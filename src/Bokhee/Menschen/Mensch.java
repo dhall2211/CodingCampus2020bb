@@ -32,15 +32,11 @@ public class Mensch {
         return geschlecht;
     }
 
-
    @Override
    public String toString() {
         String anrede = "";
         if (geschlecht == 'F') anrede = "Frau ";
         if (geschlecht == 'M') anrede = "Herr ";
         return anrede +vorname+" " + nachname + " aus " + geburtsort;
-
     }
-
-
 }
