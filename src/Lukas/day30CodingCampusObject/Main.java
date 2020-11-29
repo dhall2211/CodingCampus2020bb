@@ -23,9 +23,9 @@ public class Main {
 		// Instantiate participants and add to course
 		Vector<Participant> participants = new Vector<Participant>();
 		String[] names = {"Alex", "Aliben", "Bokhee", "Dan", "Eric", "Irene", "Klaus",
-								 "Lukas", "Marcella", "Mihael", "Sabrina", "Samet"};
+						  "Lukas", "Marcella", "Mihael", "Sabrina", "Samet"};
 
-		for(String name : names) {
+		for (String name : names) {
 			Participant participant = new Participant(name);
 			participants.add(participant);
 			codingCampus.setParticipant(participant);
