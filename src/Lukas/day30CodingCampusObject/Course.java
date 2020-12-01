@@ -23,10 +23,10 @@ public final class Course {
 
 	@Override
 	public String toString() {
-		String string = "Course name: " + name +
-						"\nLocation: " + room.getFullLocation() + "\n" +
-						"Trainers: " + trainersToString(trainers) + "\n" +
-						"Participants: " + participantsToString(participants) + "\n";
+		String string = "Course name: " + this.name +
+						"\nLocation: " + this.room.getFullLocation() + "\n" +
+						"Trainers: " + trainersToString(this.trainers) + "\n" +
+						"Participants: " + participantsToString(this.participants) + "\n";
 		return string;
 	}
 
@@ -34,7 +34,7 @@ public final class Course {
 		String p = "";
 		
 		for(Participant participant : participants) {
-			p += participant.getName() + " ";
+			p += participant.getFullName() + " ";
 		}
 		return p;
 	}
@@ -43,7 +43,7 @@ public final class Course {
 		String t = "";
 		
 		for(Trainer trainer : trainers) {
-			t += trainer.getName() + " ";
+			t += trainer.getFullName() + " ";
 		}
 		return t;
 	}

@@ -1,13 +1,7 @@
 package Lukas.day30CodingCampusObject;
 
-public final class Participant {
-	private String name;
-
-	Participant(String name) {
-		this.name = name;
-	}
-
-	public String getName() {
-		return name;
+public class Participant extends Person {
+	Participant(String firstName, String lastName, Address address) {
+		super(firstName, lastName, address);
 	}
 }

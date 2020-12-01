@@ -1,6 +1,6 @@
 package Lukas.day30CodingCampusObject;
 
-import java.util.Vector;
+import java.util.Arrays;
 
 public class Main {
 	public static void main(String[] args) {
@@ -13,25 +13,24 @@ public class Main {
 		Course codingCampus = new Course("Coding Campus", room);
 
 		// Instantiate trainers and add to course
-		Trainer t1 = new Trainer("Daniel");
-		Trainer t2 = new Trainer("Gyula");
-		Trainer t3 = new Trainer("Tobias");
-		codingCampus.setTrainer(t1);
-		codingCampus.setTrainer(t2);
-		codingCampus.setTrainer(t3);
+		Address danielAddress = new Address("a", "s", "d", "f", "g");
+		Trainer daniel = new Trainer("Daniel", "G", danielAddress);
+		codingCampus.setTrainer(daniel);
+
+		Address gyulaAddress = new Address("g", "h", "i", "j", "k");
+		Trainer gyula = new Trainer("Gyula", "H", gyulaAddress);
+		codingCampus.setTrainer(gyula);
 
 		// Instantiate participants and add to course
-		Vector<Participant> participants = new Vector<Participant>();
-		String[] names = {"Alex", "Aliben", "Bokhee", "Dan", "Eric", "Irene", "Klaus",
-						  "Lukas", "Marcella", "Mihael", "Sabrina", "Samet"};
-
-		for (String name : names) {
-			Participant participant = new Participant(name);
-			participants.add(participant);
-			codingCampus.setParticipant(participant);
-		}
+		Address ignatzAddress = new Address("Lolstreet", "42", "1337", "Kratzlol", "Mittelerde");
+		Participant ignatz = new Participant("Ignatz", "Roflcopter", ignatzAddress);
+		codingCampus.setParticipant(ignatz);
 
 		// Print course
-		System.out.println(codingCampus.toString());
+		//System.out.println(codingCampus.toString());
+
+		System.out.println(Arrays.toString(daniel.getAddress()));
+		System.out.println(Arrays.toString(gyula.getAddress()));
+		System.out.println(Arrays.toString(ignatz.getAddress()));
 	}
 }

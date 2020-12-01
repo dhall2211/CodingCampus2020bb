@@ -14,7 +14,8 @@ public final class Room {
 	}
 
 	public String getFullLocation() {
-		String location = String.format("%s, sector %s, floor %d, room %d", building.getName(), sector, floor, roomNumber);
+		String location = String.format("%s, sector %s, floor %d, room %d",
+			this.building.getName(), this.sector, this.floor, this.roomNumber);
 		return location;
 	}
 }
