@@ -29,8 +29,8 @@ public class Main {
 		// Print course
 		//System.out.println(codingCampus.toString());
 
-		System.out.println(Arrays.toString(daniel.getAddress()));
-		System.out.println(Arrays.toString(gyula.getAddress()));
-		System.out.println(Arrays.toString(ignatz.getAddress()));
+		System.out.println(daniel.getType() + ": " + Arrays.toString(daniel.getAddress()));
+		System.out.println(gyula.getType() + ": " + Arrays.toString(gyula.getAddress()));
+		System.out.println(ignatz.getType() + ": " + Arrays.toString(ignatz.getAddress()));
 	}
 }
