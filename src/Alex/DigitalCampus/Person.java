@@ -21,9 +21,9 @@ public class Person {
 
     @Override
     public String toString() {
-        return "\n" + this.vornahme + " " + this.nachnahme + " -" +
-                " " + this.straße + " " + this.hausnummer + " -" +
-                " " + this.postleitzahl + " " + this.wohnort + " " + this.land;
+        return "\n" + this.vornahme + " ," + this.nachnahme + " ," +
+                this.straße + " ," + this.hausnummer + " ," +
+                this.postleitzahl + " ," + this.wohnort + " ," + this.land;
     }
 
 
