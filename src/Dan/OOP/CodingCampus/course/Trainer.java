@@ -20,7 +20,7 @@ public class Trainer extends PersonTwo {
     }
 
     public void getFirstName() {
-        super.firstName = trainerFirstName;
+//        super.firstName = trainerFirstName;
 
     }
     public void getLastName() {

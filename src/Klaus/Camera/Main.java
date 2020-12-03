@@ -4,7 +4,7 @@ public class Main {
 
 
     public static void main(String[] args) {
-
+/*
         Camera myNikon = new Camera("Nikon", 12.3f, 10, 50,
                 )
 
@@ -18,7 +18,7 @@ public class Main {
         mySony.setOwner("Klaus");
 
         System.out.println(mySony.getDataSheet());
-
+*/
 
 
     }
