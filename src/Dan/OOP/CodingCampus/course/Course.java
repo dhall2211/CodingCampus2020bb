@@ -30,7 +30,7 @@ public class Course {
         String p =  "";
 
         for (Participant participant: particpants) {
-            p += participant.getName() + " ";
+           // p += participant.getName() + " ";
 
         }
         return p;
@@ -42,7 +42,7 @@ public class Course {
         String t = "";
 
         for(Trainer trainer : trainers) {
-            t += trainer.getName() + " ";
+           // t += trainer.getName() + " ";
         }
         return t;
     }

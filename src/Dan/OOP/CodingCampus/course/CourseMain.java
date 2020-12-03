@@ -12,7 +12,7 @@ public class CourseMain {
 
         PersonTwo DG = new Trainer("Daniel", "Greas");
 
-        System.out.println(DG.firstName + DG.lastName);
+//        System.out.println(DG.firstName + DG.lastName);
 
 
     }
