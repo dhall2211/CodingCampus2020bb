@@ -9,22 +9,16 @@ public class FotoapparatMain {
         Objektiv nikonStandard = new Objektiv(24, 80);
         nikon.setCurrentObjektiv(nikonStandard);
 
-        SpeicherKarte sdkSony= new SpeicherKarte("sdksony",5000,0);
-        SpeicherKarte hmdkarte= new SpeicherKarte("hmdsdk",3000,0);
+        SpeicherKarte sdkSony= new SpeicherKarte("sdksony",10,0);
+        SpeicherKarte hmdkarte= new SpeicherKarte("hmdsdk",30,0);
 
         System.out.println(nikon);
         System.out.println(sony+"\n");
         nikon.setSpeicherKarte(hmdkarte);
-        //nikon.machFoto();
-       // nikon.machFoto();
-       // nikon.machFoto();
+        nikon.machFoto();
 
         nikon.setSpeicherKarte(sdkSony);
-        int fotoZise=5;
-        for (int i = 0; i <sdkSony.getCapacity(); i++) {
-            nikon.machFoto();
-        }
-
+        nikon.machFoto();
         }
     }
 

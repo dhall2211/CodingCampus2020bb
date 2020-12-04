@@ -10,7 +10,7 @@ public class FotoApparat {
     private SpeicherKarte speicherKarte;
 
     // Construktor
-   public FotoApparat(String bezeichnung, float megapixel, String herkunftsLand, String funktionen) {
+    public FotoApparat(String bezeichnung, float megapixel, String herkunftsLand, String funktionen) {
         this.bezeichnung = bezeichnung;
         this.megapixel = megapixel;
         this.herkunftsLand = herkunftsLand;
@@ -38,11 +38,45 @@ public class FotoApparat {
     }
 
     public void setSpeicherKarte(SpeicherKarte speicherKarte) {
-    this.speicherKarte = speicherKarte;
+        this.speicherKarte = speicherKarte;
+    }
+
+    public boolean machFoto() {
+        int occupied = 0;
+        int free = 0;
+        do {
+            occupied = speicherKarte.getOccupied() + 5;
+            free = speicherKarte.getCapacity() - occupied;
+            System.out.println("Speicherkarte:  "+speicherKarte.getBrand()+"  FreiSpeicher:  "
+                    + free + "   BelegteSpeicher:  " + occupied +"  FotosAnzahl:  "+(occupied/5));
+            speicherKarte.setOccupied(occupied);
+
+        } while (speicherKarte != null && occupied < speicherKarte.getCapacity());
+
+
+        return speicherKarte.setOccupied(occupied);
+    }
+}
+/*
+    public int machFoto() {
+
+        int occupied = 0;
+        if (speicherKarte != null) {
+            occupied = speicherKarte.getOccupied() + 5;
+            int currentCapacity = speicherKarte.getCapacity() - occupied;
+            System.out.println("Der verfügbare Speicherplatz auf der " + speicherKarte.getBrand() + " beträgt " + currentCapacity);
+        } else {
+            System.out.println("Es stekt keine Speicherkarte in der Kamera.");
+        }
+        return speicherKarte.setOccupied(occupied);
+    }
 }
 
 
+ */
 
+
+/*
     public boolean machFoto() {
         int occupied = 0;
         int free=0;
@@ -60,6 +94,8 @@ public class FotoApparat {
 }
 
 /*
+/////////////////////zweite idee
+
     public int machFoto() {
 
         int occupied = 0;
@@ -73,7 +109,7 @@ public class FotoApparat {
         return speicherKarte.setOccupied(occupied);
     }
 }
-
+////////////////////////////////////////////////////////////////////////erste idee
     /*
     int belegte =0;
         if (speicherKarte != null) {
