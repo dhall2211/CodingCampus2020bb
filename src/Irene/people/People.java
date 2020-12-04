@@ -3,6 +3,7 @@ package Irene.people;
 import java.util.Objects;
 
 public class People {
+
     private String Vorname;
     private String Nachname;
     private int Geburtsjahr;
