@@ -27,10 +27,12 @@ public class SpeicherKarte {
         return capacity;
     }
 
-    public void setCapacity(int capacity) {
-        this.capacity = capacity;
-    }
 
+    public void setCapacity(int capacity) {
+        if ((capacity > 0) && (capacity < 5000)) {
+            this.capacity = capacity;
+        }
+    }
     public int getOccupied() {
         return occupied;
     }
@@ -53,11 +55,3 @@ public class SpeicherKarte {
         System.out.println(occupied);
     }
 }
-/*
-
-    public void speicherPlatz() {
-        if (fotoapparat.machFoto()) {
-            setOccupied(getCapacity() + 5);
-        }
-    }
- */

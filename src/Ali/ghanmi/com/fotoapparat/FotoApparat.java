@@ -10,14 +10,14 @@ public class FotoApparat {
     private SpeicherKarte speicherKarte;
 
     // Construktor
-    FotoApparat(String bezeichnung, float megapixel, String herkunftsLand, String funktionen) {
+   public FotoApparat(String bezeichnung, float megapixel, String herkunftsLand, String funktionen) {
         this.bezeichnung = bezeichnung;
         this.megapixel = megapixel;
         this.herkunftsLand = herkunftsLand;
         this.funktionen = funktionen;
         this.besitzer = "";
         this.currentObjektiv = null;
-        this.speicherKarte = null;
+        this.speicherKarte = speicherKarte;
 
     }
 
@@ -38,23 +38,22 @@ public class FotoApparat {
     }
 
     public void setSpeicherKarte(SpeicherKarte speicherKarte) {
+    this.speicherKarte = speicherKarte;
+}
 
-        this.speicherKarte = speicherKarte;
-    }
 
 
     public boolean machFoto() {
         int occupied = 0;
         int free=0;
-        if (speicherKarte != null ) {
+        if (speicherKarte != null) {
             occupied = speicherKarte.getOccupied() + 5;
-            int currentCapacity = speicherKarte.getCapacity() - occupied;
-            if(currentCapacity>=0)
-            System.out.println("Der verfügbare Speicherplatz auf der " + speicherKarte.getBrand() +
-                    " beträgt " + currentCapacity);;
+             free = speicherKarte.getCapacity() - occupied;
+            System.out.println("FreiSpeicher:  "+ free +"   BelegteSpeicher:  " + occupied);
+            speicherKarte.setOccupied(occupied);
         } else {
 
-            System.out.println("Es stekt keine Speicherkarte in der Kamera.");
+            System.out.println("Es stekt keine Speicherkarte in der Kamera oder Speicher voll.");
         }
         return speicherKarte.setOccupied(occupied);
     }

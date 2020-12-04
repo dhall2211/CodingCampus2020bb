@@ -15,13 +15,16 @@ public class FotoapparatMain {
         System.out.println(nikon);
         System.out.println(sony+"\n");
         nikon.setSpeicherKarte(hmdkarte);
-        nikon.machFoto();
-        nikon.machFoto();
-        nikon.machFoto();
+        //nikon.machFoto();
+       // nikon.machFoto();
+       // nikon.machFoto();
+
         nikon.setSpeicherKarte(sdkSony);
+        int fotoZise=5;
         for (int i = 0; i <sdkSony.getCapacity(); i++) {
             nikon.machFoto();
         }
+
         }
     }
 
