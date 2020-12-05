@@ -11,8 +11,14 @@ public class Main {
         Abteilung kleinteile = new Abteilung("Kleinteile", "Friedrich Hermann", mechanik);
         Abteilung grossteile = new Abteilung ("Grossteile", "Hannelore Peter", mechanik);
         Abteilung europa = new Abteilung("Europa", "But Moritz",grossteile);
+        Abteilung service = new Abteilung("Service", "Anna Holzer");
 
+
+        service.connectToDepartment(einkauf);
+        mechanik.connectToDepartment(privatkunden);
         vorstand.printOrganisation(" ");
+
+
 
 
     }

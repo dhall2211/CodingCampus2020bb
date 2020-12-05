@@ -1,5 +1,7 @@
 package Sabrina.Abteilungen;
 
+import Gyula.Company.Departement;
+
 import java.util.Vector;
 
 public class Abteilung {
@@ -18,6 +20,19 @@ public class Abteilung {
         if (parentAbteilung != null) {
             parentAbteilung.childDepartement.add(this);
         }
+    }
+
+    public Abteilung(String name, String manager) {
+        this(name, manager, null);
+    }
+
+    public void connectToDepartment(Abteilung parent) {
+        if (parentAbteilung != null) {
+            System.out.println(name+ " ist schon eine Unterabteilung von " + parentAbteilung.name);
+            parentAbteilung.childDepartement.remove(this);
+        }
+        parentAbteilung = parent;
+        parent.childDepartement.add(this);
     }
 
     @Override
