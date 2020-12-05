@@ -14,7 +14,12 @@ public class Main {
 		Departement einkaufGrossteile = new Departement("Einkauf Großteile", "Leiterin Peter Hannelore", einkaufMechanik);
 		Departement einkaufEuropa = new Departement("Einkauf Europa", "But Moritz", einkaufGrossteile);
 
-
 		System.out.println(vorstand.getOrganigram());
+		System.out.println("------------------------------");
+
+		Staff s1 = new Staff("Ignatz", einkaufEuropa);
+		Staff s2 = new Staff("Jürgen", einkaufEuropa);
+
+		System.out.println("Staff in einkaufEuropa: " + einkaufEuropa.getStaff());
 	}
 }
