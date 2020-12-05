@@ -10,10 +10,11 @@ public class Departement {
     private Vector<Departement> childDepartement;
 
     public Departement(String nameManager, String nameDepartement, Departement parentDepartement) {
+        // Hier werden die Attribute initialisiert....
         this.nameManager = nameManager;
         this.nameDepartement = nameDepartement;
         this.parentDepartement = parentDepartement;
-        childDepartement = new Vector<>();
+        this.childDepartement = new Vector<>();
 
         if (parentDepartement != null){
             parentDepartement.childDepartement.add(this);
@@ -27,10 +28,10 @@ public class Departement {
     public void connectToDepartment(Departement parent){
         if (parentDepartement != null) {
             System.out.println(nameDepartement + " ist schon eine Unterabeitlung von " + parentDepartement.nameDepartement);
-        } else {
-            parentDepartement = parent;
-            parent.childDepartement.add(this);
+            parentDepartement.childDepartement.remove(this);
         }
+        parentDepartement = parent;
+        parent.childDepartement.add(this);
     }
 
 

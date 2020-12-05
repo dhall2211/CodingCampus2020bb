@@ -16,6 +16,7 @@ public class Main {
         Departement service = new Departement("Gyula H", "Service");
 
         service.connectToDepartment(saleB2B);
+        service.connectToDepartment(purchase);
 
         direction.printOrganisation("");
         // System.out.println(direction);
