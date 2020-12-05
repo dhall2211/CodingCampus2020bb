@@ -12,11 +12,17 @@ public class FotoapparatMain {
         Speicherkarte hmdKarte = new Speicherkarte("hmdsdk", 3000, 250);
 
         nikon.setSpeicherkarte(hmdKarte);
-        nikon.takePicture(hmdKarte);
-        nikon.takePicture(hmdKarte);
+        nikon.takePicture();
+        nikon.takePicture();
         nikon.setSpeicherkarte(sdkSony);
-        nikon.takePicture(sdkSony);
-        nikon.takePicture(sdkSony);
+        nikon.takePicture();
+        nikon.takePicture();
+        nikon.setSpeicherkarte(hmdKarte);
+        nikon.takePicture();
+        nikon.takePicture();
+        nikon.setSpeicherkarte(sdkSony);
+        nikon.takePicture();
+        nikon.takePicture();
 
         System.out.println();
 

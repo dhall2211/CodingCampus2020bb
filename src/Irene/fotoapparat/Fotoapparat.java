@@ -28,16 +28,16 @@ public class Fotoapparat {
         this.speicherkarte = speicherkarte;
     }
 
-    public int takePicture(Speicherkarte speicherkarte){
+    public void takePicture(){
         int occupied = 0;
         if(speicherkarte != null) {
             occupied = speicherkarte.getOccupiedCapacity() + 5;
+            speicherkarte.setOccupiedCapacity(occupied);
             int currentCapacity = speicherkarte.getCapacity() - occupied;
-            System.out.println("Der verfügbare Speicherplatz auf der " + speicherkarte.getBrand() + " beträgt " + currentCapacity);
+            System.out.println("Der verfügbare Speicherplatz auf der " + speicherkarte.getBrand() + " beträgt " + currentCapacity + ".");
         } else {
             System.out.println("Es stekt keine Speicherkarte in der Kamera.");
         }
-        return speicherkarte.setOccupiedCapacity(occupied);
     }
 
     public void setCurrentObjektiv(Objektiv currentObjektiv) {
