@@ -15,6 +15,7 @@ public class Main {
         System.out.println(m);
         System.out.println(m1);
         System.out.println(et);
+        System.out.println();
         if (m.equals(m1)) {
             System.out.println("die sind identisch");
         } else {
