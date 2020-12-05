@@ -4,26 +4,22 @@ package Lukas.day33Departments;
 public class Main {
 	public static void main(String[] args) {
 		
-		Department vertrievPrivatkunden = new Department("Vertrieb Privatkunden", "Musterfrau Angela");
-		Department vertriebFirmenkunden = new Department("Vertrieb Firmenkunden", "Muste Alfons");
-		Department einkaufEuropa = new Department("Einkauf Europa", "But Moritz");
-		Department einkaufKleinteile = new Department("Einkauf Kleinteile", "Leiter Friedrich Hermann");
-		
-		Department[] einkaufGrossteileSub = {einkaufEuropa};
-		Department einkaufGrossteile = new Department("Einkauf Großteile", "Leiterin Peter Hannelore", einkaufGrossteileSub);
-		
-		Department[] einkaufMechanikSub = {einkaufKleinteile, einkaufGrossteile};
-		Department einkaufMechanik = new Department("Einkauf Mechanik", "Gunz Herlinde", einkaufMechanikSub);
-		
-		Department[] einkaufSub = {einkaufMechanik};
-		Department einkauf = new Department("Einkauf", "Kufmann Alois", einkaufSub);
-		
-		Department[] vertriebSub = {vertrievPrivatkunden, vertriebFirmenkunden};
-		Department vertrieb  = new Department("Vertrieb", "Mustermann Max", vertriebSub);
+		Departement vorstand = new Departement("Vorstand", "Alfred Boss");
+		Departement vertrieb  = new Departement("Vertrieb", "Mustermann Max", vorstand);
+		Departement vertriebPrivatkunden = new Departement("Vertrieb Privatkunden", "Musterfrau Angela", vertrieb);
+		Departement vertriebFirmenkunden = new Departement("Vertrieb Firmenkunden", "Muste Alfons", vertrieb);
+		Departement einkauf = new Departement("Einkauf", "Kufmann Alois", vorstand);
+		Departement einkaufMechanik = new Departement("Einkauf Mechanik", "Gunz Herlinde", einkauf);
+		Departement einkaufKleinteile = new Departement("Einkauf Kleinteile", "Leiter Friedrich Hermann", einkaufMechanik);
+		Departement einkaufGrossteile = new Departement("Einkauf Großteile", "Leiterin Peter Hannelore", einkaufMechanik);
+		Departement einkaufEuropa = new Departement("Einkauf Europa", "But Moritz", einkaufGrossteile);
 
-		Department[] vorstandSub = {vertrieb, einkauf};
-		Department vorstand = new Department("Vorstand", "Alfred Boss", vorstandSub);
-		
-		System.out.println(vorstand.toString());
+		System.out.println(vorstand.getOrganigram());
+		System.out.println("------------------------------");
+
+		Staff s1 = new Staff("Ignatz", einkaufEuropa);
+		Staff s2 = new Staff("Jürgen", einkaufEuropa);
+
+		System.out.println("Staff in einkaufEuropa: " + einkaufEuropa.getStaff());
 	}
 }

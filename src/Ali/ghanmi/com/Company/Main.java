@@ -1,4 +1,4 @@
-package Gyula.Company;
+package Ali.ghanmi.com.Company;
 
 public class Main {
 
@@ -13,12 +13,8 @@ public class Main {
         Departement purchaseMechanicSmall = new Departement("Friedrich Hermann", "Einkauf Kleinteile", purchaseMechanic);
         Departement purchaseMechanicBig = new Departement("Peter Hannelore", "Einkauf Großteile", purchaseMechanic);
         Departement purchaseMechanicBigEU = new Departement("But Moritz", "Einkauf Europa", purchaseMechanicBig);
-        Departement service = new Departement("Gyula H", "Service");
 
-        service.connectToDepartment(saleB2B);
-        service.connectToDepartment(purchase);
-
-        direction.printOrganisation("");
+        purchaseMechanicBigEU.printOrganisation("*");
         // System.out.println(direction);
     }
 
