@@ -1,4 +1,4 @@
-package Ali.ghanmi.com.Company;
+package Ali.ghanmi.com.Company2.Company;
 
 import java.util.Vector;
 
@@ -20,9 +20,9 @@ public class Departement {
         }
     }
     public Departement(String nameManager, String nameDepartement) {
-        this(nameManager, nameDepartement,null);
+        this(nameManager, nameDepartement, null);
     }
-    public void connectToDepartment(Departement parent) {
+    public void connectToDepartment(Departement parent){
         if (parentDepartement != null) {
             System.out.println(nameDepartement + " ist schon eine Unterabeitlung von " + parentDepartement.nameDepartement);
         } else {
@@ -31,13 +31,16 @@ public class Departement {
         }
     }
 
-    @Override
-    public String toString() { return "_ " + nameDepartement + ", " + nameManager + "toString";}
 
-    public void printOrganisation(String prefix) {
+    @Override
+    public String toString() {
+        return "_ " + nameDepartement + ", " + nameManager + "toString";
+    }
+
+    public void printOrganisation(String prefix){
         System.out.println(prefix + "_ " + nameDepartement + ", " + nameManager);
         for (int i = 0; i < childDepartement.size(); i++) {
-            childDepartement.get(i).printOrganisation("  "+prefix);
+            childDepartement.get(i).printOrganisation("    " + prefix);
         }
     }
 
