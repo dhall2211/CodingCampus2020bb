@@ -1,4 +1,4 @@
-package ghanmi.com.OOP_CampusOrganisation;
+package Ali.ghanmi.com.OOP_CampusOrganisation;
 
 import java.time.LocalDate;
 import java.time.LocalTime;

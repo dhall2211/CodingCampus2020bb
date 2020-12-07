@@ -6,7 +6,7 @@ public class ZooMain {
 
         EnclosurePark Vivarum = new EnclosurePark("Vivarum", 1970, 400, 20, null, zoo);
         EnclosurePark ReptilesWater = new EnclosurePark("Wasser reptiles", 1975, 20, 4, Vivarum, zoo);
-        EnclosurePark ReptilesErth = new EnclosurePark("Wasser reptiles", 1976, 40, 40, Vivarum, zoo);
+        EnclosurePark ReptilesErth = new EnclosurePark("Erde reptiles", 1976, 40, 40, Vivarum, zoo);
         EnclosurePark Marina = new EnclosurePark("Ocean&see", 1980, 300, 40, Vivarum, zoo);
 
         EnclosurePark WildAfrika = new EnclosurePark("Savana", 1970, 2000, 50, null, zoo);
@@ -20,6 +20,6 @@ public class ZooMain {
 
         zoo.printZoo("*");
         System.out.println(zoo);
-        Vivarum.printZooPlan("-");
+        Vivarum.printZooPlan("*");
     }
 }

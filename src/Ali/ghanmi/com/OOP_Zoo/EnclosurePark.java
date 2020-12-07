@@ -39,16 +39,20 @@ public class EnclosurePark {
         sector.enclosure.add(this);
     }
 
-    @Override
-    public String toString() { return "Enclosure:" + name + "BauJahr: " + creation + "Fläche: " + seiz + "m3" + "Maximal tiere anzahl: " + maxCapacity +
-                "Sector: " + zooSector + ", enclosure: " + enclosure + "Einrichtung: " + zoo;}
+   @Override
+      public String toString() { return "Enclosure:" + name + "BauJahr: " + creation + "Fläche: " + seiz + "m3" + "Maximal tiere anzahl: " + maxCapacity +
+    "Sector: " + zooSector + ", enclosure: " + enclosure + "Einrichtung: " + zoo;}
 
 
-    public  void printZooPlan(String prefix) {
-        System.out.println(prefix + "_ " + "Enclosure:" + name + "BauJahr: " + creation + "Fläche: " + seiz + "m3" + "Maximal tiere anzahl: " + maxCapacity +
-                "Sector: " + zooSector + ", enclosure=" + enclosure + "Einrichtung: " + zoo);
+    public void printZooPlan(String prefix) {
+        System.out.println(prefix + "" + name + " BauJahr: " + creation + ", Fläche: " + seiz + " m3," + " Maximal tiere anzahl: " + maxCapacity +
+                ", Sector: " + zooSector + ", enclosure=" + enclosure + " " + zoo);
         for (int i = 0; i < enclosure.size(); i++) {
             enclosure.get(i).printZooPlan("    " + prefix);
         }
+    }
+
+    public Vector<EnclosurePark> getEnclosure() {
+        return enclosure;
     }
 }
