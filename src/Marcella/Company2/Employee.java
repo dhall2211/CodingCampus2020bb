@@ -1,11 +1,11 @@
 package Marcella.Company2;
 
-public class Employees {
+public class Employee {
 
     private String nameEmployee;
-    private Departement departementEmployee;
+    private String departementEmployee;
 
-    public Employees(String nameEmployee, Departement departementEmployee) {
+    public Employee(String nameEmployee, String departementEmployee) {
         this.nameEmployee = nameEmployee;
         this.departementEmployee = departementEmployee;
     }
@@ -15,11 +15,7 @@ public class Employees {
         return nameEmployee + ", " + departementEmployee;
     }
 
-    public String getNameEmployee() {
-        return nameEmployee;
-    }
-
-    public Departement getDepartementEmployee() {
+    public String getDepartementEmployee() {
         return departementEmployee;
     }
 }

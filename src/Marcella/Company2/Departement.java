@@ -6,7 +6,7 @@ public class Departement {
 
     private String nameDepartement;
     private String nameManager;
-    private Vector<Employees> currentEmployees;
+    private Vector<Employee> currentEmployees;
     private Departement parentDepartement;
     private Vector<Departement> childDepartement;
 
@@ -25,14 +25,14 @@ public class Departement {
         this(nameManager, nameDepartement, null);
     }
 
-    public Vector<Employees> addCurrentEmployees(Employees E) {
-        if (E.getDepartementEmployee() == this) {
+    public Vector<Employee> addCurrentEmployees(Employee E) {
+        if (E.getDepartementEmployee() == nameDepartement) {
             currentEmployees.add(E);
         }
         return currentEmployees;
     }
 
-    public Vector<Employees> removeCurrentEmployees(Employees E) {
+    public Vector<Employee> removeCurrentEmployees(Employee E) {
             currentEmployees.remove(E);
         return currentEmployees;
     }
