@@ -7,6 +7,4 @@ public class Animals {
     private int  alt;
     EnclosurePark enclosurePark;
 
-
-
 }
