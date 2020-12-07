@@ -4,19 +4,22 @@ public class ZooMain {
     public static void main(String[] args) {
         Zoo zoo = new Zoo("county Zoo Park");
 
-        Enclosure_gehege Vivarum = new Enclosure_gehege("Vivarum", 1970, 400,20,null,zoo);
-        Enclosure_gehege ReptilesWater = new Enclosure_gehege("Wasser reptiles", 1975, 20, 4,Vivarum,zoo);
-        Enclosure_gehege ReptilesErth = new Enclosure_gehege("Wasser reptiles", 1976, 40, 40,Vivarum,zoo);
-        Enclosure_gehege Marina = new Enclosure_gehege("Ocean&see", 1980, 300, 40,Vivarum, zoo);
+        EnclosurePark Vivarum = new EnclosurePark("Vivarum", 1970, 400, 20, null, zoo);
+        EnclosurePark ReptilesWater = new EnclosurePark("Wasser reptiles", 1975, 20, 4, Vivarum, zoo);
+        EnclosurePark ReptilesErth = new EnclosurePark("Wasser reptiles", 1976, 40, 40, Vivarum, zoo);
+        EnclosurePark Marina = new EnclosurePark("Ocean&see", 1980, 300, 40, Vivarum, zoo);
 
-        Enclosure_gehege WildAfrika =new Enclosure_gehege("Savana",1970,2000,50,null,zoo);
-        Enclosure_gehege WildCatS =new Enclosure_gehege("Raubkatzen",1970,500,10,WildAfrika,zoo);
-        Enclosure_gehege Wildsahara =new Enclosure_gehege("Sahara wild",1980,1000,50,WildAfrika,zoo);
-        Enclosure_gehege WildZentrallAfrika =new Enclosure_gehege("Zentrall afrika vielfalt",1980,1000,10,WildAfrika,zoo);
+        EnclosurePark WildAfrika = new EnclosurePark("Savana", 1970, 2000, 50, null, zoo);
+        EnclosurePark WildCatS = new EnclosurePark("Raubkatzen", 1970, 500, 10, WildAfrika, zoo);
+        EnclosurePark Wildsahara = new EnclosurePark("Sahara wild", 1980, 1000, 50, WildAfrika, zoo);
+        EnclosurePark WildZentrallAfrika = new EnclosurePark("Zentrall afrika vielfalt", 1980, 1000, 10, WildAfrika, zoo);
 
+        EnclosurePark WildAlpen = new EnclosurePark("Savana", 1970, 2000, 50, null, zoo);
+        EnclosurePark birds = new EnclosurePark("Raubkatzen", 1970, 2000, 50, WildAlpen, zoo);
 
 
         zoo.printZoo("*");
         System.out.println(zoo);
+        Vivarum.printZooPlan("-");
     }
 }
