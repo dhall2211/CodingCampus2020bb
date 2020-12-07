@@ -1,4 +1,4 @@
-package Gyula.Company;
+package Marcella.Company2;
 
 public class Main {
 
@@ -15,11 +15,17 @@ public class Main {
         Departement purchaseMechanicBigEU = new Departement("But Moritz", "Einkauf Europa", purchaseMechanicBig);
         Departement service = new Departement("Gyula H", "Service");
 
-        service.connectToDepartment(saleB2B);
-        service.connectToDepartment(purchase);
+        Employee E1 = new Employee("Kühne Bertram", "Vertrieb");
+        Employee E2 = new Employee("Mathis Elfriede", "Vertrieb");
+        Employee E3 = new Employee("Janis Otto", "Einkauf Großteile");
 
+        service.connectToDepartment(saleB2B);
+        sale.addCurrentEmployees(E1);
+        sale.addCurrentEmployees(E2);
+        purchaseMechanicBig.addCurrentEmployees(E3);
         direction.printOrganisation("");
-        // System.out.println(direction);
+        sale.removeCurrentEmployees(E1);
+        direction.printOrganisation("");
     }
 
 }
