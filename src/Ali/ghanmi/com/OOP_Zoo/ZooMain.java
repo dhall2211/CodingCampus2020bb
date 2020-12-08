@@ -17,10 +17,10 @@ public class ZooMain {
         EnclosurePark WildAlpen = new EnclosurePark("Savana", 1970, 2000, 50, zoo);
         EnclosurePark birds = new EnclosurePark("Raubkatzen", 1970, 2000, 50, zoo);
 
-        Animals snik = new Animals(Vivarum,"balboa","schlange","USA",2);
+        Animal snik = new Animal(Vivarum,"bilboa","schlange","USA",2);
 
 
-        zoo.printZoo("* ");
+        zoo.printStructure("");
         //System.out.println(zoo);
     }
 }

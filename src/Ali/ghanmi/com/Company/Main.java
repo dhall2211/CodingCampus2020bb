@@ -16,6 +16,8 @@ public class Main {
         Departement service= new Departement("Peterson","service");
         Departement buchhaltung= new Departement("Schmid","buchhaltung");
 
+          Employee em1=new Employee("Hans Peter",purchase);
+        //  System.out.println(purchase.get);
 
         service.connectToDepartment(saleB2B);
         buchhaltung.connectToDepartment(direction);
