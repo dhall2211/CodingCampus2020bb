@@ -62,7 +62,10 @@ class Department {
     }
 
     public void removeDepartment() {
-        this.department = null;
+        if (parentDepartment != null) {
+            parentDepartment.childDepartment.remove(this);
+        }
+        parentDepartment = null;
     }
 
     @Override
@@ -70,14 +73,7 @@ class Department {
         return department + ", " + manager + " " + employees.toString();
     }
 
-    // childDepartment.forEach(c -> c.printOrganisation(intend, prefix, level + 1));
     public void printOrganisation(String intend, String prefix, int level) {
-        System.out.println(intend.repeat(level) + prefix + this.toString());
-
-        for (Department department : childDepartment) {
-            if (department.department != null) {
-                department.printOrganisation(intend, prefix, level + 1);
-            }
-        }
+        childDepartment.forEach(c -> c.printOrganisation(intend, prefix, level + 1));
     }
 }
