@@ -25,16 +25,12 @@ public class Departement {
         this(nameManager, nameDepartement, null);
     }
 
-    public Vector<Employee> addCurrentEmployees(Employee E) {
-        if (E.getDepartementEmployee() == nameDepartement) {
-            currentEmployees.add(E);
-        }
-        return currentEmployees;
+    public void addCurrentEmployee(Employee e) {
+        currentEmployees.add(e);
     }
 
-    public Vector<Employee> removeCurrentEmployees(Employee E) {
-            currentEmployees.remove(E);
-        return currentEmployees;
+    public void removeCurrentEmployee(Employee e) {
+        currentEmployees.remove(e);
     }
 
     public void printOrganisation(String prefix){

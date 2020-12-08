@@ -15,16 +15,15 @@ public class Main {
         Departement purchaseMechanicBigEU = new Departement("But Moritz", "Einkauf Europa", purchaseMechanicBig);
         Departement service = new Departement("Gyula H", "Service");
 
-        Employee E1 = new Employee("Kühne Bertram", "Vertrieb");
-        Employee E2 = new Employee("Mathis Elfriede", "Vertrieb");
-        Employee E3 = new Employee("Janis Otto", "Einkauf Großteile");
+        Employee E1 = new Employee("Kühne Bertram", sale);
+        Employee E2 = new Employee("Mathis Elfriede", sale);
+        Employee E3 = new Employee("Janis Otto", purchaseMechanicBig);
 
         service.connectToDepartment(saleB2B);
-        sale.addCurrentEmployees(E1);
-        sale.addCurrentEmployees(E2);
-        purchaseMechanicBig.addCurrentEmployees(E3);
         direction.printOrganisation("");
-        sale.removeCurrentEmployees(E1);
+        E3.quit(); // folgender Aufruf bewirkt das Gleiche:
+        // purchaseMechanicBig.removeCurrentEmployees(E3);
+        E2.switchDepartment(purchase);
         direction.printOrganisation("");
     }
 
