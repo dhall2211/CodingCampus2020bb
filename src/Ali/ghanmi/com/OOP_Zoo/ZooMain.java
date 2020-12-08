@@ -19,7 +19,6 @@ public class ZooMain {
 
 
         zoo.printZoo("*");
-        System.out.println(zoo);
-        Vivarum.printZooPlan("*");
+        //System.out.println(zoo);
     }
 }
