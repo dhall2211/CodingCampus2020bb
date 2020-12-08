@@ -9,7 +9,7 @@ public class Departement {
 	private Vector<Departement> subDepartement;
 	private Vector<Staff> staff;
 	
-	Departement(String depName, String boss, Departement topDepartement) {
+	public Departement(String depName, String boss, Departement topDepartement) {
 		this.depName = depName;
 		this.boss = boss;
 		this.topDepartement = topDepartement;
@@ -50,16 +50,24 @@ public class Departement {
 	public String getStaff() {
 		StringBuilder sb = new StringBuilder();
 		
-		if (this.staff != null) {
-			for (Staff s : this.staff) {
-				sb.append(s.getName()).append(", ");
+		if (staff != null) {
+			for (int i = 0; i < staff.size(); i++) {
+				if (i > 0) {
+					sb.append(", ");
+				}
+				sb.append(staff.get(i).getName());
 			}
 		}
 		return sb.toString();
 	}
 
-	// setter --------------------------------------------------------------------------------------
-	public void setStaff(Staff s) {
-		staff.add(s);
+// setter ------------------------------------------------------------------------------------------
+	public void switchToDepartment(Staff s) {
+		Departement dep = s.getDepartment();
+		
+		if (dep != null) {
+			dep.staff.remove(s);
+		}
+		this.staff.add(s);
 	}
 }
