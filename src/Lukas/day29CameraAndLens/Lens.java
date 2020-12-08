@@ -1,4 +1,4 @@
-package src.com.dcv.nov.day29day30;
+package Lukas.day29CameraAndLens;
 
 public class Lens {
 
