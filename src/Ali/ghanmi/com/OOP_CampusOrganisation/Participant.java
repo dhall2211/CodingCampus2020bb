@@ -1,4 +1,5 @@
-package ghanmi.com.OOP_CampusOrganisation;
+package Ali.ghanmi.com.OOP_CampusOrganisation;
+
 
 public class Participant {
 

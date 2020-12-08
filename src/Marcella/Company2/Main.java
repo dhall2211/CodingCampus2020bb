@@ -1,4 +1,4 @@
-package Ali.ghanmi.com.Company;
+package Marcella.Company2;
 
 public class Main {
 
@@ -13,17 +13,18 @@ public class Main {
         Departement purchaseMechanicSmall = new Departement("Friedrich Hermann", "Einkauf Kleinteile", purchaseMechanic);
         Departement purchaseMechanicBig = new Departement("Peter Hannelore", "Einkauf Großteile", purchaseMechanic);
         Departement purchaseMechanicBigEU = new Departement("But Moritz", "Einkauf Europa", purchaseMechanicBig);
-        Departement service= new Departement("Peterson","service");
-        Departement buchhaltung= new Departement("Schmid","buchhaltung");
+        Departement service = new Departement("Gyula H", "Service");
 
-          Employee em1=new Employee("Hans Peter",purchase);
-        //  System.out.println(purchase.get);
+        Employee E1 = new Employee("Kühne Bertram", sale);
+        Employee E2 = new Employee("Mathis Elfriede", sale);
+        Employee E3 = new Employee("Janis Otto", purchaseMechanicBig);
 
         service.connectToDepartment(saleB2B);
-        buchhaltung.connectToDepartment(direction);
-        direction.printOrganisation(" ");
-
-        // System.out.println(direction);
+        direction.printOrganisation("");
+        E3.quit(); // folgender Aufruf bewirkt das Gleiche:
+        // purchaseMechanicBig.removeCurrentEmployees(E3);
+        E2.switchDepartment(purchase);
+        direction.printOrganisation("");
     }
 
 }
