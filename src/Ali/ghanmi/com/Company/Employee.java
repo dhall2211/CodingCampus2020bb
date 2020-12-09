@@ -7,22 +7,29 @@ public class Employee {
     public Employee(String name, Departement aktuellDepartment) {
         this.name = name;
         this.aktuellDepartment = aktuellDepartment;
-        aktuellDepartment.SetNewEmployee(this);
-    }
 
-    public String getName() {
+        if (aktuellDepartment != null) {
+            aktuellDepartment.addCurrentEmployee(this);
+
+        }
+    }
+        public void quit () {
+            aktuellDepartment.removeCurrentEmployee(this);
+            aktuellDepartment = null;
+        }
+
+
+        public void switchDepartment(Departement newDepartement) {
+            aktuellDepartment.removeCurrentEmployee(this);
+            if (newDepartement != null){
+                newDepartement.addCurrentEmployee(this);
+            }
+        }
+
+    @Override
+    public String toString() {
         return name;
     }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public Departement getAktuellDepartment() {
-        return aktuellDepartment;
-    }
-
-    public void setAktuellDepartment(Departement aktuellDepartment) {
-        this.aktuellDepartment = aktuellDepartment;
-    }
 }
+
+

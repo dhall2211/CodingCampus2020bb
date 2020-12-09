@@ -13,16 +13,18 @@ public class Main {
         Departement purchaseMechanicSmall = new Departement("Friedrich Hermann", "Einkauf Kleinteile", purchaseMechanic);
         Departement purchaseMechanicBig = new Departement("Peter Hannelore", "Einkauf Großteile", purchaseMechanic);
         Departement purchaseMechanicBigEU = new Departement("But Moritz", "Einkauf Europa", purchaseMechanicBig);
-        Departement service= new Departement("Peterson","service");
-        Departement buchhaltung= new Departement("Schmid","buchhaltung");
+        Departement service = new Departement("Peterson", "service");
+        Departement buchhaltung = new Departement("Schmid", "buchhaltung");
 
-          Employee em1=new Employee("Hans Peter",purchase);
+        Employee Empl1 = new Employee("Hans Peter", purchase);
+        Employee Empl2 = new Employee("Hanna Kaiser", purchase);
         //  System.out.println(purchase.get);
+        buchhaltung.addCurrentEmployee(Empl1);
 
         service.connectToDepartment(saleB2B);
         buchhaltung.connectToDepartment(direction);
         direction.printOrganisation(" ");
-
+        //Empl1.switchDepartment(service);
         // System.out.println(direction);
     }
 
