@@ -3,15 +3,18 @@ package Lukas.day33Departments;
 import java.util.Vector;
 
 public class Departement {
-	String depName;
-	String boss;
+	private String depName;
+	private String boss;
 	private Departement topDepartement;
 	private Vector<Departement> subDepartement;
+	private Vector<Staff> staff;
 	
-	Departement(String depName, String boss, Departement topDepartement) {
+	public Departement(String depName, String boss, Departement topDepartement) {
 		this.depName = depName;
 		this.boss = boss;
-		subDepartement = new Vector<>();
+		this.topDepartement = topDepartement;
+		this.subDepartement = new Vector<>();
+		this.staff = new Vector<>();
 
         if (topDepartement != null){
             topDepartement.subDepartement.add(this);
@@ -22,6 +25,7 @@ public class Departement {
         this(depName, boss, null);
 	}
 	
+	// getter --------------------------------------------------------------------------------------
 	public String getOrganigram() {
 		return getOrganigram(0);
 	}
@@ -41,5 +45,29 @@ public class Departement {
 			}
 		}
 		return sb.toString();
+	}
+
+	public String getStaff() {
+		StringBuilder sb = new StringBuilder();
+		
+		if (staff != null) {
+			for (int i = 0; i < staff.size(); i++) {
+				if (i > 0) {
+					sb.append(", ");
+				}
+				sb.append(staff.get(i).getName());
+			}
+		}
+		return sb.toString();
+	}
+
+// setter ------------------------------------------------------------------------------------------
+	public void switchToDepartment(Staff s) {
+		Departement dep = s.getDepartment();
+		
+		if (dep != null) {
+			dep.staff.remove(s);
+		}
+		this.staff.add(s);
 	}
 }
