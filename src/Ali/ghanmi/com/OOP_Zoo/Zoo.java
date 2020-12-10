@@ -37,13 +37,5 @@ public class Zoo {
             enclosureParks.get(i).printStructure(prefix + "   ");
 
         }
-        int meatQuantity=0;
-        for (int i = 0; i <foodManagment.size() ; i++) {
-            if (foodManagment.get(i).equals("meat"))
-                meatQuantity +=foodManagment.get(i);
-            System.out.println("_"+ foodManagment.get(i));
-
-        }
-
     }
 }
