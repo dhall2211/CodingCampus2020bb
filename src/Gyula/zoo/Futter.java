@@ -5,12 +5,10 @@ public class Futter {
     private String einheit;
     private int tagesBedarf;
 
-    public Futter(Zoo zoo, String name, String einheit){
+    public Futter(String name, String einheit){
         this.name = name;
         this.einheit = einheit;
         tagesBedarf = 0;
-
-        zoo.addFutter(this);
     }
 
     public void tagesBedarfZufuegen(int bedarf){
@@ -27,5 +25,9 @@ public class Futter {
 
     public String getName() {
         return name;
+    }
+
+    public void setEinheit(String einheit) {
+        this.einheit = einheit;
     }
 }

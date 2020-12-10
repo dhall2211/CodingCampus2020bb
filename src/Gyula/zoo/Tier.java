@@ -8,14 +8,14 @@ public class Tier {
     private int futterBedarf;
 
     // Constructor
-    public Tier(Gehege gehege, String name, String gattung, Futter lieblingsFutter, int futterBedarf){
+    public Tier(Zoo zoo, String gehege, String name, String gattung, String lieblingsFutter, int futterBedarf){
         this.name = name;
         this.gattung = gattung;
-        this.lieblingsFutter = lieblingsFutter;
+        this.lieblingsFutter = zoo.searchAndCreateFutter(lieblingsFutter);
         this.futterBedarf = futterBedarf;
-        lieblingsFutter.tagesBedarfZufuegen(futterBedarf);
+        this.lieblingsFutter.tagesBedarfZufuegen(futterBedarf);
 
-        gehege.addTier(this);
+        zoo.searchAndCreateGehege(gehege).addTier(this);
     }
 
     public void printStruktur(String prefix){
