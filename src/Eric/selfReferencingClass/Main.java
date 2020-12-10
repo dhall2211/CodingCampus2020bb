@@ -1,4 +1,4 @@
-package Eric.SelfReferencingClass;
+package Eric.selfReferencingClass;
 
 import java.util.*;
 

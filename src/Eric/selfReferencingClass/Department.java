@@ -1,4 +1,4 @@
-package Eric.SelfReferencingClass;
+package Eric.selfReferencingClass;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -74,6 +74,7 @@ class Department {
     }
 
     public void printOrganisation(String intend, String prefix, int level) {
+        System.out.println(intend.repeat(level) + prefix + this.toString());
         childDepartment.forEach(c -> c.printOrganisation(intend, prefix, level + 1));
     }
 }

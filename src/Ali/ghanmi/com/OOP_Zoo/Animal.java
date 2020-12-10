@@ -6,6 +6,8 @@ public class Animal {
     private String herkuftLand;
     private int alt;
     private EnclosurePark animalPlace;
+    private FoodAnimal indevueduelfood;//
+
 
     public Animal(EnclosurePark animalPlace, String name, String tierart, String herkuftLand, int alt) {
         this.name = name;
@@ -13,6 +15,7 @@ public class Animal {
         this.herkuftLand = herkuftLand;
         this.alt = alt;
         this.animalPlace = animalPlace;
+      //  this.indevueduelfood= indevueduelfood;
         animalPlace.add(this);
     }
 
