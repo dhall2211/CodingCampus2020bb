@@ -1,4 +1,4 @@
-package Lukas.day34Zoo;
+package Lukas.day34ZooBasicAssociation;
 
 import java.util.Vector;
 
@@ -11,24 +11,27 @@ public class Enclosure {
 		zoo.addEnclosure(this);
 	}
 	
-	@Override
-	public String toString() {
+	public String getStructure() {
 		StringBuilder sb = new StringBuilder();
 		sb.append("  L ")
 		  .append("Enclosure with ")
 		  .append(fence)
-		  .append("\n")
-		  .append("    L ");
+		  .append("\n");
 		
 		if (animals != null) {
-			for (int i = 0; i < animals.size(); i++) {
-				if (i > 0) {
-					sb.append(", ");
-				}
-				sb.append(animals.get(i).toString());
+			for (Animal animal : animals) {
+				sb.append("      L ").append(animal.toString()).append("\n");
 			}
 		}
 		return sb.toString();
+	}
+
+	public int getNumberOfAnimals() {
+		if (animals != null) {
+			return animals.size();
+		} else {
+			return 0;
+		}
 	}
 
 	public void addAnimal(Animal a) {
