@@ -1,10 +1,21 @@
-package Ali.ghanmi.com.Company;
+package Ali.ghanmi.com.Company3.Company;
 
 public class Employee {
     private String name;
-    private Departement aktuellDepartment;
 
-    public Employee(String name, Departement aktuellDepartment) {
+    public Employee(String name) {
+        this.name= name;
+    }
+
+    public Employee() {
+
+    }
+
+    public String getName() {
+        return name;
+    }
+/*
+    public Employee(String name) {
         this.name = name;
         this.aktuellDepartment = aktuellDepartment;
 
@@ -12,6 +23,7 @@ public class Employee {
             aktuellDepartment.addCurrentEmployee(this);
 
         }
+
     }
         public void quit () {
             aktuellDepartment.removeCurrentEmployee(this);
@@ -26,6 +38,8 @@ public class Employee {
             }
         }
 
+
+ */
     @Override
     public String toString() {
         return name;
