@@ -25,6 +25,9 @@ public class Animal {
 
 
     public void printStructure(String prefix) {
-        System.out.println (prefix + name +" Tierart: "+ tierart +" Herkunft: "+ herkuftLand +" "+ alt);
+        System.out.println (prefix+"Name: " + name +", Tierart: "+ tierart +", Herkunft: "+ herkuftLand +", Alter: "+ alt);
     }
-}
+
+
+    }
+

@@ -44,6 +44,9 @@ public class Departement {
         employees.remove(mitarbeiter);
     }
 
+    public String getNameManager() {
+        return nameManager;
+    }
 
     public void printOrganisation(String prefix) {
         System.out.println(prefix + "_ " + nameDepartement + ", " + nameManager);

@@ -5,7 +5,7 @@ import java.util.Vector;
 public class Zoo {
     private String name;
     private Vector<EnclosurePark> enclosureParks;
-
+    private Vector<FoodAnimal> foodManagment;//
 
     public Zoo(String name) {
         this.name = name;

@@ -17,15 +17,17 @@ public class Main {
         Departement buchhaltung = new Departement("Schmid", "buchhaltung");
 
         Employee Empl1 = new Employee("Hans Peter", purchase);
-        Employee Empl2 = new Employee("Hanna Kaiser", purchase);
+        Employee Empl0 = new Employee("Hannna Von Kaiser", purchase);
+        ;
+        System.out.println(direction.getNameManager());//
         //  System.out.println(purchase.get);
-        buchhaltung.addCurrentEmployee(Empl1);
-
+        direction.addCurrentEmployee(Empl0);
         service.connectToDepartment(saleB2B);
         buchhaltung.connectToDepartment(direction);
         direction.printOrganisation(" ");
         //Empl1.switchDepartment(service);
         // System.out.println(direction);
+
     }
 
 }
