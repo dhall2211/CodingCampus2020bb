@@ -2,37 +2,28 @@ package Ali.ghanmi.com.OOP_Zoo;
 
 public class FoodAnimal {
     private String varietyOfFood;
-    private double Quantity;
     private String mesureUnite;
-    private Zoo zoo;
-    private Animal animal;
+private int dayliQuantity;
 
-    public FoodAnimal(Zoo zoo,Animal animal,String varietyOfFood, double quantity, String mesureUnite) {
+    public FoodAnimal(Zoo zoo,String varietyOfFood,  String mesureUnite) {
         this.varietyOfFood = varietyOfFood;
-        this.zoo=zoo;
-        this.animal=animal;
-        Quantity = quantity;
         this.mesureUnite = mesureUnite;
+       dayliQuantity=0;
         zoo.addFood(this);
-
-
-       // this.animal = animal;
+        // this.animal = animal;
     }
-
-    public String getVarietyOfFood() {
-        return varietyOfFood;
-    }
-
-    public double getQuantity() {
-        return Quantity;
-    }
-
-    public String getMesureUnite() {
-        return mesureUnite;
+    public String getVarietyOfFood() { return varietyOfFood; }
+    public String getMesureUnite() { return mesureUnite; }
+    public void tagesBedarfZufuegen(int tagesbedarf) {
+        dayliQuantity += tagesbedarf;
     }
 
     @Override
     public String toString() {
-        return "Food: "+ varietyOfFood +", Quantity: " + Quantity + "" + mesureUnite;
+        return "Food: "+ varietyOfFood +", Quantity: " + "" + mesureUnite;
+    }
+
+    public void printStructure(String prefix) {
+        System.out.printf("%s%s %d %s%n", prefix, varietyOfFood,dayliQuantity, mesureUnite);
     }
 }
