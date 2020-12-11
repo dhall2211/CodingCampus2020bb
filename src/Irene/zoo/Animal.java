@@ -6,18 +6,22 @@ public class Animal {
     private Fodder favoriteFodder;
     private int requiredFodder;
 
-    public Animal(String animalName, String species, Fodder favoriteFodder, int requiredFodder, Compound compound) {
+    public Animal(Zoo zoo, String animalName, String species, String favoriteFodder, int requiredFodder, String compound) {
         this.animalName = animalName;
         this.species = species;
-        this.favoriteFodder = favoriteFodder;
+        this.favoriteFodder = zoo.searchAndCreateFodder(favoriteFodder);
         this.requiredFodder = requiredFodder;
-        favoriteFodder.addRequiredFodder(requiredFodder);
+        this.favoriteFodder.addRequiredFodder(requiredFodder);
 
-        compound.addAnimal(this);
+//        favoriteFodder.addRequiredFodder(requiredFodder);
+
+        zoo.searchAndCreateCompound(compound).addAnimal(this);
+
+//        compound.addAnimal(this);
     }
 
     public void printStructureAnimal(String prefix){
-        System.out.printf("%s%s (%s) needs %d %s %s%n",
+        System.out.printf("%s%s (%s) needs %d %s %s.%n",
                 prefix,
                 animalName,
                 species,

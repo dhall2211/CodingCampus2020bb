@@ -1,16 +1,16 @@
 package Irene.zoo;
 
 public class Fodder {
-    private final String fodderName;
-    private final String unit;
+    private String fodderName;
+    private String unit;
     private int dailyConsumption;
 
-    public Fodder(Zoo zoo, String fodderName, String unit) {
+    public Fodder(String fodderName, String unit) {
         this.fodderName = fodderName;
         this.unit = unit;
         dailyConsumption = 0;
 
-        zoo.addFodder(this);
+//        zoo.addFodder(this);
     }
 
     public void addRequiredFodder(int requiredFodder) {
@@ -27,5 +27,9 @@ public class Fodder {
 
     public String getFodderName() {
         return fodderName;
+    }
+
+    public void setUnit(String unit) {
+        this.unit = unit;
     }
 }

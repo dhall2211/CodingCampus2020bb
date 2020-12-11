@@ -6,17 +6,21 @@ public class Compound {
     private String compoundName;
     private Vector<Animal> animalList;
 
-    public Compound(Zoo zoo, String compoundName){
+    public Compound(String compoundName){
         this.compoundName = compoundName;
         animalList = new Vector<>();
 
-        zoo.addCompound(this);
+//        zoo.addCompound(this);
     }
 
     public void addAnimal(Animal a){
         if (!animalList.contains(a)){
             animalList.add(a);
         }
+    }
+
+    public String getCompoundName() {
+        return compoundName;
     }
 
     public void printStructureCompound(String prefix){
