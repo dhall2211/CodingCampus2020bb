@@ -1,24 +1,29 @@
 package Irene.zoo;
 
-import java.util.ArrayList;
-import java.util.Vector;
-
 public class Animal {
-    private String nameAnimal;
+    private String animalName;
     private String species;
+    private Fodder favoriteFodder;
+    private int requiredFodder;
 
-    public Animal(String nameAnimal, String species) {
-        this.nameAnimal = nameAnimal;
+    public Animal(String animalName, String species, Fodder favoriteFodder, int requiredFodder, Compound compound) {
+        this.animalName = animalName;
         this.species = species;
+        this.favoriteFodder = favoriteFodder;
+        this.requiredFodder = requiredFodder;
+        favoriteFodder.addRequiredFodder(requiredFodder);
+
+        compound.addAnimal(this);
     }
 
-    @Override
-    public String toString() {
-        return nameAnimal + " is a " + species;
-    }
-
-    public void printStructureAnimal() {
-        System.out.println(this.nameAnimal + " is a " + this.species + ".");
+    public void printStructureAnimal(String prefix){
+        System.out.printf("%s%s (%s) needs %d %s %s%n",
+                prefix,
+                animalName,
+                species,
+                requiredFodder,
+                favoriteFodder.getUnit(),
+                favoriteFodder.getFodderName());
     }
 }
 
