@@ -1,4 +1,4 @@
-package Gyula.zoo;
+package Ali.ghanmi.com.ZooGyula.zoo;
 
 public class Futter {
     private String name;
