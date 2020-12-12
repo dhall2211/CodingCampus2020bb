@@ -27,4 +27,8 @@ public class Animal {
                 favouriteFood.getUnit(),
                 favouriteFood.getName());
     }
+
+    public String getName() {
+        return name;
+    }
 }
