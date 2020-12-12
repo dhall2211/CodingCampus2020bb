@@ -1,11 +1,13 @@
 package Eric.zoo;
 
+import Eric.zoo.animals.Animal;
 import Eric.zoo.compounds.Compound;
 import Eric.zoo.data.InMemoryFoodlist;
+import Eric.zoo.food.Food;
+//import Eric.zoo.data.InMemoryFoodlist;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 import java.util.stream.Collectors;
 
 public class Zoo {
@@ -24,23 +26,24 @@ public class Zoo {
         }
     }
 
-    public void printFoodlist() {
+    public void printFoodlist(List<Animal> animals) {
 
-        var map = InMemoryFoodlist.foodlist;
+        List<Food> foodTotal = animals.stream().collect(Collectors.mapping(a -> a.getFood(), Collectors.toList()));
+        var foodList = InMemoryFoodlist.foodlist.entrySet();
 
-        var groups = map.values().stream().
-                collect(Collectors.groupingBy(a -> a.getName() + "#" + a.getQuantity() + "#" + a.getUnit(),
-                        Collectors.counting()));
+        System.out.println("NEEDED FOOD");
 
-        var entries = groups.entrySet();
-
-        System.out.println("needed food");
-
-        for (Map.Entry<String, Long> entry : entries) {
-            var food = entry.getKey().split("#")[0];
-            var quantity = Double.parseDouble(entry.getKey().split("#")[1]);
-            var unit = (entry.getKey().split("#")[2].equals("null")) ? "" : entry.getKey().split("#")[2];
-            System.out.println(food + " : " + entry.getValue() * quantity + " " + unit);
+        for (var food : foodList) {
+            var res = 0.0;
+            var unit = (food.getValue().getUnit() == null) ? "" : food.getValue().getUnit();
+            var name = food.getValue().getName();
+            for (Food f : foodTotal) {
+                if (f.getName().equals(food.getValue().getName())) {
+                    res += f.getQuantity();
+                }
+            }
+            System.out.println(name + " ------------- " + res + " " + unit);
         }
     }
 }
+
