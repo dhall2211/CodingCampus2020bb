@@ -6,7 +6,7 @@ public class Zoo {
 
     private String name;
     private Vector <Enclosure> enclosures;
-    private Vector <Food> food;
+    //private Vector <Food> food;
 
     public Zoo(String name) {
         this.name = name;
