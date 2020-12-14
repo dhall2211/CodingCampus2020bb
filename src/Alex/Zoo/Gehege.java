@@ -3,8 +3,8 @@ package Alex.Zoo;
 import java.util.Vector;
 
 public class Gehege {
-    private final String name;
-    private final Vector<Tier> tierList;
+    private String name;
+    private Vector<Tier> tierList;
 
     public Gehege(Zoo zoo, String name){
         this.name = name;
@@ -21,8 +21,8 @@ public class Gehege {
 
     public void printStruktur(String prefix){
         System.out.println(prefix + name);
-        for (Tier tier : tierList) {
-            tier.printStruktur(prefix + "  ");
+        for (int i = 0; i < tierList.size(); i++) {
+            tierList.get(i).printStruktur(prefix + "  ");
         }
     }
 }

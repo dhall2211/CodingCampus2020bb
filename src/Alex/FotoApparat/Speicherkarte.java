@@ -12,13 +12,6 @@ public class Speicherkarte {
         this.aktuellerSpeicher = aktuellerSpeicher;
     }
 
-    public int getGesamtSpeicher() {
-        return gesamtSpeicher;
-    }
-
-    public int getAktuellerSpeicher() {
-        return aktuellerSpeicher;
-    }
 
     @Override
     public String toString() {

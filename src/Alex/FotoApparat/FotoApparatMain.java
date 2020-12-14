@@ -21,10 +21,9 @@ public class FotoApparatMain {
 
         Objektiv nikonFishEye = new Objektiv(8, 20);
         Objektiv nikonStandard = new Objektiv(24, 80);
-        nikon.setCurrentObjektiv(nikonStandard);
+        nikon.aktuellesObjektiv(nikonStandard);
 
         Speicherkarte speicherkarte=new Speicherkarte("SanDisk Ultra R100",128000,0);
-
 
         System.out.println(nikon);
         System.out.println(sony);

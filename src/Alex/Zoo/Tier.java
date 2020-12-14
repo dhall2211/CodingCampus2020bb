@@ -2,10 +2,10 @@ package Alex.Zoo;
 
 public class Tier {
 
-    private final String name;
-    private final String gattung;
-    private final Futter lieblingsFutter;
-    private final int futterBedarf;
+    private String name;
+    private String gattung;
+    private Futter lieblingsFutter;
+    private int futterBedarf;
 
     public Tier(Gehege gehege, String name, String gattung, Futter lieblingsFutter, int futterBedarf){
         this.name = name;

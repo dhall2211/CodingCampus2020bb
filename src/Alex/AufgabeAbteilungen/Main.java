@@ -1,5 +1,7 @@
 package Alex.AufgabeAbteilungen;
 
+import Gyula.Company.Departement;
+
 /***
  * Versucht folgendes Diagramm mit Objekten abzubilden:
  *         Vorstand (Alfred Boss)
@@ -28,29 +30,17 @@ package Alex.AufgabeAbteilungen;
 
 public class Main {
     public static void main(String[] args) {
-       // Person vorstand = new Person("Alfred Boss", "Vorstand.");
-       // Person vertrieb = new Person("Mustermann Max", "Vertriebs Leiter.");
-        Person vertriebPrivatkunden = new Person("Musterfrau Angela", "Vertriebs Leiterin Privatkunden.");
-        Person vertriebFirmenkunden = new Person("Muste Alfons", "Vertrieb Leiter Firmenkunden.");
-        Person einkauf = new Person("Kufmann Alois", "Einkaufs Leiter.");
-        Person einkaufMechanik = new Person("Gunz Herlinde", "Einkaufs Leiterin Abteilung Mechanik.");
-        Person einkaufKleinteile = new Person("Friedrich Hermann", "Einkaufs Leiter Abteilung Kleinteile.");
-        Person einkaufGroßteile = new Person("Peter Hannelor", "Einkaufs Leiter Abteilung Großteile.");
-        Person einkaufEuropa = new Person("But Moritz", "Einkauf Europa.");
 
-        Abteilung vorstand =new Abteilung("Vorstand");
-        Abteilung vertrieb =new Abteilung("Vertrieb");
+        Departement direction = new Departement("Alfred Boss", "Vorstand");
+        Departement sale = new Departement("Mustermann Max", "Vertrieb", direction);
+        Departement salePrivat = new Departement("Musterfrau Angela", "Vertrieb Privatkunden", sale);
+        Departement saleB2B = new Departement("Muste Alfons", "Vertrieb Firmenkunden", sale);
+        Departement purchase = new Departement("Kufmann Alois", "Einkauf", direction);
+        Departement purchaseMechanic = new Departement("Gunz Herlinde", "Einkauf Mechanik", purchase);
+        Departement purchaseMechanicSmall = new Departement("Friedrich Hermann", "Einkauf Kleinteile", purchaseMechanic);
+        Departement purchaseMechanicBig = new Departement("Peter Hannelore", "Einkauf Großteile", purchaseMechanic);
+        Departement purchaseMechanicBigEU = new Departement("But Moritz", "Einkauf Europa", purchaseMechanicBig);
 
-
-        System.out.println(vorstand);
-        System.out.println(vertrieb);
-        System.out.println(vertriebPrivatkunden);
-        System.out.println(vertriebFirmenkunden);
-        System.out.println(einkauf);
-        System.out.println(einkaufMechanik);
-        System.out.println(einkaufKleinteile);
-        System.out.println(einkaufGroßteile);
-        System.out.println(einkaufEuropa);
-
+        direction.printOrganisation("");
     }
 }

@@ -1,8 +1,8 @@
 package Alex.Zoo;
 
 public class Futter {
-    private final String name;
-    private final String einheit;
+    private  String name;
+    private  String einheit;
     private int tagesBedarf;
 
     public Futter(Zoo zoo, String name, String einheit){

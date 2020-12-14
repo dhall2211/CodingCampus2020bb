@@ -1,13 +1,15 @@
 package Alex.FotoApparat;
 
+import Marcella.FotoApparat.Speicherkarte;
+
 public class FotoApparat {
     private String bezeichnung; // Pflicht-Parameter
     private float megapixel; // Pflicht-Parameter
     private String herkunftsLand; // Pflicht-Parameter
     private String funktionen; // Pflicht-Parameter
     private String besitzer; // Optional
-    private Objektiv currentObjektiv; // Optional
-
+    private Objektiv aktuellesObjektiv; // Optional
+    private Speicherkarte aktuelleSpeicherkarte;
 
 
     // Construktor
@@ -17,24 +19,32 @@ public class FotoApparat {
         this.herkunftsLand = herkunftsLand;
         this.funktionen = funktionen;
         this.besitzer = "";
-        this.currentObjektiv = null;
+        this.aktuellesObjektiv = null;
+        this.aktuelleSpeicherkarte = null;
 
     }
 
-    public void setCurrentObjektiv(Objektiv currentObjektiv) {
-        this.currentObjektiv = currentObjektiv;
+    public void aktuellesObjektiv(Objektiv aktuellesObjektivObjektiv) {
+        this.aktuellesObjektiv = aktuellesObjektivObjektiv;
+    }
+
+    public void aktuelleSpeicherkarte(Speicherkarte aktuelleSpeicherkarte) {
+        this.aktuelleSpeicherkarte = aktuelleSpeicherkarte;
     }
 
     @Override
     public String toString() {
-        if (currentObjektiv != null) {
+        if (aktuellesObjektiv != null) {
             return String.format("%s %d-%dmm Objektiv",
                     bezeichnung,
-                    currentObjektiv.getMinBrennweite(),
-                    currentObjektiv.getMaxBrennweite());
+                    aktuellesObjektiv.getMinBrennweite(),
+                    aktuellesObjektiv.getMaxBrennweite());
         } else {
             return bezeichnung + " ohne Objektiv";
         }
+    }
+    public void macheFoto() {
+        
     }
 
 }

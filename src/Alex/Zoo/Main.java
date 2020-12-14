@@ -4,13 +4,35 @@ public class Main {
     public static void main(String[] args) {
 
         Zoo zoo = new Zoo("->Fabelhafte Welt der Tiere<-");
-        Gehege gehegePrimaten = new Gehege(zoo, "Gehege Primaten");
-        Futter banane = new Futter(zoo, "Banane(n)", "Stück");
-        Tier Affe1 = new Tier(gehegePrimaten, "Chitta", "Affe", banane, 5);
-        Tier Affe2 = new Tier(gehegePrimaten, "King Kong", "Affe", banane, 115);
-        Tier Affe3 = new Tier(gehegePrimaten, "Koko", "Affe", banane, 2);
+        Gehege gehegePrimaten = new Gehege(zoo, "Gehege Primaten");//gattungen
+        Gehege gehegePanthera = new Gehege(zoo, "Gehege Panthera");
+        Gehege gehegeZahnwale = new Gehege(zoo, "Gehege Zahnwale");
 
-        zoo.printStruktur("");
+        Futter banane = new Futter(zoo, "Banane(n)", "Stück");
+        Futter fleisch = new Futter(zoo, "Fleisch", "Kg");
+        Futter lachs = new Futter(zoo, "Lachs", "Kg");
+
+        Tier Schimpansen = new Tier(gehegePrimaten, "Chitta", "Schimpanse", banane, 5);
+        Tier Gorilla = new Tier(gehegePrimaten, "King Kong", "Gorilla", banane, 115);
+        Tier ZeichentrickAffe = new Tier(gehegePrimaten, "Koko", "Zeichentrick Affe", banane, 1);
+
+        Tier Löwe = new Tier(gehegePanthera, "Aslan", "Löwe", fleisch, 45);
+        Tier Tiger = new Tier(gehegePanthera, "Shir Khan", "Tiger", fleisch, 35);
+
+        Tier Delfin = new Tier(gehegeZahnwale, "Flipper", "Delfin", lachs, 10);
+        Tier Orka = new Tier(gehegeZahnwale, "Willy", "Orka", lachs, 177);
+
+       /* Pfleger pfleger1=new Pfleger(zoo,"Chuck Norris");
+        Pfleger pfleger2=new Pfleger(zoo,"Tarzan");
+        Pfleger pfleger3=new Pfleger(zoo,"Waterman");
+
+        */
+
+        zoo.searchAndCreateTierArzt("Dr.House");
+        zoo.searchAndCreatePfleger("Chuck Norris");
+        zoo.searchAndCreatePfleger("Tarzan");
+        zoo.searchAndCreatePfleger("Aquaman");
+        zoo.printStruktur(" ");
     }
 
 }
