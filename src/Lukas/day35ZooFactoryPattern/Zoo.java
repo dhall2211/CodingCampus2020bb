@@ -7,6 +7,8 @@ public class Zoo {
 	private String chairman;
 	private Vector<Enclosure> enclosures;
 	private Vector<Food> foodList;
+	private Vector<Palaeontologist> palaes;
+	private Vector<DinosaurHandler> dinosaurHandler;
 
 	public Zoo(String name, String chairman) {
 		this.name =
@@ -19,10 +21,16 @@ public class Zoo {
 		this.chairman = chairman;
 		this.enclosures = new Vector<>();
 		this.foodList = new Vector<>();
+		this.palaes = new Vector<>();
+		this.dinosaurHandler = new Vector<>();
 	}
 
 	public Animal createAnimal(String enclosure, String name, String species, String type, String foodType, int foodDemand, String foodUnit) {
 		return new Animal(this, enclosure, name, species, type, foodType, foodDemand, foodUnit);
+	}
+
+	public Food createFood(String foodType, String foodUnit) {
+		return createFood(foodType, 0, foodUnit);
 	}
 
 	public Food createFood(String foodType, int foodDemand, String foodUnit) {
@@ -48,6 +56,34 @@ public class Zoo {
 		return e;
 	}
 
+	public Palaeontologist createPalaeontologist(String name) {
+		for (Palaeontologist palea : palaes) {
+			if (palea.getName().equals(name)) {
+				return palea;
+			}
+		}
+		Palaeontologist p = new Palaeontologist(name);
+		palaes.add(p);
+		return p;
+	}
+
+	public DinosaurHandler createDinosaurHandler(String name, Animal favouriteAnimal, String[] enclosures) {
+		for (DinosaurHandler handler : dinosaurHandler) {
+			if (handler.getName().equals(name)) {
+				return handler;
+			}
+		}
+		Vector<Enclosure> handlerEnclosures = new Vector<>();
+		for (String enclosureName : enclosures) {
+			Enclosure enclosure = createEnclosure(enclosureName);
+			handlerEnclosures.add(enclosure);
+		}
+
+		DinosaurHandler d = new DinosaurHandler(name, favouriteAnimal, handlerEnclosures);
+		dinosaurHandler.add(d);
+		return d;
+	}
+
 	public String getStructure() {
 		StringBuilder sb = new StringBuilder();
 		sb.append(name);
@@ -55,6 +91,22 @@ public class Zoo {
 		if (enclosures != null) {
 			for (Enclosure enclosure : enclosures) {
 				sb.append("\n").append(enclosure.getStructure());
+			}
+		}
+
+		// Personnel
+		if (palaes != null) {
+			sb.append("\n").append("Palaeontologist");
+			for (Palaeontologist palae : palaes) {
+				sb.append("\n  ").append(palae.getName());
+			}
+		}
+		sb.append("\n");
+
+		if (dinosaurHandler != null) {
+			sb.append("\n").append("Dinosaur Handler");
+			for (DinosaurHandler handler : dinosaurHandler) {
+				sb.append("\n   - ").append(handler.toString());
 			}
 		}
 		return sb.toString();

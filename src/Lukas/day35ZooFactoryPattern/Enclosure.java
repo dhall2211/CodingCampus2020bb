@@ -6,7 +6,7 @@ public class Enclosure {
 	private String name;
 	private Vector<Animal> animals;
 
-	public Enclosure(String name) {
+	protected Enclosure(String name) {
 		this.name = name;
 		animals = new Vector<>();
 	}

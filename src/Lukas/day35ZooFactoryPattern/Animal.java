@@ -7,7 +7,7 @@ public class Animal {
 	private Food foodType;
 	private int foodDemand;
 
-	public Animal(Zoo zoo, String enclosure, String name, String species, String type, String foodType, int foodDemand, String foodUnit) {
+	protected Animal(Zoo zoo, String enclosure, String name, String species, String type, String foodType, int foodDemand, String foodUnit) {
 		this.name = name;
 		this.species = species;
 		this.type = type;
@@ -16,6 +16,10 @@ public class Animal {
 
 		Enclosure e = zoo.createEnclosure(enclosure);
 		e.assignAnimal(this);
+	}
+
+	public String getName() {
+		return name;
 	}
 
 	@Override
