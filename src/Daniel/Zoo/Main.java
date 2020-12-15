@@ -14,10 +14,15 @@ public class Main {
         zoo.searchAndCreateFutter("Obst", "kg");
         zoo.searchAndCreateFutter("Bratwurst", "Stk");
 
-        zoo.searchAndCreateZookeeper("Franz", igel, new String[]{"Gehege Alps"});
+        var franz = zoo.searchAndCreateZookeeper("Franz", igel, new String[]{"Gehege Alps"});
 
         zoo.searchAndCreateVeterinary("Anna");
 
         zoo.printStructure("");
+
+        // food simulation
+        for(int day = 1; day < 31; day++){
+            franz.feedAnimals();
+        }
     }
 }
