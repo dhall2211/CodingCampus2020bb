@@ -6,13 +6,15 @@ public class Zoo {
     private String name;
     private Vector<Compound> compounds;
     private Vector<Food> foods;
-    private Vector<Veterinary> veterinarian;
+    private Vector<Veterinary> veterinaries;
+    private Vector<Zookeeper> zookeepers;
 
     public Zoo(String name) {
         this.name = name;
-        compounds = new Vector<>();
-        foods = new Vector<>();
-        veterinarian = new Vector<>();
+        this.compounds = new Vector<>();
+        this.foods = new Vector<>();
+        this.veterinaries = new Vector<>();
+        this.zookeepers = new Vector<>();
     }
 
 
@@ -44,11 +46,11 @@ public class Zoo {
         return g;
     }
 
-    public Animal createTier(String gehege, String name, String gattung, String lieblingsFutter, int futterBedarf) {
-        return new Animal(this, gehege, name, gattung, lieblingsFutter, futterBedarf);
+    public Animal createAnimal(String compound, String name, String species, String favouriteFood, int foodDemand) {
+        return new Animal(this, compound, name, species, favouriteFood, foodDemand);
     }
 
-    public void printStruktur(String prefix) {
+    public void printStructure(String prefix) {
         System.out.println(prefix + name);
         System.out.println(prefix + "  Gehege:");
         for (int i = 0; i < compounds.size(); i++) {
@@ -59,14 +61,18 @@ public class Zoo {
             foods.get(i).printStruktur(prefix + "    ");
         }
         System.out.println("  Tierärzte:");
-        for (var veterinary : veterinarian) {
+        for (var veterinary : veterinaries) {
             veterinary.printStruktur("    ");
+        }
+        System.out.println("  Pfleger:");
+        for (var zookeeper : zookeepers) {
+            zookeeper.printStruktur("    ");
         }
     }
 
     public Veterinary searchAndCreateVeterinary(String name) {
         // search
-        for (var veterinary : veterinarian) {
+        for (var veterinary : veterinaries) {
             if (veterinary.getName().equals(name)) {
                 return veterinary;
             }
@@ -74,7 +80,27 @@ public class Zoo {
 
         // or create
         var veterinary = new Veterinary(name);
-        veterinarian.add(veterinary);
+        veterinaries.add(veterinary);
         return veterinary;
+    }
+
+    public Zookeeper searchAndCreateZookeeper(String name, Animal favoriteAnimal, String[] compoundNames) {
+        // search
+        for (var zookeeper : zookeepers) {
+            if (zookeeper.getName().equals(name)) {
+                return zookeeper;
+            }
+        }
+
+        Vector<Compound> compounds = new Vector<>();
+        for (var compoundName:compoundNames) {
+            var compound = searchAndCreateGehege(compoundName);
+            compounds.add(compound);
+        }
+
+        // or create
+        var zookeeper = new Zookeeper(name, favoriteAnimal, compounds);
+        zookeepers.add(zookeeper);
+        return zookeeper;
     }
 }

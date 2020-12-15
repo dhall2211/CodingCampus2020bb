@@ -7,12 +7,9 @@ public class Enclosure {
     private String name;
     private Vector <Animal> animals;
 
-    public Enclosure(String name, Zoo zoo) {
+    public Enclosure(String name) {
         this.name = name;
         this.animals = new Vector<>();
-        if (zoo != null) {
-            zoo.addEnclosure(this);
-        }
     }
 
     public String getName() {
@@ -20,17 +17,16 @@ public class Enclosure {
     }
 
     public void addAnimal(Animal animal) {
-        animals.add(animal);
+        if (!animals.contains(animal)) {
+            animals.add(animal);
+        }
     }
 
     public void printStructure(String prefix){
         System.out.println(this.name);
-        System.out.print(prefix + "Tiere: ");
         for (int i = 0; i < animals.size(); i++) {
+            System.out.print(prefix);
             animals.get(i).printStructure();
-            if (i != animals.size() -1) {
-                System.out.print(" | ");
-            }
         }
     }
 

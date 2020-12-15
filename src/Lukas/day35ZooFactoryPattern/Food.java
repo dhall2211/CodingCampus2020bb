@@ -5,7 +5,7 @@ public class Food {
 	private int demand;
 	private String unit;
 
-	public Food(String name, int demand, String unit) {
+	protected Food(String name, int demand, String unit) {
 		this.name = name;
 		this.demand = demand;
 		this.unit = unit;

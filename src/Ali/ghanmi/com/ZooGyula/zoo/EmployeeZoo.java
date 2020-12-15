@@ -1,19 +1,27 @@
 package Ali.ghanmi.com.ZooGyula.zoo;
 
+import Ali.ghanmi.com.OOP_Zoo.Animal;
+
+import java.util.Vector;
+
 public class EmployeeZoo {
     private String name;
-    Tier tier;
+    private Tier tier;
+    private Vector<Gehege> gehegeList;
 
 
-    public EmployeeZoo(String name,Tier tier) {
+    public EmployeeZoo(Zoo zoo, String name, Tier tier, String[] gehege) {
         this.name = name;
-        this.tier= tier;
+        this.tier = tier;
+        gehegeList = new Vector<>();
+        for (String gehegename : gehege) {
+            Gehege gehegezoo = zoo.searchAndCreateGehege(gehegename);
+            gehegeList.add(gehegezoo);
+        }
+
 
     }
 
-    public EmployeeZoo(String name) {
-        this.name=name;
-    }
 
     public String getName() {
         return name;
@@ -24,7 +32,14 @@ public class EmployeeZoo {
     }
 
     public void printStruktur(String prefix) {
-            System.out.println(prefix + name+ tier.getName());
+        //System.out.println(prefix+ " Pfleger: "+ name + ", Liebligstier: " + tier.getName());
+        for (Gehege gehege : gehegeList) {
+            System.out.println(prefix + gehege.getName());
+            System.out.println("    -"+ "Pfleger: "+ name + ", Liebligstier: " + tier.getName());
+
 
         }
+
     }
+}
+

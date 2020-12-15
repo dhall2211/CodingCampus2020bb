@@ -6,16 +6,16 @@ public class Tier {
     private String gattung;
     private Futter lieblingsFutter;
     private int futterBedarf;
-    private EmployeeZoo mitarbeiter;
+
 
 
     // Constructor
-    public Tier(Zoo zoo, String gehege, String name, String gattung, String lieblingsFutter, int futterBedarf, String mitarbeiter) {
+    public Tier(Zoo zoo, String gehege, String name, String gattung, String lieblingsFutter, int futterBedarf) {
         this.name = name;
         this.gattung = gattung;
         this.lieblingsFutter = zoo.searchAndCreateFutter(lieblingsFutter);
 
-        this.mitarbeiter = zoo.searchAndCreateMitarbeiter(mitarbeiter);
+
 
         this.futterBedarf = futterBedarf;
         this.lieblingsFutter.tagesBedarfZufuegen(futterBedarf);
