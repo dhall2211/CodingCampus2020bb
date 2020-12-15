@@ -4,19 +4,26 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Zoo bigZoo = new Zoo("The big Zoo");
+        Zoo zoo = new Zoo("The big Zoo");
 
-        Enclosure tundra = new Enclosure("Tundra", bigZoo);
-        Enclosure savanna = new Enclosure("Savanna", bigZoo);
-        Enclosure westernEuropean = new Enclosure("Westeuropa", bigZoo);
+        Animal leo = zoo.createAnimal("Savanna", "Leo", "Lion", "Meat", 7);
+        Animal atilla = zoo.createAnimal("Savanna","Atilla", "Antilope", "Gras", 15);
+        Animal woolfi = zoo.createAnimal("Tundra","Woolfi", "Woolf", "Meat", 5);
+        Animal bootsi = zoo.createAnimal("Western European","Bootsi", "Bird", "Seeds", 1);
 
-        Animal leo = new Animal("Leo", "Lion", savanna, bigZoo);
-        Animal atilla = new Animal("Atilla", "Antilope", savanna, bigZoo);
-        Animal woolfi = new Animal("Woolfi", "Woolf", tundra, bigZoo);
-        Animal bootsi = new Animal("Bootsi", "Bird", westernEuropean, bigZoo);
+        zoo.searchAndCreateFood("Meat", "kg");
+        zoo.searchAndCreateFood("Gras", "kg");
+        zoo.searchAndCreateFood("Seeds", "kg");
 
-        bigZoo.printStructure("  ");
+        zoo.searchAndCreateRanger("Tilda", atilla, new String[]{"Savanna"});
+        zoo.searchAndCreateRanger("August", woolfi, new String[]{"Savanna", "Tundra"});
+        zoo.searchAndCreateRanger("Brian", bootsi, new String[]{"Western European"});
+
+        zoo.searchAndCreateVet("Daniel");
+
+        zoo.printStructure("   ");
 
     }
+
 
 }
