@@ -1,13 +1,21 @@
 package Eric.zoo.animals;
 
+import Eric.zoo.Observer;
+import Eric.zoo.Veterinarian;
 import Eric.zoo.data.InMemoryAnimalList;
 import Eric.zoo.data.InMemoryFoodlist;
 import Eric.zoo.food.Food;
+import Eric.zoo.keeper.Keeper;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public abstract class Animal {
     private String name;
     private String species;
     private Food food;
+    private int health = 10;
+    private List<Observer> observers = new ArrayList();
 
     public Animal(String name, String species) {
         this.name = name;
@@ -27,6 +35,37 @@ public abstract class Animal {
         this.name = name;
         InMemoryAnimalList.animals.add(this);
     }
+
+    public void setHealth(int health){
+            this.health = health;
+            notifyAllObservers(health);
+}
+
+    public void attach(Observer observer){
+        observers.add(observer);
+    }
+
+    public void notifyAllObservers(int health) {
+
+        if (health < 4 ) {
+
+            System.out.println("!!!\t" + this.getName() + " feels very ill ");
+            for (Observer observer : observers) {
+                if (observer.getClass() == Veterinarian.class) {
+                    observer.update();
+                }
+            }
+        } else if (health < 7) {
+
+            System.out.println("!\t" + this.getName() + " feels not too good ");
+            for (Observer observer : observers) {
+                if (observer.getClass() == Keeper.class) {
+                    observer.update();
+                }
+            }
+        }
+    }
+
 
     public String getSpecies() {
         return species;
@@ -48,9 +87,13 @@ public abstract class Animal {
         this.food = food;
     }
 
+    public int getHealth() {
+        return health;
+    }
+
     @Override
     public String toString() {
-        return species + ": name='" + name + '\'';
+        return species + ": " + name;
     }
 
 }
