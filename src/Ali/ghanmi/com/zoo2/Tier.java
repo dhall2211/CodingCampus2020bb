@@ -1,4 +1,4 @@
-package Gyula.zoo;
+package Ali.ghanmi.com.zoo2;
 
 public class Tier {
     // Member Variablen
@@ -8,14 +8,14 @@ public class Tier {
     private int futterBedarf;
 
     // Constructor
-    public Tier(Zoo zoo, String gehege, String name, String gattung, String lieblingsFutter, int futterBedarf){
+    public Tier(Gehege gehege, String name, String gattung, Futter lieblingsFutter, int futterBedarf){
         this.name = name;
         this.gattung = gattung;
-        this.lieblingsFutter = zoo.searchAndCreateFutter(lieblingsFutter);
+        this.lieblingsFutter = lieblingsFutter;
         this.futterBedarf = futterBedarf;
-        this.lieblingsFutter.tagesBedarfZufuegen(futterBedarf);
+        lieblingsFutter.tagesBedarfZufuegen(futterBedarf);
 
-        zoo.searchAndCreateGehege(gehege).addTier(this);
+        gehege.addTier(this);
     }
 
     public void printStruktur(String prefix){

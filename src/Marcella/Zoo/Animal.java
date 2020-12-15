@@ -4,23 +4,28 @@ public class Animal {
 
     private String name;
     private String species;
-    private Enclosure enclosure;
-    private Zoo zoo;
+    private Food food;
+    private int foodAmount;
 
-    public Animal(String name, String species, Enclosure enclosure, Zoo zoo) {
+    public Animal(Zoo zoo, String enclosure, String name, String species, String food, int foodAmount) {
         this.name = name;
         this.species = species;
-        this.enclosure = enclosure;
-        this.zoo = zoo;
-            zoo.addEnclosure(this.enclosure);
-        if (zoo != null) {
-            zoo.addAnimal(this);
-        }
+        this.food = zoo.searchAndCreateFood(food);
+        this.foodAmount = foodAmount;
+        this.food.addDailyAmount(foodAmount);
+
+        zoo.searchAndCreateEnclosure(enclosure).addAnimal(this);
     }
 
-    @Override
-    public String toString() {
+    public String getName() {
         return name;
+    }
+
+    public void printStructure() {
+        System.out.println("_ " + this.name + ", "
+                + species + ", "
+                + foodAmount + food.getAmount() + ", "
+                + food.getName());
     }
 
 }

@@ -21,9 +21,10 @@ public class EnclosurePark {
 
     }
     public void add(Animal animal) {
-        animals.add(animal);
+        if (!animals.contains(animal)) {
+            animals.add(animal);
+        }
     }
-
 
     public EnclosurePark(String name, int creation, int size, int maxCapacity) {
         this(name, creation, size, maxCapacity, null);

@@ -10,7 +10,7 @@ public class Snake extends Animal {
         super(name, species);
     }
 
-    public Snake(String name, String species, SnakeFood snakeFood) {
+    public Snake(String name, String species, Food snakeFood) {
         super(name, species, snakeFood);
     }
 }

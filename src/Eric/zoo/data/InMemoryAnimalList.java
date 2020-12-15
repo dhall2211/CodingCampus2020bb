@@ -5,21 +5,22 @@ import Eric.zoo.animals.Lion;
 import Eric.zoo.animals.Snake;
 import Eric.zoo.food.LionFood;
 import Eric.zoo.food.SnakeFood;
+import Eric.zoo.food.SpecialFood;
 
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 
-public class InMemoryAnimals implements AnimalList {
+public class InMemoryAnimalList implements AnimalList {
 
     public static List<Animal> animals = new ArrayList<>();
 
-    public InMemoryAnimals() {
-        new Lion("Simba", "Lion", new LionFood("Cheesecake", 12));
+    public InMemoryAnimalList() {
+        new Lion("Simba", "Lion", new SpecialFood("Cheesecake", 12, "pieces"));
         new Lion("Scar", "Lion", new LionFood());
         new Animal("Kaa", "Snake", new SnakeFood()) {
         };
-        new Snake("MontyThePython", "Snake", new SnakeFood("Vegan", 0.7));
+        new Snake("MontyThePython", "Snake", new SpecialFood("Vegan", 0.7));
         new Snake("IBiteYou", "Snake", new SnakeFood());
     }
 

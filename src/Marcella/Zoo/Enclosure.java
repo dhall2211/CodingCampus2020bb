@@ -1,21 +1,33 @@
 package Marcella.Zoo;
 
+import java.util.Vector;
+
 public class Enclosure {
 
     private String name;
-    private Zoo zoo;
+    private Vector <Animal> animals;
 
-    public Enclosure(String name, Zoo zoo) {
+    public Enclosure(String name) {
         this.name = name;
-        this.zoo = zoo;
-        if (zoo != null) {
-            zoo.addEnclosure(this);
+        this.animals = new Vector<>();
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void addAnimal(Animal animal) {
+        if (!animals.contains(animal)) {
+            animals.add(animal);
         }
     }
 
-    @Override
-    public String toString() {
-        return name;
+    public void printStructure(String prefix){
+        System.out.println(this.name);
+        for (int i = 0; i < animals.size(); i++) {
+            System.out.print(prefix);
+            animals.get(i).printStructure();
+        }
     }
 
 }
