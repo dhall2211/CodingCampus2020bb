@@ -3,15 +3,15 @@ package Irene.zoo;
 public class Animal {
     private String animalName;
     private String species;
-    private Fodder favoriteFodder;
+    private Fodder favouriteFodder;
     private int requiredFodder;
 
-    public Animal(Zoo zoo, String animalName, String species, String favoriteFodder, int requiredFodder, String compound) {
+    public Animal(Zoo zoo, String animalName, String species, String favouriteFodder, int requiredFodder, String compound) {
         this.animalName = animalName;
         this.species = species;
-        this.favoriteFodder = zoo.searchAndCreateFodder(favoriteFodder);
+        this.favouriteFodder = zoo.searchAndCreateFodder(favouriteFodder);
         this.requiredFodder = requiredFodder;
-        this.favoriteFodder.addRequiredFodder(requiredFodder);
+        this.favouriteFodder.addRequiredFodder(requiredFodder);
 
 //        favoriteFodder.addRequiredFodder(requiredFodder);
 
@@ -26,8 +26,12 @@ public class Animal {
                 animalName,
                 species,
                 requiredFodder,
-                favoriteFodder.getUnit(),
-                favoriteFodder.getFodderName());
+                favouriteFodder.getUnit(),
+                favouriteFodder.getFodderName());
+    }
+
+    public String getAnimalName() {
+        return animalName;
     }
 }
 

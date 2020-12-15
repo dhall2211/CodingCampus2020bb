@@ -30,6 +30,11 @@ public class Main {
         zoo.searchAndCreateFodder("Greens", "kg");
         zoo.searchAndCreateFodder("Bugs", "");
 
+        zoo.searchAndCreateCaretaker("Sepp", wartHog, new String[]{"Savanna"});
+        zoo.searchAndCreateCaretaker("Hubert", sealess, new String[]{"Waterworld", "Lionsden"});
+
+        zoo.searchAndCreateVeterinarian("DrDolittle");
+
         zoo.printStructure("");
     }
 }
