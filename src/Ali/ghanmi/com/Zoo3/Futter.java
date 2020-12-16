@@ -1,4 +1,4 @@
-package Ali.ghanmi.com.ZooGyula.zoo;
+package Ali.ghanmi.com.Zoo3;
 
 public class Futter {
     private String name;
@@ -7,16 +7,16 @@ public class Futter {
     private int tagesBedarf;
     private int actuelStock;//
 
-    public Futter(String name,String einheit,int minimalStock){//
+    public Futter(String name, String einheit, int minimalStock) {//
         this.name = name;
         this.einheit = einheit;
-        this.minimalStock=minimalStock;
+        this.minimalStock = minimalStock;
         tagesBedarf = 0;
 
 
-        }
+    }
 
-            public void tagesBedarfZufuegen(int bedarf){
+    public void tagesBedarfZufuegen(int bedarf) {
         tagesBedarf += bedarf;
     }
 
@@ -30,10 +30,11 @@ public class Futter {
         }
     }
 
-    public void printStruktur(String prefix){
-        int actuelStock= minimalStock-tagesBedarf;
+    public void printStruktur(String prefix) {
+        actuelStock = minimalStock - tagesBedarf;
+        setMinimalStock(minimalStock);
         System.out.printf("%s %s:   %d%s Tagesbedarf, %d%s im Lager, %s %d%s  %n", prefix, name, tagesBedarf,
-                einheit, minimalStock,einheit, futerManagment(),actuelStock,einheit);
+                einheit, minimalStock, einheit, futerManagment(), actuelStock, einheit);
     }
 
     public String getEinheit() {
@@ -48,20 +49,18 @@ public class Futter {
         this.einheit = einheit;
     }
 
+
+    public void setMinimalStock(int minimalStock) {
+        this.minimalStock = actuelStock;
+
+    }
+
     public int getMinimalStock() {
         return minimalStock;
     }
 
-    public void setMinimalStock(int minimalStock) {
-        this.minimalStock = minimalStock;
-    }
-
     public int getTagesBedarf() {
         return tagesBedarf;
-    }
-
-    public int getActuelStock() {
-        return actuelStock;
     }
 }
 
