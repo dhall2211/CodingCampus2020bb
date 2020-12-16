@@ -1,6 +1,6 @@
 package Eric.zoo.compounds;
 
-import Eric.zoo.Zoo;
+import Eric.zoo.ZooController;
 import Eric.zoo.animals.Animal;
 
 import java.util.List;
@@ -12,7 +12,7 @@ public abstract class Compound {
     public Compound(String name, List<Animal> animals) {
         this.name = name;
         this.animalsInCompound = animals;
-        Zoo.compounds.add(this);
+        ZooController.compounds.add(this);
     }
 
     public void assignAnimalToCompound(String animalName, Compound actualCompound) {
@@ -24,6 +24,22 @@ public abstract class Compound {
     public void assignAnimalToCompound(Animal animal, Compound other) {
         this.animalsInCompound.remove(animal);
         other.animalsInCompound.add(animal);
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public List<Animal> getAnimalsInCompound() {
+        return animalsInCompound;
+    }
+
+    public void setAnimalsInCompound(List<Animal> animalsInCompound) {
+        this.animalsInCompound = animalsInCompound;
     }
 
     @Override
