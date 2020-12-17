@@ -99,8 +99,35 @@ public class Zoo {
         }
 
         // or create
-        var zookeeper = new Zookeeper(name, favoriteAnimal, compounds);
+        var zookeeper = new Zookeeper(name, favoriteAnimal, compounds, this);
         zookeepers.add(zookeeper);
         return zookeeper;
+    }
+
+    /**
+     * Take food from zoo food stock and return it.
+     * @param demands
+     * @return
+     */
+    public Vector<Food> getFood(Vector<Demand> demands) {
+        var foods = new Vector<Food>();
+        for (var demand : demands) {
+            var food = demand.getFood();
+            var demandAmount = demand.getAmount();
+            foods.add(food.getDemand(demandAmount));
+        }
+
+        checkFoodStock();
+
+        return foods;
+    }
+
+    /**
+     * check food stock and reorder if necessary
+     */
+    private void checkFoodStock() {
+        for (var food : foods) {
+            food.checkStock();
+        }
     }
 }

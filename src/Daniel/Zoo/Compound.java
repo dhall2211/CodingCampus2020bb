@@ -11,6 +11,8 @@ public class Compound {
         animalList = new Vector<>();
     }
 
+
+
     public void addTier(Animal t){
         if (!animalList.contains(t)){
             animalList.add(t);
@@ -26,9 +28,5 @@ public class Compound {
 
     public String getName() {
         return name;
-    }
-
-    public Vector<Animal> getAnimalList() {
-        return animalList;
     }
 }
