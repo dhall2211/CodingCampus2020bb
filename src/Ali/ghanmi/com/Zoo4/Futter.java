@@ -1,4 +1,4 @@
-package Ali.ghanmi.com.ZooGyula.zoo;
+package Ali.ghanmi.com.Zoo4;
 
 public class Futter {
     private String name;
@@ -29,6 +29,14 @@ public class Futter {
         }
     }
 
+    public int getFutterImLager() {
+        return futterImLager;
+    }
+
+    public int getTagesBedarf() {
+        return tagesBedarf;
+    }
+
     public void printStruktur(String prefix) {
         for (int i = 0; i < 10; i++) {
             int actuelStock = futterImLager - tagesBedarf;
@@ -54,4 +62,5 @@ public class Futter {
     }
 
 }
+
 

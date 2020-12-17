@@ -1,4 +1,4 @@
-package Ali.ghanmi.com.ZooGyula.zoo;
+package Ali.ghanmi.com.Zoo4;
 
 import Daniel.Zoo.Veterinary;
 
@@ -10,7 +10,7 @@ public class Zoo {
     private Vector<Futter> futterList;
     private Vector<EmployeeZoo> mitarbeiterListe;
     private Vector<Veterinary> veterinarian;
-
+    private Vector<FoodManagment> foodManagments;
 
 
     public Zoo(String name) {
@@ -19,6 +19,7 @@ public class Zoo {
         futterList = new Vector<>();
         mitarbeiterListe = new Vector<>();
         veterinarian = new Vector<>();
+        foodManagments= new Vector<>();
 
     }
 /*
@@ -31,14 +32,14 @@ public class Zoo {
 
  */
 
-    public EmployeeZoo searchAndCreateMitarbeiter(String name,Tier tier, String[] gehege) {
+    public EmployeeZoo searchAndCreateMitarbeiter(String name, Tier tier, String[] gehege) {
         for (int i = 0; i < mitarbeiterListe.size(); i++) {
             if (mitarbeiterListe.get(i).getName().equals(name)) {
                 return mitarbeiterListe.get(i);
             }
         }
 
-        EmployeeZoo emp = new EmployeeZoo(this,name,tier,gehege);
+        EmployeeZoo emp = new EmployeeZoo(this, name, tier, gehege);
         mitarbeiterListe.add(emp);
         return emp;
     }
@@ -57,11 +58,12 @@ public class Zoo {
                 return futterList.get(i);
             }
         }
-        Futter f = new Futter(name, "N.N.",0);
+        Futter f = new Futter(name, "N.N.", 0);
         futterList.add(f);
         return f;
 
     }
+
     public Gehege searchAndCreateGehege(String name) {
         for (int i = 0; i < gehegeList.size(); i++) {
             if (gehegeList.get(i).getName().equals(name)) {
@@ -88,7 +90,6 @@ public class Zoo {
     }
 
 
-
     public Tier createTier(String gehege, String name, String gattung, String lieblingsFutter, int futterBedarf) {
         return new Tier(this, gehege, name, gattung, lieblingsFutter, futterBedarf);
 
@@ -108,7 +109,7 @@ public class Zoo {
 
         System.out.println(prefix + "Mitarbeiter&Verantwortlichkeit:\n");
         for (int i = 0; i < mitarbeiterListe.size(); i++) {
-            mitarbeiterListe.get(i).printStruktur("*" );
+            mitarbeiterListe.get(i).printStruktur("*");
         }
         System.out.println("  Tierärzte:");
         for (var veterinary : veterinarian) {
@@ -116,8 +117,12 @@ public class Zoo {
 
 
         }
+        System.out.println(prefix + "  Futter Tagesbedarf&Lager übersicht\n");
+        for (var FoodManagment:foodManagments ) {
+          FoodManagment.printStruktur(prefix + "    ");
+
+        }
+
 
     }
-
-
 }

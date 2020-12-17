@@ -7,14 +7,7 @@ public class Animal {
     public Animal(String name, String genus) {
         this.name = name;
         this.genus = genus;
-    }
 
-    @Override
-    public String toString() {
-        return "Animal{" +
-                "name='" + name + '\'' +
-                ", genus='" + genus + '\'' +
-                '}';
     }
     public String getName() { return name;};
     public String getGenus() {return genus;};

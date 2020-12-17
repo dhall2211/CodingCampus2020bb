@@ -1,6 +1,4 @@
-package Ali.ghanmi.com.ZooGyula.zoo;
-
-import Ali.ghanmi.com.OOP_Zoo.Animal;
+package Ali.ghanmi.com.Zoo4;
 
 import java.util.Vector;
 
