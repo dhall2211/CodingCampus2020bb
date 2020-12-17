@@ -5,12 +5,12 @@ import java.util.Vector;
 public class Caretaker {
     private String careName;
     private Animal favouriteAnimal;
-    private Vector<Compound> compounds;
+    private Vector<Compound> responsibleFor;
 
-    public Caretaker(String careName, Animal favouriteAnimal, Vector<Compound> compounds) {
+    public Caretaker(String careName, Animal favouriteAnimal, Vector<Compound> responsibleFor) {
         this.careName = careName;
         this.favouriteAnimal = favouriteAnimal;
-        this.compounds = compounds;
+        this.responsibleFor = responsibleFor;
     }
 
 //    public Caretaker(String careName) {
@@ -29,7 +29,7 @@ public class Caretaker {
         System.out.println(prefix + this.careName);
         System.out.println(prefix + "  Favorite animal: " + favouriteAnimal.getAnimalName());
         System.out.println(prefix + "  " + "Compound:");
-        for (var compound : compounds) {
+        for (var compound : responsibleFor) {
             System.out.println(prefix + "    " + compound.getCompoundName());
         }
     }
