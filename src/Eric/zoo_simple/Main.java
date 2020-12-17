@@ -1,7 +1,7 @@
-package Daniel.Zoo;
+package Eric.zoo_simple;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         Zoo zoo = new Zoo("Wildpark Feldkirch");
 
         Animal reh1 = zoo.createAnimal("Gehege Alps", "Rudolf", "Reh", "Heu", 7);
@@ -14,15 +14,15 @@ public class Main {
         zoo.searchAndCreateFutter("Obst", "kg");
         zoo.searchAndCreateFutter("Bratwurst", "Stk");
 
-        var franz = zoo.searchAndCreateZookeeper("Franz", igel, new String[]{"Gehege Alps"});
+        zoo.searchAndCreateZookeeper("Marie", loewe, new String[]{"Savanna"});
+        zoo.searchAndCreateZookeeper("Franz", igel, new String[]{"Gehege Alps"});
+
 
         zoo.searchAndCreateVeterinary("Anna");
 
-        zoo.printStructure("");
-
-        // food simulation
-        for(int day = 1; day < 31; day++){
-            franz.feedAnimals();
-        }
+        zoo.simulation();
+        //zoo.printStructure("");
     }
+
+
 }

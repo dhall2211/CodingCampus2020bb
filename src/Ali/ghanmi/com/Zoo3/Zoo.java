@@ -1,4 +1,4 @@
-package Ali.ghanmi.com.ZooGyula.zoo;
+package Ali.ghanmi.com.Zoo3;
 
 import Daniel.Zoo.Veterinary;
 
@@ -10,8 +10,6 @@ public class Zoo {
     private Vector<Futter> futterList;
     private Vector<EmployeeZoo> mitarbeiterListe;
     private Vector<Veterinary> veterinarian;
-
-
 
     public Zoo(String name) {
         this.name = name;
@@ -31,14 +29,14 @@ public class Zoo {
 
  */
 
-    public EmployeeZoo searchAndCreateMitarbeiter(String name,Tier tier, String[] gehege) {
+    public EmployeeZoo searchAndCreateMitarbeiter(String name, Tier tier, String[] gehege) {
         for (int i = 0; i < mitarbeiterListe.size(); i++) {
             if (mitarbeiterListe.get(i).getName().equals(name)) {
                 return mitarbeiterListe.get(i);
             }
         }
 
-        EmployeeZoo emp = new EmployeeZoo(this,name,tier,gehege);
+        EmployeeZoo emp = new EmployeeZoo(this, name, tier, gehege);
         mitarbeiterListe.add(emp);
         return emp;
     }
@@ -57,11 +55,12 @@ public class Zoo {
                 return futterList.get(i);
             }
         }
-        Futter f = new Futter(name, "N.N.",0);
+        Futter f = new Futter(name, "N.N.", 0);
         futterList.add(f);
         return f;
 
     }
+
     public Gehege searchAndCreateGehege(String name) {
         for (int i = 0; i < gehegeList.size(); i++) {
             if (gehegeList.get(i).getName().equals(name)) {
@@ -88,11 +87,8 @@ public class Zoo {
     }
 
 
-
     public Tier createTier(String gehege, String name, String gattung, String lieblingsFutter, int futterBedarf) {
         return new Tier(this, gehege, name, gattung, lieblingsFutter, futterBedarf);
-
-
     }
 
     public void printStruktur(String prefix) {
@@ -108,16 +104,12 @@ public class Zoo {
 
         System.out.println(prefix + "Mitarbeiter&Verantwortlichkeit:\n");
         for (int i = 0; i < mitarbeiterListe.size(); i++) {
-            mitarbeiterListe.get(i).printStruktur("*" );
+            mitarbeiterListe.get(i).printStruktur("*");
         }
         System.out.println("  Tierärzte:");
         for (var veterinary : veterinarian) {
             veterinary.printStruktur("    ");
-
-
         }
 
     }
-
-
 }
