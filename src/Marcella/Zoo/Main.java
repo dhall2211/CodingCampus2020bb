@@ -8,6 +8,7 @@ public class Main {
 
         Animal leo = zoo.createAnimal("Savanna", "Leo", "Lion", "Meat", 7);
         Animal atilla = zoo.createAnimal("Savanna","Atilla", "Antilope", "Gras", 15);
+        Animal penelope = zoo.createAnimal("Savanna", "Penelope", "Antilope", "Gras", 20);
         Animal woolfi = zoo.createAnimal("Tundra","Woolfi", "Woolf", "Meat", 5);
         Animal bootsi = zoo.createAnimal("Western European","Bootsi", "Bird", "Seeds", 1);
 

@@ -17,6 +17,9 @@ public class Ranger {
         return name;
     }
 
+    public void feedAnimal(Enclosure enclosure) {
+    }
+
     public void printStructure(String prefix) {
         System.out.println(prefix + name);
         System.out.println(prefix + "Lieblingstier" + lovedAnimal.getName());

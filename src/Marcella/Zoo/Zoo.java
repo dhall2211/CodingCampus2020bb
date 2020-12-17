@@ -1,8 +1,5 @@
 package Marcella.Zoo;
 
-import Daniel.Zoo.Compound;
-import Daniel.Zoo.Veterinary;
-
 import java.util.Vector;
 
 public class Zoo {
