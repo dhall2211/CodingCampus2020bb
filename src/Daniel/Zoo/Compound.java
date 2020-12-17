@@ -1,27 +1,28 @@
 package Daniel.Zoo;
 
-import java.util.Collection;
 import java.util.Vector;
 
 public class Compound {
     private String name;
-    private Vector<Animal> animals;
+    private Vector<Animal> animalList;
 
     public Compound(String name){
         this.name = name;
-        animals = new Vector<>();
+        animalList = new Vector<>();
     }
 
+
+
     public void addTier(Animal t){
-        if (!animals.contains(t)){
-            animals.add(t);
+        if (!animalList.contains(t)){
+            animalList.add(t);
         }
     }
 
     public void printStruktur(String prefix){
         System.out.println(prefix + name);
-        for (int i = 0; i < animals.size(); i++) {
-            animals.get(i).printStruktur(prefix + "  ");
+        for (int i = 0; i < animalList.size(); i++) {
+            animalList.get(i).printStruktur(prefix + "  ");
         }
     }
 
@@ -35,14 +36,14 @@ public class Compound {
      */
     public Vector<Demand> getDemands() {
         var demands = new Vector<Demand>();
-        for (var animal : animals) {
+        for (var animal : animalList) {
             demands.add(animal.getDemand());
         }
         return demands;
     }
 
     public void feedAnimals(Vector<Food> foods) {
-        for (var animal : animals) {
+        for (var animal : animalList) {
             var demand = animal.getDemand();
             Food foodToFeed = null;
             for (var food : foods) {

@@ -1,7 +1,6 @@
-package Eric.zoo.animals;
+package Eric._zoo_simulation.animals;
 
-import Eric.zoo.food.Food;
-import Eric.zoo.food.SnakeFood;
+import Eric._zoo_simulation.food.Food;
 
 public class Snake extends Animal {
     private Food food;

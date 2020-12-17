@@ -1,4 +1,4 @@
-package Eric.zoo.food;
+package Eric._zoo_simulation.food;
 
 public class SpecialFood extends Food {
     public SpecialFood(String name, double quantity) {

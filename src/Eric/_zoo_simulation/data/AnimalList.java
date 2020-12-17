@@ -1,6 +1,6 @@
-package Eric.zoo.data;
+package Eric._zoo_simulation.data;
 
-import Eric.zoo.animals.Animal;
+import Eric._zoo_simulation.animals.Animal;
 
 import java.util.List;
 

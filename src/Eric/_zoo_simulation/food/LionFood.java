@@ -1,4 +1,4 @@
-package Eric.zoo.food;
+package Eric._zoo_simulation.food;
 
 public class LionFood extends Food{
 

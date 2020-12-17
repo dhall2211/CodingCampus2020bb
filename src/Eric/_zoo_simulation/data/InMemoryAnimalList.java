@@ -1,11 +1,11 @@
-package Eric.zoo.data;
+package Eric._zoo_simulation.data;
 
-import Eric.zoo.animals.Animal;
-import Eric.zoo.animals.Lion;
-import Eric.zoo.animals.Snake;
-import Eric.zoo.food.LionFood;
-import Eric.zoo.food.SnakeFood;
-import Eric.zoo.food.SpecialFood;
+import Eric._zoo_simulation.animals.Animal;
+import Eric._zoo_simulation.animals.Lion;
+import Eric._zoo_simulation.animals.Snake;
+import Eric._zoo_simulation.food.LionFood;
+import Eric._zoo_simulation.food.SnakeFood;
+import Eric._zoo_simulation.food.SpecialFood;
 
 import java.util.ArrayList;
 import java.util.Comparator;

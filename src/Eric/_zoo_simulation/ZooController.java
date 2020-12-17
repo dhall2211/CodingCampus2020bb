@@ -1,14 +1,14 @@
-package Eric.zoo;
+package Eric._zoo_simulation;
 
-import Eric.zoo.animals.Animal;
-import Eric.zoo.compounds.Compound;
-import Eric.zoo.compounds.LionCompound;
-import Eric.zoo.compounds.SnakeCompound;
-import Eric.zoo.data.InMemoryAnimalList;
-import Eric.zoo.data.InMemoryFoodlist;
-import Eric.zoo.data.InMemoryPricelist;
-import Eric.zoo.food.Food;
-import Eric.zoo.keeper.Keeper;
+import Eric._zoo_simulation.animals.Animal;
+import Eric._zoo_simulation.compounds.Compound;
+import Eric._zoo_simulation.compounds.LionCompound;
+import Eric._zoo_simulation.compounds.SnakeCompound;
+import Eric._zoo_simulation.data.InMemoryAnimalList;
+import Eric._zoo_simulation.data.InMemoryFoodlist;
+import Eric._zoo_simulation.data.InMemoryPricelist;
+import Eric._zoo_simulation.food.Food;
+import Eric._zoo_simulation.keeper.Keeper;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,8 +1,7 @@
-package Eric.zoo.animals;
+package Eric._zoo_simulation.animals;
 
-import Eric.zoo.data.InMemoryFoodlist;
-import Eric.zoo.food.Food;
-import Eric.zoo.food.LionFood;
+import Eric._zoo_simulation.food.Food;
+import Eric._zoo_simulation.food.LionFood;
 
 public class Lion extends Animal {
     private Food food;

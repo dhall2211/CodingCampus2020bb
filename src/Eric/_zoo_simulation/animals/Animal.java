@@ -1,11 +1,11 @@
-package Eric.zoo.animals;
+package Eric._zoo_simulation.animals;
 
-import Eric.zoo.Observer;
-import Eric.zoo.Veterinarian;
-import Eric.zoo.data.InMemoryAnimalList;
-import Eric.zoo.data.InMemoryFoodlist;
-import Eric.zoo.food.Food;
-import Eric.zoo.keeper.Keeper;
+import Eric._zoo_simulation.Observer;
+import Eric._zoo_simulation.Veterinarian;
+import Eric._zoo_simulation.data.InMemoryAnimalList;
+import Eric._zoo_simulation.data.InMemoryFoodlist;
+import Eric._zoo_simulation.food.Food;
+import Eric._zoo_simulation.keeper.Keeper;
 
 import java.util.ArrayList;
 import java.util.List;
