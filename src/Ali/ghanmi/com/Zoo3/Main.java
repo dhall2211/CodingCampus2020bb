@@ -1,4 +1,4 @@
-package Ali.ghanmi.com.ZooGyula.zoo;
+package Ali.ghanmi.com.Zoo3;
 
 public class Main {
     public static void main(String[] args) {
@@ -16,7 +16,11 @@ public class Main {
         zoo.searchAndCreateMitarbeiter("Bernard",reh1, new String[]{"Gehege Alps"});
         zoo.searchAndCreateMitarbeiter("Xavi",reh2, new String[]{"Gehege Mediteranne"});
 
-       zoo.searchAndCreateVeterinary("Alfred");
+        zoo.searchAndCreateVeterinary("Alfred");
+
+       // FutterManagement.foodManagment();
         zoo.printStruktur("");
+
+
     }
 }
