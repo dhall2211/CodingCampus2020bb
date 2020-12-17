@@ -1,6 +1,6 @@
-package Eric.zoo;
+package Eric._zoo_simulation;
 
-import Eric.zoo.animals.Animal;
+import Eric._zoo_simulation.animals.Animal;
 
 public abstract class Observer {
         protected Animal animal;

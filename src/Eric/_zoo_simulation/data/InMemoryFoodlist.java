@@ -1,6 +1,6 @@
-package Eric.zoo.data;
+package Eric._zoo_simulation.data;
 
-import Eric.zoo.food.Food;
+import Eric._zoo_simulation.food.Food;
 
 import java.util.HashMap;
 import java.util.Map;

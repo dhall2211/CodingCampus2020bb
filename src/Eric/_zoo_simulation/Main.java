@@ -1,4 +1,4 @@
-package Eric.zoo;
+package Eric._zoo_simulation;
 
 // TODO decouple relevant classes and separate View
 // TODO create own simulation package and clean up Zoo class

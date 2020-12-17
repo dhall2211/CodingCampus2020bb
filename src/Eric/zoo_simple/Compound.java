@@ -1,4 +1,4 @@
-package Daniel.Zoo;
+package Eric.zoo_simple;
 
 import java.util.Vector;
 

@@ -1,7 +1,7 @@
-package Eric.zoo.compounds;
+package Eric._zoo_simulation.compounds;
 
-import Eric.zoo.ZooController;
-import Eric.zoo.animals.Animal;
+import Eric._zoo_simulation.ZooController;
+import Eric._zoo_simulation.animals.Animal;
 
 import java.util.List;
 

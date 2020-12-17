@@ -1,4 +1,4 @@
-package Eric.zoo.data;
+package Eric._zoo_simulation.data;
 
 import java.util.HashMap;
 import java.util.Map;

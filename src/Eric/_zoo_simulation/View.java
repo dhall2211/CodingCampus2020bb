@@ -1,4 +1,4 @@
-package Eric.zoo;
+package Eric._zoo_simulation;
 
 public class View {
 
