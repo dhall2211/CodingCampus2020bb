@@ -1,4 +1,4 @@
-package Ali.ghanmi.com.Zoo3;
+package Ali.ghanmi.com.Zoo4;
 
 import java.util.Vector;
 
@@ -24,6 +24,10 @@ public class Gehege {
         for (int i = 0; i < tierList.size(); i++) {
             tierList.get(i).printStruktur(prefix + "  ");
         }
+    }
+
+    public Vector<Tier> getTierList() {
+        return tierList;
     }
 
     public String getName() {

@@ -47,7 +47,7 @@ public class Zoo {
     public Futter searchAndCreateFutter(String name, String einheit, int minimalStock) {//
         Futter f = searchAndCreateFutter(name);
         f.setEinheit(einheit);
-        f.setMinimalStock(minimalStock);
+        f.setFutterImLager(minimalStock);
         return f;
     }
 
@@ -101,7 +101,7 @@ public class Zoo {
         for (int i = 0; i < gehegeList.size(); i++) {
             gehegeList.get(i).printStruktur(prefix + "    ");
         }
-        System.out.println(prefix + "  Futter Tagesbedarf&Lager übersicht");
+        System.out.println(prefix + "  Futter Tagesbedarf&Lager übersicht\n");
         for (int i = 0; i < futterList.size(); i++) {
             futterList.get(i).printStruktur(prefix + "    ");
         }

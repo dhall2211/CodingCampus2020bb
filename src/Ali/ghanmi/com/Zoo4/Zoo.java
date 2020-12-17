@@ -1,4 +1,4 @@
-package Ali.ghanmi.com.Zoo3;
+package Ali.ghanmi.com.Zoo4;
 
 import Daniel.Zoo.Veterinary;
 
@@ -10,6 +10,8 @@ public class Zoo {
     private Vector<Futter> futterList;
     private Vector<EmployeeZoo> mitarbeiterListe;
     private Vector<Veterinary> veterinarian;
+    private Vector<FoodManagment> foodManagments;
+
 
     public Zoo(String name) {
         this.name = name;
@@ -17,6 +19,7 @@ public class Zoo {
         futterList = new Vector<>();
         mitarbeiterListe = new Vector<>();
         veterinarian = new Vector<>();
+        foodManagments= new Vector<>();
 
     }
 /*
@@ -45,7 +48,7 @@ public class Zoo {
     public Futter searchAndCreateFutter(String name, String einheit, int minimalStock) {//
         Futter f = searchAndCreateFutter(name);
         f.setEinheit(einheit);
-        f.setMinimalStock(minimalStock);
+        f.setFutterImLager(minimalStock);
         return f;
     }
 
@@ -89,6 +92,8 @@ public class Zoo {
 
     public Tier createTier(String gehege, String name, String gattung, String lieblingsFutter, int futterBedarf) {
         return new Tier(this, gehege, name, gattung, lieblingsFutter, futterBedarf);
+
+
     }
 
     public void printStruktur(String prefix) {
@@ -97,7 +102,7 @@ public class Zoo {
         for (int i = 0; i < gehegeList.size(); i++) {
             gehegeList.get(i).printStruktur(prefix + "    ");
         }
-        System.out.println(prefix + "  Futter Tagesbedarf&Lager übersicht");
+        System.out.println(prefix + "  Futter Tagesbedarf&Lager übersicht\n");
         for (int i = 0; i < futterList.size(); i++) {
             futterList.get(i).printStruktur(prefix + "    ");
         }
@@ -109,7 +114,15 @@ public class Zoo {
         System.out.println("  Tierärzte:");
         for (var veterinary : veterinarian) {
             veterinary.printStruktur("    ");
+
+
         }
+        System.out.println(prefix + "  Futter Tagesbedarf&Lager übersicht\n");
+        for (var FoodManagment:foodManagments ) {
+          FoodManagment.printStruktur(prefix + "    ");
+
+        }
+
 
     }
 }

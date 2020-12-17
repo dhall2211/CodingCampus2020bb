@@ -32,8 +32,10 @@ public class Tier {
                 futterBedarf,
                 lieblingsFutter.getEinheit(),
                 lieblingsFutter.getName());
-               //  mitarbeiter.getName();
+    }
 
+    public int getFutterBedarf() {
+        return futterBedarf;
     }
 
     public String getName() {

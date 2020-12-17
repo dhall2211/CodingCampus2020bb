@@ -1,4 +1,4 @@
-package Ali.ghanmi.com.Zoo3;
+package Ali.ghanmi.com.Zoo4;
 
 import java.util.Vector;
 
@@ -30,11 +30,9 @@ public class EmployeeZoo {
     }
 
     public void printStruktur(String prefix) {
-        //System.out.println(prefix+ " Pfleger: "+ name + ", Liebligstier: " + tier.getName());
         for (Gehege gehege : gehegeList) {
             System.out.println(prefix + gehege.getName());
             System.out.println("    -"+ "Pfleger: "+ name + ", Liebligstier: " + tier.getName());
-
 
         }
 

@@ -26,6 +26,10 @@ public class Gehege {
         }
     }
 
+    public Vector<Tier> getTierList() {
+        return tierList;
+    }
+
     public String getName() {
         return name;
     }

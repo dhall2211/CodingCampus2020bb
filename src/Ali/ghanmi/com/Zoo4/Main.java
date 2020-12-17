@@ -1,4 +1,5 @@
-package Ali.ghanmi.com.Zoo3;
+package Ali.ghanmi.com.Zoo4;
+
 
 public class Main {
     public static void main(String[] args) {
@@ -11,16 +12,14 @@ public class Main {
         Tier loewe = zoo.createTier("Savanna", "Leo", "Löwe", "Fleisch", 10);
 
         zoo.searchAndCreateFutter("Heu","kg",1000);
-        zoo.searchAndCreateFutter("Obst","kg",10);
-        zoo.searchAndCreateFutter("Fleisch","kg",20);
+        zoo.searchAndCreateFutter("Obst","kg",100);
+        zoo.searchAndCreateFutter("Fleisch","kg",50);
+
         zoo.searchAndCreateMitarbeiter("Bernard",reh1, new String[]{"Gehege Alps"});
         zoo.searchAndCreateMitarbeiter("Xavi",reh2, new String[]{"Gehege Mediteranne"});
 
-        zoo.searchAndCreateVeterinary("Alfred");
+       zoo.searchAndCreateVeterinary("Alfred");
 
-       // FutterManagement.foodManagment();
         zoo.printStruktur("");
-
-
     }
 }
