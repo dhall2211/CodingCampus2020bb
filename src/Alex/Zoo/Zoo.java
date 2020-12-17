@@ -50,6 +50,7 @@ public class Zoo {
             pfleger.printStrukturPfleger("    ");
         }
     }
+
     public Pfleger searchAndCreatePfleger(String name){
         for (var pfleger:pfleger1) {
             if(pfleger.getName().equals(name)){

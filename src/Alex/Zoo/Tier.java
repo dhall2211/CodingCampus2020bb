@@ -22,4 +22,7 @@ public class Tier {
                 lieblingsFutter.getEinheit(), lieblingsFutter.getName());
     }
 
+    public String getName() {
+        return name;
+    }
 }

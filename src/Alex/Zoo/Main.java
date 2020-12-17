@@ -4,7 +4,7 @@ public class Main {
     public static void main(String[] args) {
 
         Zoo zoo = new Zoo("->Fabelhafte Welt der Tiere<-");
-        Gehege gehegePrimaten = new Gehege(zoo, "Gehege Primaten");//gattungen
+        Gehege gehegePrimaten = new Gehege(zoo, "Gehege Primaten");
         Gehege gehegePanthera = new Gehege(zoo, "Gehege Panthera");
         Gehege gehegeZahnwale = new Gehege(zoo, "Gehege Zahnwale");
 
@@ -22,11 +22,6 @@ public class Main {
         Tier Delfin = new Tier(gehegeZahnwale, "Flipper", "Delfin", lachs, 10);
         Tier Orka = new Tier(gehegeZahnwale, "Willy", "Orka", lachs, 177);
 
-       /* Pfleger pfleger1=new Pfleger(zoo,"Chuck Norris");
-        Pfleger pfleger2=new Pfleger(zoo,"Tarzan");
-        Pfleger pfleger3=new Pfleger(zoo,"Waterman");
-
-        */
 
         zoo.searchAndCreateTierArzt("Dr.House");
         zoo.searchAndCreatePfleger("Chuck Norris");
