@@ -22,7 +22,7 @@ public class Main {
         Simulation simulation1= new Simulation(wildpark,3);
         simulation2.start();
 
-      //  wildpark.printStructure("----");
+        wildpark.printStructure("----");
 
     }
    }
