@@ -1,15 +1,14 @@
 package Ali.ghanmi.com.BakeryOrderSystem;
 
+import java.util.Vector;
+
 public class Order {
-    private Customer customer;
-    private OrderBasket orderBasket;
+    private Vector<Customer> customer;
+    private Vector<OrderBasket> pendingOrders;
 
-    public Order(Customer customer, OrderBasket orderBasket) {
-        this.customer = customer;
-        this.orderBasket = orderBasket;
-    }
+    public Order(Vector<Customer> customer,  Vector<OrderBasket> pendingOrders) {
+        this.customer = new Vector<>();
+        this.pendingOrders =new Vector<>();
 
-    public void setCustomer(Customer customer) {
-        this.customer = customer;
     }
 }

@@ -1,20 +1,16 @@
 package Ali.ghanmi.com.BakeryOrderSystem;
 
-import java.lang.reflect.Array;
-import java.util.Arrays;
 import java.util.Vector;
 
 public class Staff {
     private String name;
     private int bakingCapacity;
     private String favoriteCokie;
-   // private Vector<Cokie> bakingSpecialty;
     private Vector<Cokie> cokies;
 
     public Staff(String name, int bakingCapacity, String favoriteCokie, Vector<Cokie> bakingSpecialty, Bakery bakery) {
         this.name = name;
         this.bakingCapacity = bakingCapacity;
-      //  this.bakingSpecialty = bakingSpecialty;
         this.cokies = new Vector<>();
         this.favoriteCokie = favoriteCokie; //setFavoriteCokie(favoriteCokie);
 

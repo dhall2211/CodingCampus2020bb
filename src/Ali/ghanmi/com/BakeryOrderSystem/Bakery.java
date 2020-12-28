@@ -20,20 +20,25 @@ public class Bakery {
 
     }
 
-    public Customer searchAndCreateCustomer(String name, String adress) {
+    public Customer searchAndCreateCustomer(String name, String adress, int customerNumber) {
         // search[]
         for (Customer customer : customers) {
             if (customer.getName().equals(name) && customer.getAdress().equals(adress)) {
                 return customer;
             }
         }
-
         // or create
-        Customer customer = new Customer(name, adress);
-        customers.add(customer);
-        return customer;
+        int number = 0;
+        for (Customer cust : customers) {
+            if (cust.getCustomerNumber() > number) {
+                number = cust.getCustomerNumber();
+                Customer customer = new Customer(name, adress, customerNumber = number);
+                customers.add(customer);
+                return customer;
+            }
+        }
+        return null;
     }
-
     public Staff searchAndCreateStaff(String name, int bakingCapacity, String favoriteCokie, String[] cokiesNames, Bakery bakery) {
         // search[]
         for (Staff staff : staffs) {
@@ -79,25 +84,31 @@ public class Bakery {
         }
     }
 
-    public void logIn(String name, String adress) {
+    public void logIn(String name, int customerNumber) {
         for (Customer customer : customers) {
-            if (customer.getName().equals(name) && customer.getAdress().equals(adress)) {
+            if (customer.getName().equals(name) && customer.getCustomerNumber() == customerNumber) {
                 System.out.println("Herzlich Willkommen bitte Wälen sie ihre geewünschte artikeln");
-               System.out.println(cokies.toString()+"\n");
+                System.out.println(cokies.toString() + "\n");
             } else {
-                System.out.println("falsche eingaben versuchen sie nochmal, ");
+                System.out.println("falsche eingaben versuchen sie nochmal");
+            }
+
+        }
+
+    }
+    public Customer CreateCustomer(String name, String adress,int customerNumber) {
+        Customer customer = new Customer(name, adress, customerNumber);
+        for (int i = 0; i < customers.size(); i++) {
+            if (customers.get(i).getCustomerNumber() == customerNumber) {
+                System.out.println("Versuche mit eine andere customerNumber");
+            } else {
+                customers.add(customer);
+                System.out.println("erfolgreich angemeldet");
+                return customer;
             }
         }
-    }
-
-    public Customer CreateCustomer(String name, String adress) {
-
-        Customer customer = new Customer(name, adress);
-        customers.add(customer);
-        System.out.println("erfolgreich angemeldet");
         return customer;
     }
-
 
     public void CreateOrderBascket(int amount, String name){
         int startNum=1000;

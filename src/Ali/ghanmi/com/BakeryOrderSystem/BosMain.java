@@ -6,10 +6,12 @@ public class BosMain {
         Bakery bacKunst = new Bakery("Schmid Confiserie");
 
         //Customers Registred
-        Customer a = new Customer("Frank Schmid", "Hofstrasse 14, 6800 Lustenau");
-        Customer b = new Customer("Walter summer", "BlumenbergStr. 10, 6890 Dornbirn");
-        Customer c = new Customer("Alfred winter", "Alber einstein 2, 6900 Bregenz");
-        Customer d = bacKunst.searchAndCreateCustomer("Francice Alber", "Hofnungweg 101,6910Bregenz");
+
+        Customer AlfredWinter = new Customer("Alfred winter", "Alber einstein 2, 6900 Bregenz", 1000);
+        Customer FranciceAlber = bacKunst.searchAndCreateCustomer("Francice Alber", "Hofnungweg 101,6910Bregenz", 1005);
+        Customer FionaFritz = bacKunst.CreateCustomer("Fiona Fritz", "nirwendwo di hei 600000000 ", 1010);//unden anmelden
+        Customer AdelSieger = bacKunst.CreateCustomer("Adel Sieger", "Bahnhofplatz 11", 1015);
+
 
         //Cokies
 
@@ -44,15 +46,8 @@ public class BosMain {
         // Order
 
 
-        //bacKunst.printStructure("-");
-
-        bacKunst.logIn("Frank Schmid", "Hofstrasse 14, 6800 Lustenau"); // Falsche login
-
-        bacKunst.logIn("Francice Alber", "Hofnungweg 101,6910Bregenz");  // richtige login
-
-        bacKunst.CreateCustomer("Fiona Fritz", "nirwendwo di hei 600000000 "); // Ne kunden anmelden
-
-        bacKunst.logIn("Fiona Fritz", "nirwendwo di hei 600000000 ");   // Mit Neu anmeldung login
-        bacKunst.CreateOrderBascket(200, "Datlen Kuss");
+        bacKunst.printStructure("-");
+        System.out.println("*************************");
+        bacKunst.logIn("Ali",9000);
     }
 }
