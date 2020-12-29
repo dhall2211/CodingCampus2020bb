@@ -7,7 +7,7 @@ public class Confectionery {
     private Vector<Staff> staffs;
     private Vector<Product> products;
     private Vector<Customer> customers;
-    private Vector<OrderBasket> orderBaskets;
+    private Vector<Ali.ghanmi.com.OrderindSysteme.OrderBasket> orderBaskets;
     private OrderBasket OrderBasket;
 
 
@@ -15,7 +15,8 @@ public class Confectionery {
         this.name = name;
         this.products = new Vector<>();
         this.staffs = new Vector<>();
-        this.orderBaskets = new Vector<>();
+        this.orderBaskets = new Vector<Ali.ghanmi.com.OrderindSysteme.OrderBasket>();
+        this.customers = new Vector<>();
     }
 
     @Override
@@ -41,36 +42,43 @@ public class Confectionery {
         return staff;
     }
 
-    public Customer searchAndCreatCustomer(String name, String adress, int customerPw, OrderBasket orderBasket) {
+    public Customer searchAndCreatCustomer(String name, String adress, int customerPw, String[] basketLists) {
         for (Customer customer : customers) {
             if ((customer.getName().equals(name) && customer.getCustomerPw() == customerPw)) {
-                return customer;
-
-            } else {
-                Customer cus = new Customer(name, adress, customerPw, OrderBasket);
-                customers.add(cus);
                 return customer;
             }
 
         }
-        return null;
+        Customer cus = new Customer(name, adress, customerPw, orderBaskets);
+        customers.add(cus);
+        return cus;
     }
 
+    public Vector<OrderBasket> addBasket(OrderBasket orderBasket) {
+        orderBaskets.add(orderBasket);
+        return orderBaskets;
+
+    }
 
     public Product searchAndCreateProduct(String name) {
-       for (int i = 0; i < products.size(); i++) {
-           if (products.get(i).getName().equals(name)) {
-               return products.get(i);
-           }
-       }
-       Product p = new Product(name);
-       products.add(p);
-       return p;
-   }
+        for (int i = 0; i < products.size(); i++) {
+            if (products.get(i).getName().equals(name)) {
+                return products.get(i);
+            }
+        }
+        Product p = new Product(name);
+        products.add(p);
+        return p;
+    }
+
     public void printStructure(String prefix) {
-        System.out.println("unsere bäckerei läuft nach plan\n"+prefix + " " + name+"\n");
+        System.out.println("unsere bäckerei läuft nach plan\n" + prefix + " " + name + "\n");
         for (int i = 0; i < staffs.size(); i++) {
             staffs.get(i).printStructure("--");
+        }
+        for (int i = 0; i <customers.size() ; i++) {
+            customers.get(i).printStructure("--");
+
         }
     }
 

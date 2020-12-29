@@ -26,7 +26,7 @@ public class Staff {
         for (int i = 0; i <products.size() ; i++) {
             System.out.println("           *"+ "Other spcialty: "+products.get(i).getName());
         }
-        System.out.println();
+        System.out.println("*************");
     }
 
     public void addSpcialty(Product product) {

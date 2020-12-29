@@ -27,16 +27,18 @@ public class OsMain {
         daniel.addSpcialty(mandelziegel);
         //orderBasket
         OrderBasket a = new OrderBasket(choco, 100);
-         OrderBasket b =new OrderBasket(zimmt,400);
+        OrderBasket b = new OrderBasket(zimmt, 400);
+        OrderBasket c = new OrderBasket(mandelziegel, 300);
         //add basket to customer
 
 
         //customer
-        Customer julia =schmied.searchAndCreatCustomer("Julia Meier", "Blumenbergstrasse 11, 6800 Bregenz", 12345,a);
-        Customer rita =schmied.searchAndCreatCustomer("Rita Wolfgang", "Seestrasse  10, 6800 Bregenz", 23456, a);
+        Customer julia = schmied.searchAndCreatCustomer("Julia Meier", "Blumenbergstrasse 11, 6800 Bregenz", 12345, new String[]{});
+        Customer rita = schmied.searchAndCreatCustomer("Rita Wolfgang", "Seestrasse  10, 6800 Bregenz", 23456, new String[]{});
         //add basket to customer
         julia.addOrderbasket(a);
         julia.addOrderbasket(b);
+        rita.addOrderbasket(c);
         //PrintStrukrure
         schmied.printStructure("-");
     }
