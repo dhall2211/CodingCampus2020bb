@@ -20,11 +20,6 @@ public class OrderBasket {
     }
 
     public void setAmount(int amount) {
-        if (amount == 200 || amount == 400 || amount == 600 || amount == 800 ){
-            this.amount = amount;
-        }else{
-            System.out.println("Menge soll 200 oder 400 oder 600 oder 800 sein");
-        }
     }
     public void printStructure(String prefix) {
         System.out.println(prefix+"   Artikel: "+product+"Quantität: "+amount);

@@ -24,7 +24,12 @@ public class Customer {
     }
 
     public void addOrderbasket(OrderBasket orderBasket) {
-        orderBaskets.add(orderBasket);
+        if (orderBasket.getAmount() == 200 || orderBasket.getAmount() == 400 || orderBasket.getAmount() == 600 || orderBasket.getAmount() == 800) {
+            orderBaskets.add(orderBasket);
+        } else {
+            orderBaskets.remove(orderBasket);
+            System.out.println("errrror");;
+        }
     }
 
     public void printStructure(String prefix) {
