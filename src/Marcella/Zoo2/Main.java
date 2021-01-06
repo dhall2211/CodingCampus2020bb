@@ -22,7 +22,9 @@ public class Main {
 
         Vet anna = new Vet(zoo, "Anna");
 
-        zoo.printStructure();
+        zoo.printStructure("  ");
+        luise.careForAnimals("  ");
+        hans.careForAnimals("  ");
 
     }
 

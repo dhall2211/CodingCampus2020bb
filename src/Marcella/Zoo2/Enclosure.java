@@ -23,10 +23,14 @@ public class Enclosure {
         }
     }
 
-    public void printStructure() {
-        System.out.println("Gehege: " + name);
+    public Vector<Animal> getAnimals() {
+        return animals;
+    }
+
+    public void printStructure(String prefix) {
+        System.out.println(prefix + "Gehege: " + name);
         for (Animal eachAnimal : animals) {
-            eachAnimal.printStructure();
+            eachAnimal.printStructure(prefix);
         }
     }
 

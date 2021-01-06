@@ -9,8 +9,8 @@ public class Vet {
         zoo.addNewVet(this);
     }
 
-    public void printStructure() {
-        System.out.println("Tierärztin: " + name);
+    public void printStructure(String prefix) {
+        System.out.println(prefix + "Tierärztin: " + name);
     }
 
 }

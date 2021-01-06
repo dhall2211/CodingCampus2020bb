@@ -15,8 +15,8 @@ public class Animal {
         return name;
     }
 
-    public void printStructure() {
-        System.out.println("Tier: " + name + ", " + species);
+    public void printStructure(String prefix) {
+        System.out.println(prefix + "_ " + name + ", " + species);
     }
 
 }

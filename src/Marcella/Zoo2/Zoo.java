@@ -46,16 +46,19 @@ public class Zoo {
         }
     }
 
-    public void printStructure() {
+    public void printStructure(String prefix) {
         System.out.println("Zoo: " + name);
+        System.out.println();
         for (Enclosure oneEnclosure : enclosures) {
-            oneEnclosure.printStructure();
+            oneEnclosure.printStructure(prefix);
         }
+        System.out.println();
         for (Ranger oneRanger : rangers) {
-            oneRanger.printStructure();
+            oneRanger.printStructure(prefix);
         }
+        System.out.println();
         for (Vet oneVet : vets) {
-            oneVet.printStructure();
+            oneVet.printStructure(prefix);
         }
     }
 
