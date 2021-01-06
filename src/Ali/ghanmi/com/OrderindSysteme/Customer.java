@@ -27,7 +27,7 @@ public class Customer {
         if (orderBasket.getAmount() == 200 || orderBasket.getAmount() == 400 || orderBasket.getAmount() == 600 || orderBasket.getAmount() == 800) {
             orderBaskets.add(orderBasket);
         } else {
-            orderBaskets.remove(orderBasket);
+           // orderBaskets.remove(orderBasket);
             System.out.println("errrror");;
         }
     }
