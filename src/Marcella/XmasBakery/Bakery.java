@@ -16,7 +16,6 @@ public class Bakery {
         this.employees = new Vector<>();
         this.cookies = new Vector<>();
         this.customers = new Vector<>();
-
     }
 
     public void addNewEmployee(Employee newEmployee) {
