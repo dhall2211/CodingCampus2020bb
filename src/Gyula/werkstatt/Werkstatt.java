@@ -17,5 +17,16 @@ public class Werkstatt {
         kostenService = 20;
     }
 
+    public void service(Auto auto, Fahrer fahrer){
+        System.out.println(auto.getMarke() + " braucht Service.");
+        if (auto.getKmReifenRest() < 0) {
+            System.out.println("  Reifen werden gewechselt.");
+            auto.setKmReifenRest(40000);
+            System.out.println("  " + fahrer.getName() + " bezahlt für Service inkl. Reifenwechsel: " + (kostenService+kostenReifenwechseln)+"€");
+        } else {
+            System.out.println("  " + fahrer.getName() + " bezahlt für Service: "+kostenService+"€");
+        }
+        auto.setKmServiceRest(18500);
+    }
 
 }

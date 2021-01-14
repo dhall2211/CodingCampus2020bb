@@ -6,13 +6,15 @@ public class Main {
         Auto autoVW = new Auto("VW Touran", 20, 50, 150);
         Auto autoFord = new Auto("Ford Mondeo", 50, 10, 150);
 
-        Fahrer fahrerPeter = new Fahrer("Peter", autoFord);
-        Fahrer fahrerAlexandra = new Fahrer("Alexandra", autoVW);
         Tankstelle total = new Tankstelle("Total", 0.95f);
         Werkstatt tiptop = new Werkstatt("Tip-Top", 100, 20);
 
-        autoVW.fahren(951, total);
-        autoFord.fahren(450, total);
+        Fahrer fahrerAlexandra = new Fahrer("Alexandra", tiptop, autoVW);
+
+
+        fahrerAlexandra.fahren(951, total);
+        fahrerAlexandra.setAuto(autoFord);
+        fahrerAlexandra.fahren(450, total);
 
     }
 }
