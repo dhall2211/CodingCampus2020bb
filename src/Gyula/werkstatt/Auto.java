@@ -27,7 +27,8 @@ public class Auto {
         System.out.println(marke + " ist " + km + " gefahren und aktuell ist " + String.format("%.2f", benzinStand) +
                 " Liter Benzin im Tank.");
         if (kmServiceRest <= 0){
-            System.out.println("Bitte service.");
+            // System.out.println("Bitte service.");
+            service();
         }
     }
 
@@ -43,4 +44,17 @@ public class Auto {
                 liter*tankstelle.getPreisProLiter() +
                 "€");
     }
+
+    public void service(){
+        System.out.println(marke + " braucht Service.");
+        if (kmReifenRest < 0) {
+            System.out.println("  Reifen werden gewechselt.");
+            kmReifenRest = 40000;
+            System.out.println("  Kosten Service inkl. Reifenwechsel: 120€");
+        } else {
+            System.out.println("  Kosten Service: 20€");
+        }
+        kmServiceRest = 18500;
+    }
+
 }

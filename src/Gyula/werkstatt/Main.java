@@ -9,6 +9,7 @@ public class Main {
         Fahrer fahrerPeter = new Fahrer("Peter", autoFord);
         Fahrer fahrerAlexandra = new Fahrer("Alexandra", autoVW);
         Tankstelle total = new Tankstelle("Total", 0.95f);
+        Werkstatt tiptop = new Werkstatt("Tip-Top", 100, 20);
 
         autoVW.fahren(951, total);
         autoFord.fahren(450, total);
