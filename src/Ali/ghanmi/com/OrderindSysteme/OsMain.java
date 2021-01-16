@@ -11,7 +11,7 @@ public class OsMain {
         Product zimmt = schmied.searchAndCreateProduct("Zimmt");
         Product caramel = schmied.searchAndCreateProduct("Caramel");
         Product mandelziegel = schmied.searchAndCreateProduct("Mandelziegel");
-        Product nuss = schmied.searchAndCreateProduct("nuss");
+        Product nuss = schmied.searchAndCreateProduct("Nuss");
         Product orangenTuile = schmied.searchAndCreateProduct("Orangen-Tuile");
         //Staff
         Staff frank = schmied.searchAndCreateStaff("Frank Müller", mandelziegel, 2500, new String[]{});
@@ -30,6 +30,9 @@ public class OsMain {
         OrderBasket b = new OrderBasket(zimmt, 400);
         OrderBasket c = new OrderBasket(mandelziegel, 800);
         OrderBasket d = new OrderBasket(zimmt, 800);
+
+
+
         //add basket to customer
 
 
@@ -45,7 +48,23 @@ public class OsMain {
         ralph.addOrderbasket(d);
         ralph.addOrderbasket(c);
         ralph.addOrderbasket(a);
+
+//add basket to order
+        Order order1 =new Order(julia);
+        order1.addOrderBasket(c);
+        order1.addOrderBasket(c);
+        order1.addOrderBasket(a);
+
+        Order order2 =new Order(ralph);
+        order2.addOrderBasket(c);
+        order2.addOrderBasket(c);
+        order2.addOrderBasket(b);
+        order2.addOrderBasket(b);
         //PrintStrukrure
         schmied.printStructure("-");
+        System.out.println("**************************************");
+       // System.out.println("Herzlich Willkommen beim Schmid konfiserie\n" +"Bitte logIn oder neu Kunden anmelden:" +"");
+       // schmied.logIn("Ralph winter",23456);
+        //schmied.CreateCustomer("Mike Müller","BahnhofPlatz 4, 6800 Lustenau",456789);
     }
 }

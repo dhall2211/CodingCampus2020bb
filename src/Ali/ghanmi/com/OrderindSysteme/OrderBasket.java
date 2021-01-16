@@ -25,4 +25,5 @@ public class OrderBasket {
         System.out.println(prefix+"   Artikel: "+product+"Quantität: "+amount);
 
     }
+
 }

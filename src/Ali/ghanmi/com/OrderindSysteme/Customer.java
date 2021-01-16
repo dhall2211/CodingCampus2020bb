@@ -6,13 +6,20 @@ public class Customer {
     private String name;
     private String adress;
     private int customerPw;
+    private Vector<Order> orders;
     private Vector<OrderBasket> orderBaskets;
 
     public Customer(String name, String adress, int customerPw, Vector<OrderBasket> orderBaskets) {
         this.name = name;
         this.adress = adress;
         this.customerPw = customerPw;
+        this.orders = new Vector<>();
         this.orderBaskets = new Vector<>();
+    }
+        public Customer(String name, String adress, int customerPw) {
+            this.name = name;
+            this.adress = adress;
+            this.customerPw = customerPw;
     }
 
     public String getName() {
