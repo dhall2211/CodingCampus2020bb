@@ -1,15 +1,19 @@
 package Ali.ghanmi.com.Restaurant;
 
+import java.util.Vector;
+
 public class Tabel {
 
     private int tableNumber;
     private int capacity;
     private boolean isFree;
+    private Vector<Order> orders;
 
     public Tabel(int tableNumber, int capacity) {
         this.tableNumber = tableNumber;
         this.capacity = capacity;
         this.isFree = true;
+        this.orders = new Vector<>();
     }
 
     public int getCapacity() {
@@ -30,6 +34,11 @@ public class Tabel {
 
     @Override
     public String toString() {
-        return "Tabel: " + "tableNumber: " + tableNumber + ", capacity: " + capacity + ", Statut: " + isFree+"\n";
+        return "Tabel: " + "tableNumber: " + tableNumber + ", capacity: " + capacity + "" +
+                ", Statut: " + isFree+ " "+orders.toString();
+    }
+
+    public void addOrderToTabel(Order order) {
+            orders.add(order);
     }
 }

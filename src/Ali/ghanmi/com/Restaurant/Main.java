@@ -105,8 +105,10 @@ Bestellung aufnehmen Wahrscheinlichkeit
         order101.addProductsToOrder(new Product[]{drink2,drink1,drink3,main1,main2,dessert1});
         order104.addProductsToOrder(new Product[]{starter1,drink1});
 
-        customerGroup11.addOrderToCustumer(order100);
-        customerGroup12.addOrderToCustumer(order104);
+        tabel1.addOrderToTabel(order100);
+        tabel2.addOrderToTabel(order104);
+
+
 
         System.out.println(goldenerHirsch);
 

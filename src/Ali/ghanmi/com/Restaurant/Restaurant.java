@@ -1,5 +1,6 @@
 package Ali.ghanmi.com.Restaurant;
 
+import java.util.Collections;
 import java.util.Vector;
 
 public class Restaurant {
@@ -28,9 +29,7 @@ public class Restaurant {
             this.tabels.add(oneTabel);
         }
     }
-    public void addOrderToCustumer(CustomerGroup order) {
-        customerGroups.add(order);
-    }
+
 
     @Override
     public String toString() {
@@ -41,6 +40,7 @@ public class Restaurant {
     }
 
     public void assignTable(CustomerGroup customerGroup) {
+         this.tabels.sort(new SortTabelsByCapacity());
         for (Tabel oneTabel : tabels) {
             if (oneTabel.isFree() && oneTabel.getCapacity() >= customerGroup.getNumberCustomers()) {
                 this.customerGroups.add(customerGroup);

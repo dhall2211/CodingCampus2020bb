@@ -24,9 +24,6 @@ public class Order {
                 "products=" + products +
                 ", customerGroup=" + customerGroups +
                 '}';
-    }
 
-    public void addOrderToCustumer(Order order) {
-        customerGroups.add(order);
     }
 }

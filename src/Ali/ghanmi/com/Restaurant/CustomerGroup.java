@@ -28,10 +28,8 @@ public class CustomerGroup {
 }
     @Override
     public String toString() {
-        return "\n" + "numberCustomers=" + numberCustomers + ", orders=" + orders;
+        return "\n" + "numberCustomers=" + numberCustomers ;
     }
 
-    public void addOrderToCustumer(Order order) {
-        orders.add(order);
     }
-}
+
