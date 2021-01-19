@@ -2,21 +2,25 @@ package Marcella.XmasBakery;
 
 public class OrderDescription {
 
-    private Customer nameCustomer;
     private String nameCookie;
-    private String amountCookies;
+    private int amountCookies;
 
-    public OrderDescription(Customer whoOrders, String[][] orderDescriptions) {
-        this.nameCustomer = whoOrders;
-        for (String[] oneOrderDescription : orderDescriptions) {
-            this.nameCookie = oneOrderDescription[0];
-            this.amountCookies = oneOrderDescription[1];
-        }
+    public OrderDescription(Order whoOrders, String nameCookie, int amountCookies) {
+        this.nameCookie = nameCookie;
+        this.amountCookies = amountCookies;
         whoOrders.addNewOrderDescription(this);
-}
+    }
+
+    public String getNameCookie() {
+        return nameCookie;
+    }
+
+    public int getAmountCookies() {
+        return amountCookies;
+    }
 
     public void printOrderDescription() {
-        System.out.println(amountCookies + "-mal " + nameCookie);
+        System.out.println("_ " + amountCookies + "-mal " + nameCookie);
     }
 
 }

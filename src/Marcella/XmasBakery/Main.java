@@ -1,6 +1,7 @@
 package Marcella.XmasBakery;
 
 import java.lang.reflect.Array;
+import java.util.Vector;
 
 public class Main {
 
@@ -9,9 +10,9 @@ public class Main {
         Bakery zuckerbaeckerei = new Bakery("Die Zuckerbäckerei");
 
         // Employees --------------------------------------------------------------------------------------
-        Employee hans = new Employee(zuckerbaeckerei, "Hans", "Vanillekipferl");
-        Employee werner = new Employee(zuckerbaeckerei, "Werner", "Zimtsterne");
-        Employee luise = new Employee(zuckerbaeckerei, "Luise", "Schoko-Nuss-Makronen");
+        Employee hans = new Employee(zuckerbaeckerei, "Hans", "Vanillekipferl", 50);
+        Employee werner = new Employee(zuckerbaeckerei, "Werner", "Zimtsterne", 30);
+        Employee luise = new Employee(zuckerbaeckerei, "Luise", "Schoko-Nuss-Makronen", 20);
 
         // Cookies ----------------------------------------------------------------------------------------
         Cookie vanillekipferl = new Cookie(zuckerbaeckerei, "Vanillekipferl");
@@ -24,9 +25,18 @@ public class Main {
         Customer patricia = new Customer(zuckerbaeckerei, "Patricia Ludwig", "Reichstraße 22, 6800 Feldkirch");
         Customer tom = new Customer(zuckerbaeckerei, "Tom Tennert", "Liechtensteiner Straße 38, 6800 Feldkirch");
 
-        OrderDescription tomsOrder = new OrderDescription(tom, new String[][] {{"Vanillekipferl", "5"}, {"Zimtsterne", "3"}});
+        Order tomsOrder = new Order(zuckerbaeckerei, tom);
+        OrderDescription tomsOrderDescription1 = new OrderDescription(tomsOrder,"Vanillekipferl", 5);
+        OrderDescription tomsOrderDescription2 = new OrderDescription(tomsOrder,"Zimtsterne", 3);
 
-        zuckerbaeckerei.printStructure("   ");
+        zuckerbaeckerei.produceCookie();
+
+        Order patriciasOrder = new Order(zuckerbaeckerei, patricia);
+        OrderDescription patriciasOrderDescription1 = new OrderDescription(patriciasOrder, "Schoko-Nuss-Makronen", 7);
+
+        System.out.println(zuckerbaeckerei.getOrders().size());
+
+        // zuckerbaeckerei.printStructure("   ");
 
     }
 

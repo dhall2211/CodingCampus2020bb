@@ -1,7 +1,5 @@
 package Marcella.XmasBakery;
 
-import Marcella.Zoo2.Ranger;
-
 import java.util.Vector;
 
 public class Bakery {
@@ -10,12 +8,14 @@ public class Bakery {
     private Vector<Employee> employees;
     private Vector<Cookie> cookies;
     private Vector<Customer> customers;
+    private Vector<Order> orders;
 
     public Bakery(String name) {
         this.name = name;
         this.employees = new Vector<>();
         this.cookies = new Vector<>();
         this.customers = new Vector<>();
+        this.orders = new Vector<>();
     }
 
     public void addNewEmployee(Employee newEmployee) {
@@ -36,20 +36,44 @@ public class Bakery {
         }
     }
 
-    public void printStructure(String spaces) {
-        System.out.println(this.name);
-        System.out.println(spaces + "Angestellte: ");
-        for (Employee oneEmployee : employees) {
-            oneEmployee.printStructure(spaces);
-        }
-        System.out.println(spaces + "Kekssorten: ");
-        for (Cookie oneCookie : cookies) {
-            oneCookie.printStructure(spaces);
-        }
-        System.out.println(spaces + "Kunden: ");
-        for (Customer oneCustomer : customers) {
-            oneCustomer.printStructure(spaces);
+    public void addNewOrder(Order newOrder) {
+        if (!orders.contains(newOrder)) {
+            orders.add(newOrder);
         }
     }
 
-}
+    public void produceCookie() {
+        for (Order oneOrder : orders) {
+            for (OrderDescription oneOrderDescription : oneOrder.getOrderDescriptions()) {
+                String nameCookie = oneOrderDescription.getNameCookie();
+                int amountCookies = oneOrderDescription.getAmountCookies();
+                for (Employee oneEmployee : employees) {
+                    if (nameCookie.equals(oneEmployee.getBestCookie())) {
+                        oneEmployee.produceCookies(amountCookies);
+                    }
+                }
+            }
+        }
+    }
+
+        public Vector<Order> getOrders () {
+            return orders;
+        }
+
+        public void printStructure (String spaces){
+            System.out.println(this.name);
+            System.out.println(spaces + "Angestellte: ");
+            for (Employee oneEmployee : employees) {
+                oneEmployee.printStructure(spaces);
+            }
+            System.out.println(spaces + "Kekssorten: ");
+            for (Cookie oneCookie : cookies) {
+                oneCookie.printStructure(spaces);
+            }
+            System.out.println(spaces + "Kunden: ");
+            for (Customer oneCustomer : customers) {
+                oneCustomer.printStructure(spaces);
+            }
+        }
+
+    }
