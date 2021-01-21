@@ -49,69 +49,92 @@ public class Pizzeria {
 
     public void order() {
 
-            int menuItem = chooseMenuIthem();
-            switch (menuItem) {
-                case 1:
-                    Bestellung();
-                    break;
+        int menuItem = chooseMenuIthem();
+        switch (menuItem) {
+            case 1:
+                Bestellung();
+                break;
 
-                case 0:
-                    salutaion();
+            case 0:
+                salutaion();
 
         }
     }
 
     private void salutaion() {
-        System.out.println("danke und aufwiedersehen");
+        System.out.println("danke für ihren besuch und aufwiedersehen");
     }
 
     private void Bestellung() {
-        double totalKosten=0;
+        double totalKosten = 0;
+        String[] namestopping = new String[5];
         System.out.println("Herzlich willkommen bei Giovannis. Bitte geben Sie Ihren Vor- und nachname ein");
         this.customerName = scanner.nextLine();
         // choose BasicPizza ---------------------------------------
         System.out.println(customerName + ", Bitte wählen Sie Ihre BasicPizza per Nummer aus: \n");
-       // choosePizza();
-        String names = "";
-        boolean isActive = true;
-        while (isActive) {
+        // choosePizza();
+        String namebasic = "";
+        boolean isOrdering = true;
+        while (isOrdering) {
             int basicPiza = choosePizza();
             switch (basicPiza) {
-                case 1,2,3:
+                case 1, 2, 3:
                     for (int i = 0; i < basicPizzas.size(); i++) {
                         if (basicPiza == basicPizzas.get(i).getIdNumberPizza()) {
-                            names = basicPizzas.get(i).getName();
-                            totalKosten +=basicPizzas.get(i).getPrice();
-                            System.out.println("deine aktuel kosten: " + basicPizzas.get(i).getPrice() + " " + names);
-                        }}}
-                      //  boolean moreToppind= true;
-                            int topping=chooseTopping();
-
-                            switch (topping) {
-                                case 11,12,13,14,15:
-                                    for (int j = 0; j < toppings.size(); j++) {
-                                        if (topping == toppings.get(j).getIdNumberTopping()) {
-                                          String  namest = toppings.get(j).getName();
-                                          totalKosten +=toppings.get(j).getPrice();
-                                            System.out.println("deine aktuel kosten: " + toppings.get(j).getPrice() + " " + namest);
-                                            System.out.println("total kosten: "+totalKosten);
-
-                        } break;
-
-
+                            namebasic = basicPizzas.get(i).getName();
+                            totalKosten += basicPizzas.get(i).getPrice();
+                            System.out.println("deine aktuel kosten: " + basicPizzas.get(i).getPrice() + " " + namebasic);
                         }
-                        case 0:
-                            salutaion();
-                            isActive = false;
-                            break;
-
+                    }
             }
+            boolean moreToppind = true;
+            while (moreToppind) {
+                int topping = chooseTopping();
+
+                switch (topping) {
+
+                    case 11, 12, 13, 14, 15:
+                        int counter=0;
+                        for (int j = 0; j < toppings.size(); j++) {
+                            if (topping == toppings.get(j).getIdNumberTopping()) {
+                                    namestopping[counter] = toppings.get(j).getName();
+                                    totalKosten += toppings.get(j).getPrice();
+                                    counter++;
+                                    System.out.println("deine aktuel Zusatz kosten: " + toppings.get(j).getPrice() +
+                                            " " + Arrays.toString(namestopping));
+                                    System.out.println("total kosten: " + totalKosten);
+
+                            }
+                        }
+                        break;
+                    case 100:
+                        bestellungAbschlisen();
+                        System.out.println("Pizza " + namebasic + ",zusätzlich zutaten: " + Arrays.toString(namestopping)+ " " + totalKosten + " $");
+                        Order newOrder = new Order(this.idNumberOrder,new String[]{namebasic},namestopping);
+                        orders.add(newOrder);
+                        idNumberOrder++;
+                        chooseMenuIthem();
+                        break;
+
+
+                    case 0:
+                        salutaion();
+                        isOrdering = false;
+
+
+                }
             }
         }
+    }
+
+    private void bestellungAbschlisen() {
+        System.out.println("ihren Bestellung lautet:");
+
+    }
 
     private int chooseTopping() {
         while (true) {
-            System.out.println(" 11 = pepperoni \n 12 = olive\n 13 = anchois \n 14 = mais \n 15 = aglio \n 0 = Benden");
+            System.out.println(" 11 = pepperoni \n 12 = olive\n 13 = anchois \n 14 = mais \n 15 = aglio \n 0 = Benden\n 100 = bestellung abgeben");
             Scanner sc = new Scanner(System.in);
             if (sc.hasNextInt()) {
                 return sc.nextInt();
@@ -121,15 +144,15 @@ public class Pizzeria {
     }
 
 
-    private static int chooseMenuIthem () {
-            while (true) {
-                System.out.println(" 1 = Bestellung \n 0 = Benden");
-                Scanner sc = new Scanner(System.in);
-                if (sc.hasNextInt()) {
-                    return sc.nextInt();
-                }
+    private static int chooseMenuIthem() {
+        while (true) {
+            System.out.println(" 1 = Bestellung \n 0 = Benden");
+            Scanner sc = new Scanner(System.in);
+            if (sc.hasNextInt()) {
+                return sc.nextInt();
             }
         }
+    }
 
     private static int choosePizza() {
         while (true) {
@@ -141,16 +164,6 @@ public class Pizzeria {
         }
     }
 
-
-    private static int getScannerInput(String text) {
-        while (true) {
-            System.out.println();
-            Scanner sc = new Scanner(System.in);
-            if (sc.hasNextInt()) {
-                return sc.nextInt();
-            }
-        }
-    }
 }
 
       /*
