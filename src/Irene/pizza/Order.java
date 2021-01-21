@@ -13,7 +13,11 @@ public class Order {
         orderedToppingsList = new Vector<>();
     }
 
-    public void addTopping(Topping name) {
+    public void addOrderedToppings(Topping name) {
         orderedToppingsList.add(name);
+    }
+
+    public Vector<Topping> getOrderedToppingsList() {
+        return orderedToppingsList;
     }
 }

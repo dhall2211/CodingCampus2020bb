@@ -19,7 +19,6 @@ public class Main {
         napoli.addToppings(new Vector<>(Arrays.asList(salami, corn, pineapple, bacon, onions, chilliPepper, cheese)));
 
         Scanner scanner = new Scanner(System.in);
-
         System.out.println("Welcome to the pizzeria Napoli!");
         System.out.println("Please enter your name:");
         String name = scanner.next();
@@ -28,34 +27,45 @@ public class Main {
         System.out.println("You can add up to five additional toppings. Here is a list of the available toppings:");
         napoli.printToppings();
         System.out.println();
-        System.out.println("Please enter the idNumber of a topping you want to add.");
-        System.out.println("If you don't want any more toppings please enter [0].");
-        int id = scanner.nextInt();
-        switch (id){
-            case 0:
+        boolean isOrderComplete = false;
+        for (int i = 1; i <= 5; i++) {
+            if (isOrderComplete == false) {
+                System.out.println("Please enter the idNumber of a topping you want to add.");
+                System.out.println("If you don't want any more toppings please enter [0].");
+                int id = scanner.nextInt();
+                switch (id) {
+                    case 0:
+                        isOrderComplete = true;
+                        break;
+                    case 1:
+                        customer.addOrderedToppings(salami);
+                        break;
+                    case 2:
+                        customer.addOrderedToppings(corn);
+                        break;
+                    case 3:
+                        customer.addOrderedToppings(pineapple);
+                        break;
+                    case 4:
+                        customer.addOrderedToppings(bacon);
+                        break;
+                    case 5:
+                        customer.addOrderedToppings(onions);
+                        break;
+                    case 6:
+                        customer.addOrderedToppings(chilliPepper);
+                        break;
+                    case 7:
+                        customer.addOrderedToppings(cheese);
+                        break;
+                }
+            } else {
+                System.out.println("You don't want any more toppings.");
                 break;
-            case 1:
-                customer.addTopping(salami);
-                break;
-            case 2:
-                customer.addTopping(corn);
-                break;
-            case 3:
-                customer.addTopping(pineapple);
-                break;
-            case 4:
-                customer.addTopping(bacon);
-                break;
-            case 5:
-                customer.addTopping(onions);
-                break;
-            case 6:
-                customer.addTopping(chilliPepper);
-                break;
-            case 7:
-                customer.addTopping(cheese);
-                break;
+            }
         }
+        System.out.println("Order complete.");
+        //System.out.println(customer + " orders a Pizza with " + );
         System.out.println();
         System.out.println();
     }

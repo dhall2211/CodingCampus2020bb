@@ -3,11 +3,11 @@ package Irene.pizza;
 import java.util.Vector;
 
 public class Restaurant {
-    private String name;
+    private String restaurantName;
     private Vector<Topping> toppingList;
 
-    public Restaurant(String name) {
-        this.name = name;
+    public Restaurant(String restaurantName) {
+        this.restaurantName = restaurantName;
         toppingList = new Vector<>();
     }
 
@@ -19,5 +19,9 @@ public class Restaurant {
         for (int i = 0; i < toppingList.size(); i++) {
             System.out.println(toppingList.get(i));
         }
+    }
+
+    public String getRestaurantName() {
+        return restaurantName;
     }
 }
