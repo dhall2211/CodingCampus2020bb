@@ -1,11 +1,12 @@
 package Irene.pizza;
 
-import java.util.Arrays;
 import java.util.Scanner;
 import java.util.Vector;
 
 public class Main {
     public static void main(String[] args) {
+        Restaurant napoli = new Restaurant("Napoli");
+
         Topping salami = new Topping("Salami", 1, 1);
         Topping corn = new Topping("Corn", 1, 2);
         Topping pineapple = new Topping("Pineapple", 1, 3);
@@ -14,9 +15,7 @@ public class Main {
         Topping chilliPepper = new Topping("Chilli Pepper", 1, 6);
         Topping cheese = new Topping("Cheese", 1, 7);
 
-        Restaurant napoli = new Restaurant("Napoli");
-
-        napoli.addToppings(new Vector<>(Arrays.asList(salami, corn, pineapple, bacon, onions, chilliPepper, cheese)));
+//        napoli.addToppings("Salami");
 
         Scanner scanner = new Scanner(System.in);
         System.out.println("Welcome to the pizzeria Napoli!");
@@ -25,7 +24,7 @@ public class Main {
         Order customer = new Order(name);
         System.out.println("Our basic pizza is always a pizza Margherita.");
         System.out.println("You can add up to five additional toppings. Here is a list of the available toppings:");
-        napoli.printToppings();
+        System.out.println(napoli.getToppingList());
         System.out.println();
         boolean isOrderComplete = false;
         for (int i = 1; i <= 5; i++) {
@@ -65,7 +64,7 @@ public class Main {
             }
         }
         System.out.println("Order complete.");
-        //System.out.println(customer + " orders a Pizza with " + );
+        System.out.println(customer.getCustomerName() + " orders a Pizza with " + customer.getOrderedToppingsList());
         System.out.println();
         System.out.println();
     }

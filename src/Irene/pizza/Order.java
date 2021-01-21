@@ -20,4 +20,8 @@ public class Order {
     public Vector<Topping> getOrderedToppingsList() {
         return orderedToppingsList;
     }
+
+    public String getCustomerName() {
+        return customerName;
+    }
 }

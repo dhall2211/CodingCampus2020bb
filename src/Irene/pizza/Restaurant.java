@@ -4,24 +4,27 @@ import java.util.Vector;
 
 public class Restaurant {
     private String restaurantName;
-    private Vector<Topping> toppingList;
+    private Vector<String> toppingList;
 
     public Restaurant(String restaurantName) {
         this.restaurantName = restaurantName;
         toppingList = new Vector<>();
     }
 
-    public void addToppings(Vector<Topping> t) {
-            toppingList.addAll(t);
-    }
-
-    public void printToppings() {
-        for (int i = 0; i < toppingList.size(); i++) {
-            System.out.println(toppingList.get(i));
-        }
-    }
+//   public void addToppings(Topping toppingName, String toppingName) {
+//       toppingList.add(toppingName.getToppingName());
+//    }
 
     public String getRestaurantName() {
         return restaurantName;
+    }
+
+    public Vector<String> getToppingList() {
+        return toppingList;
+    }
+
+    @Override
+    public String toString() {
+        return String.valueOf(toppingList);
     }
 }
