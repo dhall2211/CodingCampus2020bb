@@ -6,17 +6,17 @@ import java.util.Vector;
 
 public class Pizzeria {
     private String name;
-    private Vector<Pizza> pizzas;
+    private Vector<Pizza> pizzaSorten;
     private Vector<Zutat> zutaten;
 
     public Pizzeria(String name){
         this.name = name;
-        pizzas = new Vector<>();
+        pizzaSorten = new Vector<>();
         zutaten = new Vector<>();
     }
 
     public void addPizza(Pizza p){
-        pizzas.add(p);
+        pizzaSorten.add(p);
     }
 
     public void addZutat(Zutat z){
@@ -30,7 +30,7 @@ public class Pizzeria {
     }
 
     public void ordnenMenuUndZutaten(){
-        pizzas.sort(new Comparator<Pizza>() {
+        pizzaSorten.sort(new Comparator<Pizza>() {
             @Override
             public int compare(Pizza o1, Pizza o2) {
                 return o1.getId() - o2.getId();
@@ -66,7 +66,7 @@ public class Pizzeria {
             } else {
                 System.out.println("Was darf noch sein?");
             }
-            for (Pizza p : pizzas) {
+            for (Pizza p : pizzaSorten) {
                 System.out.println("    " + String.format("%2d", p.getId()) +
                         " " + String.format("%20s", p.getName()) +
                         " " + String.format("%5.2f€", p.getPreis()));
@@ -80,7 +80,7 @@ public class Pizzeria {
                 try {
                     pizzaID = Integer.valueOf(line);
                     if (pizzaID != 0) {
-                        for (Pizza p : pizzas) {
+                        for (Pizza p : pizzaSorten) {
                             if (p.getId() == pizzaID) {
                                 pizza = new Pizza(p);
                             }
@@ -162,7 +162,7 @@ public class Pizzeria {
     public String toString() {
         return "Pizzeria{" +
                 "name='" + name + '\'' +
-                ",\n pizzas=" + pizzas +
+                ",\n pizzas=" + pizzaSorten +
                 ",\n zutaten=" + zutaten +
                 '}';
     }
