@@ -3,21 +3,28 @@ package Irene.pizza;
 import java.util.Vector;
 
 public class Restaurant {
-    private String name;
-    private Vector<Topping> toppingList;
+    private String restaurantName;
+    private Vector<String> toppingList;
 
-    public Restaurant(String name) {
-        this.name = name;
+    public Restaurant(String restaurantName) {
+        this.restaurantName = restaurantName;
         toppingList = new Vector<>();
     }
 
-    public void addToppings(Vector<Topping> t) {
-            toppingList.addAll(t);
+//   public void addToppings(Topping toppingName, String toppingName) {
+//       toppingList.add(toppingName.getToppingName());
+//    }
+
+    public String getRestaurantName() {
+        return restaurantName;
     }
 
-    public void printToppings() {
-        for (int i = 0; i < toppingList.size(); i++) {
-            System.out.println(toppingList.get(i));
-        }
+    public Vector<String> getToppingList() {
+        return toppingList;
+    }
+
+    @Override
+    public String toString() {
+        return String.valueOf(toppingList);
     }
 }

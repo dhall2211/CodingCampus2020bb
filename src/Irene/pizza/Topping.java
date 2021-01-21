@@ -1,14 +1,12 @@
 package Irene.pizza;
 
-import java.util.Vector;
-
 public class Topping {
-    private String name;
+    private String toppingName;
     private double price;
     private int idNumber;
 
     public Topping(String name, double price, int idNumber) {
-        this.name = name;
+        this.toppingName = toppingName;
         this.price = price;
         this.idNumber = idNumber;
     }
@@ -17,8 +15,12 @@ public class Topping {
         return price;
     }
 
+    public String getToppingName() {
+        return toppingName;
+    }
+
     @Override
     public String toString() {
-        return name + ", idNumber=" + idNumber;
+        return toppingName;
     }
 }
