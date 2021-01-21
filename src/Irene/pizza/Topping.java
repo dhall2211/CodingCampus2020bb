@@ -5,7 +5,7 @@ public class Topping {
     private double price;
     private int idNumber;
 
-    public Topping(String name, double price, int idNumber) {
+    public Topping(String toppingName, int price, int idNumber) {
         this.toppingName = toppingName;
         this.price = price;
         this.idNumber = idNumber;
@@ -22,5 +22,11 @@ public class Topping {
     @Override
     public String toString() {
         return toppingName;
+    }
+
+    public void printStructureToppings(){
+        System.out.printf("%s (%s) ",
+                toppingName,
+                idNumber);
     }
 }
