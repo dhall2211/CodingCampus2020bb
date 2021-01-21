@@ -48,7 +48,7 @@ public class Pizzeria {
         for (int i = 1; i <= 5; i++) {
             System.out.println(customerName + ", Sie können maximal 5 zusätzliche Toppings wählen. Bitte wählen Sie Ihr " + i + ". Topping per Nummer aus, oder beenden Sie die Bestellung mit 0: \n");
             for (Topping oneTopping : toppings) {
-                System.out.println("_ " + oneTopping.getIdNumberTopping() + ": " + oneTopping.getName() + ", " + oneTopping.getPrice() + " Euro.");
+                System.out.println("_" + oneTopping.getIdNumberTopping() + " : " + oneTopping.getName() + ", " + oneTopping.getPrice() + " Euro.");
             }
             System.out.println("_ 0: Bestellung beenden.");
             int temp = scanner.nextInt();
