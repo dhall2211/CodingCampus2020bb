@@ -16,14 +16,6 @@ public class Order {
     }
 
 
-    public void addBasicPizza(int idNumberPizza) {
-        for (BasicPizza oneBasicPizza : basicPizzas) {
-            if (oneBasicPizza.getIdNumberPizza() == idNumberPizza) {
-                this.basicPizzas.add(oneBasicPizza);
-            }
-        }
-    }
-
     public void addTopping(int idNumberTopping) {
         for (Topping oneTopping : toppings) {
             if (oneTopping.getIdNumberTopping() == idNumberTopping) {

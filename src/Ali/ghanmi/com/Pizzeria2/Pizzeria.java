@@ -22,13 +22,11 @@ public class Pizzeria {
         this.toppings = new Vector<>();
         idNumberOrder = 1;
     }
-
     public void addBasicPizza(BasicPizza[] basicPizzas) {
         for (BasicPizza oneBasicPizza : basicPizzas) {
             this.basicPizzas.add(oneBasicPizza);
         }
     }
-
     @Override
     public String toString() {
         return "Pizzeria{" +
@@ -66,6 +64,7 @@ public class Pizzeria {
     }
 
     private void Bestellung() {
+        int counter = 0;
         double totalKosten = 0;
         String[] namestopping = new String[5];
         System.out.println("Herzlich willkommen bei Giovannis. Bitte geben Sie Ihren Vor- und nachname ein");
@@ -94,26 +93,26 @@ public class Pizzeria {
                 switch (topping) {
 
                     case 11, 12, 13, 14, 15:
-                        int counter=0;
                         for (int j = 0; j < toppings.size(); j++) {
                             if (topping == toppings.get(j).getIdNumberTopping()) {
-                                    namestopping[counter] = toppings.get(j).getName();
-                                    totalKosten += toppings.get(j).getPrice();
-                                    counter++;
-                                    System.out.println("deine aktuel Zusatz kosten: " + toppings.get(j).getPrice() +
-                                            " " + Arrays.toString(namestopping));
-                                    System.out.println("total kosten: " + totalKosten);
+                                namestopping[counter] = toppings.get(j).getName();
+                                totalKosten += toppings.get(j).getPrice();
+                                counter++;
+                                System.out.println("deine aktuel Zusatz kosten: " + toppings.get(j).getPrice() +
+                                        " " + Arrays.toString(namestopping));
+                                System.out.println("total kosten: " + totalKosten);
 
                             }
                         }
                         break;
                     case 100:
                         bestellungAbschlisen();
-                        System.out.println("Pizza " + namebasic + ",zusätzlich zutaten: " + Arrays.toString(namestopping)+ " " + totalKosten + " $");
-                        Order newOrder = new Order(this.idNumberOrder,new String[]{namebasic},namestopping);
+                        System.out.println("Pizza " + namebasic + ",zusätzlich zutaten: " + Arrays.toString(namestopping) + " " + totalKosten + " $");
+                        Order newOrder = new Order(this.idNumberOrder, new String[]{namebasic}, namestopping);
                         orders.add(newOrder);
                         idNumberOrder++;
-                        chooseMenuIthem();
+                        System.out.println("möchten Sie weiter PizzaBestellen?");
+                        order();
                         break;
 
 
@@ -121,14 +120,13 @@ public class Pizzeria {
                         salutaion();
                         isOrdering = false;
 
-
                 }
             }
         }
     }
 
     private void bestellungAbschlisen() {
-        System.out.println("ihren Bestellung lautet:");
+        System.out.println("ihren Bestellung lautet:\nBestellNr:" + idNumberOrder);
 
     }
 
@@ -140,9 +138,7 @@ public class Pizzeria {
                 return sc.nextInt();
             }
         }
-
     }
-
 
     private static int chooseMenuIthem() {
         while (true) {
@@ -165,57 +161,4 @@ public class Pizzeria {
     }
 
 }
-
-      /*
-        int idN = this.idNumberOrder;
-        String topname = "";
-
-        System.out.println("Herzlich willkommen bei Giovannis. Bitte geben Sie Ihren Vor- und nachname ein");
-        this.customerName = scanner.nextLine();
-        // choose BasicPizza ---------------------------------------
-        System.out.println(customerName + ", Bitte wählen Sie Ihre BasicPizza per Nummer aus: \n");
-        for (BasicPizza oneBasicPizza : basicPizzas) {
-            System.out.println("_" + oneBasicPizza.getIdNumberPizza() + ": " + oneBasicPizza.getName() + ", " + oneBasicPizza.getPrice() + " Euro.");
-        }
-        System.out.println("_0: Bestellung beenden.");
-        String names = "";
-        int auswahl = (scanner.nextInt());
-        for (int i = 0; i < basicPizzas.size(); i++) {
-            if (auswahl == basicPizzas.get(i).getIdNumberPizza()) {
-                names = basicPizzas.get(i).getName();
-                System.out.println("deine aktuel kosten: " + basicPizzas.get(i).getPrice() + " " + names);
-            } else {
-                System.out.println("Falsche numer bitte veruchen nochmal");
-            }
-            // choose Toppings ------------------------------------------
-            for (int j = 1; j <= 5; j++) {
-                System.out.println(customerName + ", Sie können maximal 5 zusätzliche Toppings wählen. Bitte wählen Sie Ihr " + j + ". Topping per Nummer aus, oder beenden Sie die Bestellung mit 0: \n");
-                for (Topping oneTopping : toppings) {
-                    System.out.println("_" + oneTopping.getIdNumberTopping() + ": " + oneTopping.getName() + ", " + oneTopping.getPrice() + " Euro.");
-                }
-                System.out.println("_ 0: Bestellung beenden.");
-                int temp = scanner.nextInt();
-                if (temp != 0) {
-                    for (int k = 1; k < toppings.size(); k++) {
-                        if (temp == toppings.get(i).getIdNumberTopping()) {
-                            topname = toppings.get(i).getName();
-                        }
-                    }
-                } else {
-
-                    System.out.println("Vielen Dank für Ihre Bestellung.");
-                    break;
-                }
-            }
-            Order newOrder = new Order(this.idNumberOrder, new String[]{names}, new String[]{topname});
-            // add new Order -------------------------------------------
-            orders.add(newOrder);
-            System.out.println(customerName + " Ihren Bestellung nummer: " + newOrder.getIdNumberOrder() + "\n "
-                    + newOrder.getBasicPizzas().toString());
-        }
-        // System.out.println(Arrays.toString(orders.toArray()));
-        // change idNumber for next Order --------------------------
-        */
-
-
 
