@@ -46,16 +46,22 @@ public class Pizzeria {
     }
 
     public void order() {
+        boolean repeat = true;
+        while (repeat) {
+            int menuItem = chooseMenuIthem();
+            switch (menuItem) {
+                case 1:
+                    bestellung();
+                    break;
 
-        int menuItem = chooseMenuIthem();
-        switch (menuItem) {
-            case 1:
-                Bestellung();
-                break;
-
-            case 0:
-                salutaion();
-
+                case 0:
+                    repeat = false;
+                    salutaion();
+                    break;
+                default:
+                    repeat = true;
+                    break;
+            }
         }
     }
 
@@ -63,7 +69,7 @@ public class Pizzeria {
         System.out.println("danke für ihren besuch und aufwiedersehen");
     }
 
-    private void Bestellung() {
+    private void bestellung() {
         int counter = 0;
         double totalKosten = 0;
         String[] namestopping = new String[5];
@@ -85,9 +91,12 @@ public class Pizzeria {
                             System.out.println("deine aktuel kosten: " + basicPizzas.get(i).getPrice() + " " + namebasic);
                         }
                     }
+                    break;
+                case 0:
+                    isOrdering = false;
+                    break;
             }
-            boolean moreToppind = true;
-            while (moreToppind) {
+            while (isOrdering) {
                 int topping = chooseTopping();
 
                 switch (topping) {
@@ -112,13 +121,12 @@ public class Pizzeria {
                         orders.add(newOrder);
                         idNumberOrder++;
                         System.out.println("möchten Sie weiter PizzaBestellen?");
-                        order();
+                        isOrdering = false;
                         break;
 
-
                     case 0:
-                        salutaion();
                         isOrdering = false;
+                        break;
 
                 }
             }
