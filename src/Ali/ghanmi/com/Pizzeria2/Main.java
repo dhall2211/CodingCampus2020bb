@@ -6,9 +6,9 @@ public class Main {
 
         Pizzeria giovannis = new Pizzeria("Giovannis Pizza");
 
-        BasicPizza margherita = new BasicPizza(1, "margherita", 6.0,new String[]{});
-        BasicPizza prosciutto = new BasicPizza(2, "prosciutto", 7.0,new String[]{});
-        BasicPizza funghi = new BasicPizza(3, "funghi", 6.5,new String[]{});
+        BasicPizza margherita = new BasicPizza(1, "margherita", 6.0, new String[]{});
+        BasicPizza prosciutto = new BasicPizza(2, "prosciutto", 7.0, new String[]{});
+        BasicPizza funghi = new BasicPizza(3, "funghi", 6.5, new String[]{});
 
         Topping pepperoni = new Topping(11, "pepperoni", 1.0);
         Topping olive = new Topping(12, "olive", 1.0);
@@ -21,8 +21,8 @@ public class Main {
 
         margherita.addToppingToBasic(new Topping[]{pepperoni, olive});
 
-        giovannis.order();
 
+        giovannis.order();
+     }
     }
 
-}
