@@ -35,4 +35,12 @@ public class PersonFactory {
         }
         return guards;
     }
+
+    public static LinkedList<Visitor> createVisitors(int count) {
+        LinkedList<Visitor> visitors = new LinkedList<>();
+        for (int i = 0; i < count; i++) {
+            visitors.add(PersonFactory.createVisitor());
+        }
+        return visitors;
+    }
 }

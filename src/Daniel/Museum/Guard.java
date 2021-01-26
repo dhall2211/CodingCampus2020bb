@@ -10,14 +10,6 @@ public class Guard {
         this.lastName = lastName;
     }
 
-    @Override
-    public String toString() {
-        return "Guard{" +
-                "firstName='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'' +
-                '}';
-    }
-
     public void visitRoom(Room room) {
         if(this.room != null){
             this.room.removeGuard(this);
@@ -25,5 +17,13 @@ public class Guard {
         room.addGuard(this);
         this.room = room;
         System.out.println("Guard " + firstName + " " + lastName + " moves to room " + room.getId());
+    }
+
+    @Override
+    public String toString() {
+        return "Guard{" +
+                "firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                '}';
     }
 }

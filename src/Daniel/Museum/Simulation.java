@@ -8,16 +8,17 @@ import Daniel.Util.CollectionUtil;
 public class Simulation {
     public static void main(String[] args) {
         var rooms = RoomFactory.createRooms(4);
-        Museum monastery = new Museum("Kloster Riedenburg", rooms);
+        var startingRoom = rooms.get(0);
+        Museum monastery = new Museum("Kloster Riedenburg", rooms, startingRoom, 9, 16, 17);
 
         var guards = PersonFactory.createGuards(3);
-        var startingRoom = rooms.get(0);
         for (var guard : guards) {
             guard.visitRoom(startingRoom);
         }
 
-        for (int i = 0; i < 5; i++) {
-            monastery.nextSimulationStep();
+        Integer maxGuestsPerTick = 4;
+        for (int tick = 1; tick < monastery.getTicksUntilClose(); tick++) {
+            monastery.nextSimulationStep(tick, maxGuestsPerTick);
         }
     }
 
