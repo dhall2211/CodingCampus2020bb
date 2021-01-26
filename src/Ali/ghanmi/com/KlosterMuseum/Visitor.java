@@ -70,12 +70,22 @@ public class Visitor {
                     (new Random().nextInt(60) + 15));
             visitorEntry.add(v);
             visitorCounter++;
+          //  moveVisitor(visitorEntry,rooms);
 
         }
         System.out.println(Arrays.toString(visitorEntry.toArray()) + " " + visitorCounter);
         System.out.println();
     }
-public  void moveVisitor(){
+   public static void moveVisitor(Vector<Visitor> visitors,Vector<Room> rooms){
+    for (Visitor oneVisitor: visitors) {
+        for (Room oneRoom: rooms) {
+            Random random = new Random();
+           oneRoom.addVisitorToRoom(oneVisitor);
+
+        }
+
+    }
+
 
 
 }
