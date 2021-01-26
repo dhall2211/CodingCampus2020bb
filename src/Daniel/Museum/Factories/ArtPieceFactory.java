@@ -1,4 +1,6 @@
-package Daniel.Museum;
+package Daniel.Museum.Factories;
+
+import Daniel.Museum.ArtPiece;
 
 import java.nio.charset.Charset;
 import java.util.Calendar;
