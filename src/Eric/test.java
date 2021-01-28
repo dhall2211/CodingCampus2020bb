@@ -1,14 +1,19 @@
 package Eric;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Scanner;
-import java.util.Vector;
+import java.util.*;
 
 class testInit {
 
     public static void main(String[] args) {
 
+        Vector<String > list = new Vector<>();
+        list.add("2er");
+        list.add("3z5");
+
+        System.out.println(list.get(0).substring(1,2));
+        list.sort((o1, o2) -> o2.substring(1,2).compareTo(o1.substring(1,2)));
+
+        System.out.println(list);
         // counter initialisieren
         int toppingCounter = 2;
 
