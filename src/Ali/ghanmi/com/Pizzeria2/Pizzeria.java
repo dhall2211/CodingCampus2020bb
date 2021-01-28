@@ -21,6 +21,7 @@ public class Pizzeria {
         this.basicPizzas = new Vector<>();
         this.toppings = new Vector<>();
         idNumberOrder = 1;
+        customerName = null;
     }
     public void addBasicPizza(BasicPizza[] basicPizzas) {
         for (BasicPizza oneBasicPizza : basicPizzas) {
@@ -73,8 +74,11 @@ public class Pizzeria {
         int counter = 0;
         double totalKosten = 0;
         String[] namestopping = new String[5];
-        System.out.println("Herzlich willkommen bei Giovannis. Bitte geben Sie Ihren Vor- und nachname ein");
-        this.customerName = scanner.nextLine();
+
+        if(customerName == null) {
+            System.out.println("Herzlich willkommen bei Giovannis. Bitte geben Sie Ihren Vor- und nachname ein");
+            this.customerName = scanner.nextLine();
+        }
         // choose BasicPizza ---------------------------------------
         System.out.println(customerName + ", Bitte wählen Sie Ihre BasicPizza per Nummer aus: \n");
         // choosePizza();
