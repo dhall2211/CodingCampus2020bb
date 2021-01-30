@@ -9,6 +9,10 @@ public class Simulation {
     public static void main(String[] args) {
         var rooms = RoomFactory.createRooms(4);
         var startingRoom = rooms.get(0);
+        int artPiecesCount = 5;
+        for (var room : rooms) {
+            room.addRandomArtPieces(artPiecesCount);
+        }
         Museum monastery = new Museum("Kloster Riedenburg", rooms, startingRoom, 9, 16, 17);
 
         var guards = PersonFactory.createGuards(3);

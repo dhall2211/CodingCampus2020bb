@@ -1,35 +1,35 @@
 package Daniel.Museum;
 
+import Daniel.Museum.Factories.ArtPieceFactory;
+
 import java.util.LinkedList;
 import java.util.Random;
 
 public class Room {
     private String id;
     private LinkedList<ArtPiece> artPieces;
-    private LinkedList<Guard> guards;
-    private LinkedList<Visitor> visitors;
+    private LinkedList<Person> persons;
+    private static Random random = new Random(System.currentTimeMillis());
 
     public Room(String id) {
         this.id = id;
         this.artPieces = new LinkedList<>();
-        this.guards = new LinkedList<>();
-        this.visitors = new LinkedList<>();
+        this.persons = new LinkedList<>();
     }
 
-    public void addGuard(Guard guard) {
-        guards.add(guard);
+    public void addPerson(Person person) {
+        persons.add(person);
     }
 
-    public void removeGuard(Guard guard) {
-        guards.remove(guard);
+    public void removePerson(Person person) {
+        persons.remove(person);
     }
 
-    public void moveGuards(LinkedList<Room> rooms) {
-        var random = new Random();
-        var guards = new LinkedList<>(this.guards);
-        for (var guard : guards) {
+    public void movePersons(LinkedList<Room> rooms) {
+        var persons = new LinkedList<>(this.persons);
+        for (var person : persons) {
             var randomRoom = rooms.get(random.nextInt(rooms.size()));
-            guard.visitRoom(randomRoom);
+            person.visitRoom(randomRoom);
         }
     }
 
@@ -37,31 +37,19 @@ public class Room {
         return id;
     }
 
-    public void removeVisitor(Visitor visitor) {
-        visitors.remove(visitor);
-    }
-
-    public void addVisitor(Visitor visitor) {
-        visitors.add(visitor);
-    }
-
-    public void moveVisitors(LinkedList<Room> rooms) {
-        var random = new Random();
-        var visitors = new LinkedList<>(this.visitors);
-        for (var visitor : visitors) {
-            if(visitor.getVisitedRoomsCount() >= rooms.size() * 0.8){
-                visitor.leaveMuseum();
+    public void removeAllPersons(Room startingRoom) {
+        var persons = new LinkedList<>(this.persons);
+        for (var person : persons) {
+            if(person.getClass().isAssignableFrom(IVisitor.class)){
+                ((IVisitor) person).leaveMuseum();
             }
-            var randomRoom = rooms.get(random.nextInt(rooms.size()));
-            visitor.visitRoom(randomRoom);
+            if(person.getClass().isAssignableFrom(Guard.class)){
+                person.visitRoom(startingRoom);
+            }
         }
     }
 
-    public void removeAllPersons() {
-        var visitors = new LinkedList<>(this.visitors);
-        for (var visitor : visitors) {
-            visitor.leaveMuseum();
-        }
-        // TODO reset guards position
+    public void addRandomArtPieces(int artPiecesCount) {
+        this.artPieces = ArtPieceFactory.createArtPieces(artPiecesCount);
     }
 }

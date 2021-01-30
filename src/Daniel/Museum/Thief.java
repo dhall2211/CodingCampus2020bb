@@ -1,12 +1,10 @@
 package Daniel.Museum;
 
-public class Thief {
-    private String firstName;
-    private String lastName;
+public class Thief extends Person implements IVisitor {
+    private ArtPiece observedArtPiece;
 
     public Thief(String firstName, String lastName) {
-        this.firstName = firstName;
-        this.lastName = lastName;
+        super(firstName, lastName, PersonType.THIEF);
     }
 
     @Override
@@ -15,5 +13,19 @@ public class Thief {
                 "firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 '}';
+    }
+
+    @Override
+    public void leaveMuseum() {
+        if(this.room != null){
+            this.room.removePerson(this);
+        }
+        this.room = null;
+        System.out.println("Thief " + firstName + " " + lastName + " leaves the museum.");
+    }
+
+    @Override
+    public void observeArtPiece(ArtPiece artPiece) {
+        observedArtPiece = artPiece;
     }
 }

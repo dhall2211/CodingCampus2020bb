@@ -1,37 +1,16 @@
 package Daniel.Museum;
 
-import java.util.HashSet;
-import java.util.Set;
-
-public class Visitor {
-    private String firstName;
-    private String lastName;
-    private Room room;
-    private HashSet<Room> visitedRooms;
+public class Visitor extends Person implements IVisitor {
+    private ArtPiece observedArtPiece;
 
     public Visitor(String firstName, String lastName) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.visitedRooms = new HashSet<>();
+        super(firstName, lastName, PersonType.VISITOR);
     }
 
-    public void visitRoom(Room room) {
-        if(this.room != null){
-            this.room.removeVisitor(this);
-        }
-        room.addVisitor(this);
-        this.room = room;
-        visitedRooms.add(room);
-        System.out.println("Visitor " + firstName + " " + lastName + " moves to room " + room.getId());
-    }
-
-    public int getVisitedRoomsCount(){
-        return visitedRooms.size();
-    }
-
+    @Override
     public void leaveMuseum() {
         if(this.room != null){
-            this.room.removeVisitor(this);
+            this.room.removePerson(this);
         }
         this.room = null;
         System.out.println("Visitor " + firstName + " " + lastName + " leaves the museum.");
@@ -43,5 +22,10 @@ public class Visitor {
                 "firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 '}';
+    }
+
+    @Override
+    public void observeArtPiece(ArtPiece artPiece) {
+        observedArtPiece = artPiece;
     }
 }
