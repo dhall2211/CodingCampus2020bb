@@ -1,12 +1,8 @@
 package Daniel.Museum;
 
-public class Thief {
-    private String firstName;
-    private String lastName;
-
+public class Thief extends ExternalPerson {
     public Thief(String firstName, String lastName) {
-        this.firstName = firstName;
-        this.lastName = lastName;
+        super(firstName, lastName, PersonType.THIEF);
     }
 
     @Override

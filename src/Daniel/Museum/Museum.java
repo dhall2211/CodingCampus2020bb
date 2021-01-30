@@ -32,8 +32,7 @@ public class Museum {
 
     public void nextSimulationStep(int tick, int maxGuestsPerTick) {
         for (var room : rooms) {
-            room.moveGuards(rooms);
-            room.moveVisitors(rooms);
+            room.movePersons(rooms);
         }
 
         var random = new Random();
@@ -47,7 +46,7 @@ public class Museum {
 
         if(tick == getTicksUntilClose()-1){
             for (var room : rooms) {
-                room.removeAllPersons();
+                room.removeAllPersons(startingRoom);
             }
         }
     }
