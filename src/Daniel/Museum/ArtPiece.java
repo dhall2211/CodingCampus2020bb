@@ -17,6 +17,10 @@ public class ArtPiece {
         this.price = price;
     }
 
+    public Integer getPrice() {
+        return price;
+    }
+
     @Override
     public String toString() {
         return "ArtPiece{" +
@@ -26,5 +30,9 @@ public class ArtPiece {
                 ", createdDate=" + createdDate +
                 ", price=" + price +
                 '}';
+    }
+
+    public String getTitle() {
+        return title;
     }
 }

@@ -6,10 +6,10 @@ import java.util.LinkedList;
 import java.util.Random;
 
 public class Room {
+    private static Random random = new Random(System.currentTimeMillis());
     private String id;
     private LinkedList<ArtPiece> artPieces;
     private LinkedList<Person> persons;
-    private static Random random = new Random(System.currentTimeMillis());
 
     public Room(String id) {
         this.id = id;
@@ -29,7 +29,11 @@ public class Room {
         var persons = new LinkedList<>(this.persons);
         for (var person : persons) {
             var randomRoom = rooms.get(random.nextInt(rooms.size()));
-            person.visitRoom(randomRoom);
+            if (person instanceof ExternalPerson && person.getVisitedRoomsCount() >= rooms.size() * 0.8) {
+                ((ExternalPerson) person).leaveMuseum();
+            } else {
+                person.visitRoom(randomRoom);
+            }
         }
     }
 
@@ -40,10 +44,10 @@ public class Room {
     public void removeAllPersons(Room startingRoom) {
         var persons = new LinkedList<>(this.persons);
         for (var person : persons) {
-            if(person.getClass().isAssignableFrom(IVisitor.class)){
-                ((IVisitor) person).leaveMuseum();
+            if (person instanceof ExternalPerson) {
+                ((ExternalPerson) person).leaveMuseum();
             }
-            if(person.getClass().isAssignableFrom(Guard.class)){
+            if (person instanceof Guard) {
                 person.visitRoom(startingRoom);
             }
         }
@@ -51,5 +55,9 @@ public class Room {
 
     public void addRandomArtPieces(int artPiecesCount) {
         this.artPieces = ArtPieceFactory.createArtPieces(artPiecesCount);
+    }
+
+    public void addArtPiece(ArtPiece artPiece) {
+        artPieces.add(artPiece);
     }
 }

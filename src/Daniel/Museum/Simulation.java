@@ -1,9 +1,7 @@
 package Daniel.Museum;
 
-import Daniel.Museum.Factories.ArtPieceFactory;
 import Daniel.Museum.Factories.PersonFactory;
 import Daniel.Museum.Factories.RoomFactory;
-import Daniel.Util.CollectionUtil;
 
 public class Simulation {
     public static void main(String[] args) {
@@ -13,7 +11,7 @@ public class Simulation {
         for (var room : rooms) {
             room.addRandomArtPieces(artPiecesCount);
         }
-        Museum monastery = new Museum("Kloster Riedenburg", rooms, startingRoom, 9, 16, 17);
+        Museum monastery = new Museum("Kloster Riedenburg", rooms, startingRoom, 9, 16, 17, new Curator("John", "Smith"));
 
         var guards = PersonFactory.createGuards(3);
         for (var guard : guards) {
@@ -22,20 +20,7 @@ public class Simulation {
 
         Integer maxGuestsPerTick = 4;
         for (int tick = 1; tick < monastery.getTicksUntilClose(); tick++) {
-            monastery.nextSimulationStep(tick, maxGuestsPerTick);
+            monastery.nextSimulationStep(tick, maxGuestsPerTick, 100);
         }
-    }
-
-    private static void testMethods() {
-        var randomArtPiece = ArtPieceFactory.createArtPiece();
-        System.out.println(randomArtPiece);
-
-        System.out.println(PersonFactory.createVisitor());
-        System.out.println(PersonFactory.createVisitor());
-        System.out.println(PersonFactory.createThief());
-        System.out.println(PersonFactory.createThief());
-
-        var guards = PersonFactory.createGuards(3);
-        CollectionUtil.printCollection(guards, ", ");
     }
 }
