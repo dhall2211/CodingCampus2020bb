@@ -25,7 +25,7 @@ public class Simulation {
     }
 
     private static void testMethods() {
-        var randomArtPiece = ArtPieceFactory.createArtPiece();
+        var randomArtPiece = ArtPieceFactory.createArtPiece(1);
         System.out.println(randomArtPiece);
 
         System.out.println(PersonFactory.createVisitor());
