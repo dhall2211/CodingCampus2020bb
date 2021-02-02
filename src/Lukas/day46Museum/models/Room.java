@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.Random;
 
 import Lukas.day46Museum.abstracts.Person;
-import Lukas.day46Museum.enums.PersonType;
 
 
 public class Room {
@@ -21,13 +20,13 @@ public class Room {
 	// -- METHODS ----------------------------------------------------------------------------------
 	public void releaseSatisfiedPersons() {
 		for (Person person : getCopyOfPersons()) {
-			if (person.getType() == PersonType.VISITOR) {
+			if (person instanceof Visitor) {
 				Visitor visitor = (Visitor) person;
 				if (visitor.isSatisfied()) {
 					System.out.println(visitor.getInfo() + " is satisfied and leaves");
 					persons.remove(visitor);
 				}
-			} else if (person.getType() == PersonType.THIEF) {
+			} else if (person instanceof Thief) {
 				Thief thief = (Thief) person;
 				if (thief.isSatisfied()) {
 					System.out.println(thief.getInfo() + " is satisfied and leaves");
@@ -48,7 +47,7 @@ public class Room {
 
 	public void sendPersonsHome() {
 		for (Person person : persons) {
-			if (person.getType() == PersonType.VISITOR || person.getType() == PersonType.THIEF) {
+			if ((person instanceof Visitor) || (person instanceof Thief)) {
 				System.out.println(person.getInfo() + " goes home");
 			}
 		}
@@ -83,7 +82,7 @@ public class Room {
 		boolean onlyThievesInRoom = true;
 
 		for (Person person : persons) {
-			if (person.getType() != PersonType.THIEF) {
+			if (!(person instanceof Thief)) {
 				onlyThievesInRoom = false;
 				break;
 			}

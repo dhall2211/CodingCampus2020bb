@@ -5,7 +5,6 @@ import java.util.Calendar;
 import java.util.Random;
 
 import Lukas.day46Museum.abstracts.Person;
-import Lukas.day46Museum.enums.PersonType;
 
 
 public class Museum {
@@ -48,10 +47,10 @@ public class Museum {
 				person.visitRoom(getRandomRoom());
 			}
 
-			if (person.getType() == PersonType.THIEF) {
+			if (person instanceof Thief) {
 				Thief thief = (Thief) person;
 				thief.observeArtPiece(thief.getRoom().getRandomArtPiece());
-			} else if (person.getType() == PersonType.VISITOR) {
+			} else if (person instanceof Visitor) {
 				Visitor visitor = (Visitor) person;
 				visitor.observeArtPiece(visitor.getRoom().getRandomArtPiece());
 			}
