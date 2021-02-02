@@ -3,7 +3,6 @@ package Ali.ghanmi.com.Museum;
 import Ali.ghanmi.com.Museum.Factories.ArtPieceFactory;
 import Ali.ghanmi.com.Museum.Factories.PersonFactory;
 import Ali.ghanmi.com.Museum.Factories.RoomFactory;
-//import Daniel.Util.CollectionUtil;
 import Ali.ghanmi.com.Util.CollectionUtil;
 public class Simulation {
     public static void main(String[] args) {
@@ -19,8 +18,6 @@ public class Simulation {
         Integer maxGuestsPerTick = 2;
         for (int tick = 1; tick < monastery.getTicksUntilClose(); tick++) {
             monastery.nextSimulationStep(tick, maxGuestsPerTick);
-
-
         }
     }
 
