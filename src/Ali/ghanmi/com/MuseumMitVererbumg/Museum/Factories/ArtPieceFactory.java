@@ -1,6 +1,6 @@
-package Ali.ghanmi.com.Museum.Factories;
+package Ali.ghanmi.com.MuseumMitVererbumg.Museum.Factories;
 
-import Ali.ghanmi.com.Museum.ArtPiece;
+import Ali.ghanmi.com.MuseumMitVererbumg.Museum.ArtPiece;
 
 import java.util.Date;
 import java.util.LinkedList;

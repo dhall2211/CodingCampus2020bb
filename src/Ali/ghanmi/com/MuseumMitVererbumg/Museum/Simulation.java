@@ -1,26 +1,28 @@
-package Ali.ghanmi.com.Museum;
+package Ali.ghanmi.com.MuseumMitVererbumg.Museum;
 
-import Ali.ghanmi.com.Museum.Factories.ArtPieceFactory;
-import Ali.ghanmi.com.Museum.Factories.PersonFactory;
-import Ali.ghanmi.com.Museum.Factories.RoomFactory;
-//import Daniel.Util.CollectionUtil;
-import Ali.ghanmi.com.Util.CollectionUtil;
+import Ali.ghanmi.com.MuseumMitVererbumg.Museum.Factories.ArtPieceFactory;
+import Ali.ghanmi.com.MuseumMitVererbumg.Museum.Factories.PersonFactory;
+import Ali.ghanmi.com.MuseumMitVererbumg.Museum.Factories.RoomFactory;
+import Daniel.Util.CollectionUtil;
+
 public class Simulation {
     public static void main(String[] args) {
-        var rooms = RoomFactory.createRooms(3);
+        var rooms = RoomFactory.createRooms(4);
         var startingRoom = rooms.get(0);
+        int artPiecesCount = 5;
+        for (var room : rooms) {
+            room.addRandomArtPieces(artPiecesCount);
+        }
         Museum monastery = new Museum("Kloster Riedenburg", rooms, startingRoom, 9, 16, 17);
 
-        var guards = PersonFactory.createGuards(1);
+        var guards = PersonFactory.createGuards(3);
         for (var guard : guards) {
             guard.visitRoom(startingRoom);
         }
 
-        Integer maxGuestsPerTick = 2;
+        Integer maxGuestsPerTick = 4;
         for (int tick = 1; tick < monastery.getTicksUntilClose(); tick++) {
             monastery.nextSimulationStep(tick, maxGuestsPerTick);
-
-
         }
     }
 

@@ -1,11 +1,11 @@
-package Ali.ghanmi.com.Museum;
+package Ali.ghanmi.com.MuseumMitVererbumg.Museum;
 
-import Ali.ghanmi.com.Museum.Factories.ArtPieceFactory;
+import Ali.ghanmi.com.MuseumMitVererbumg.Museum.Factories.ArtPieceFactory;
 
 import java.util.LinkedList;
 import java.util.Random;
 
-public class Room implements ISimulation {
+public class Room {
     private String id;
     private LinkedList<ArtPiece> artPieces;
     private LinkedList<Person> persons;
@@ -51,10 +51,5 @@ public class Room implements ISimulation {
 
     public void addRandomArtPieces(int artPiecesCount) {
         this.artPieces = ArtPieceFactory.createArtPieces(artPiecesCount);
-    }
-
-    @Override
-    public void simulate(int tick) {
-
     }
 }

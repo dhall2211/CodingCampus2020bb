@@ -1,4 +1,4 @@
-package Ali.ghanmi.com.Museum;
+package Ali.ghanmi.com.MuseumMitVererbumg.Museum;
 
 public class Guard extends Person {
     private Room room;

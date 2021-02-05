@@ -1,4 +1,4 @@
-package Ali.ghanmi.com.Museum;
+package Ali.ghanmi.com.MuseumMitVererbumg.Museum;
 
 public class Thief extends ExternalPerson {
     public Thief(String firstName, String lastName) {

@@ -1,8 +1,8 @@
-package Ali.ghanmi.com.Museum.Factories;
+package Ali.ghanmi.com.MuseumMitVererbumg.Museum.Factories;
 
-import Ali.ghanmi.com.Museum.Guard;
-import Ali.ghanmi.com.Museum.Thief;
-import Ali.ghanmi.com.Museum.Visitor;
+import Ali.ghanmi.com.MuseumMitVererbumg.Museum.Guard;
+import Ali.ghanmi.com.MuseumMitVererbumg.Museum.Thief;
+import Ali.ghanmi.com.MuseumMitVererbumg.Museum.Visitor;
 
 import java.util.LinkedList;
 import java.util.Random;

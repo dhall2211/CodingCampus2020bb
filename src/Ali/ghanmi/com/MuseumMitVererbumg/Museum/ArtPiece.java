@@ -1,8 +1,8 @@
-package Ali.ghanmi.com.Museum;
+package Ali.ghanmi.com.MuseumMitVererbumg.Museum;
 
 import java.util.Date;
 
-public class ArtPiece{
+public class ArtPiece {
    private String type;
    private String title;
    private String artist;
@@ -27,5 +27,4 @@ public class ArtPiece{
                 ", price=" + price +
                 '}';
     }
-
 }

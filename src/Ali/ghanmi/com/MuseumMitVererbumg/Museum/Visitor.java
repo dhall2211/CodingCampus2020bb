@@ -1,8 +1,6 @@
-package Ali.ghanmi.com.Museum;
+package Ali.ghanmi.com.MuseumMitVererbumg.Museum;
 
 public class Visitor extends ExternalPerson {
-
-
     public Visitor(String firstName, String lastName) {
         super(firstName, lastName, PersonType.VISITOR);
     }
