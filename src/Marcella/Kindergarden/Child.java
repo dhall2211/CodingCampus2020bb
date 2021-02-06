@@ -2,7 +2,7 @@ package Marcella.Kindergarden;
 
 import java.util.Random;
 
-public class Child extends Person implements IDoSomething, IPrintAction {
+public class Child extends Being {
 
     private int happyIndex;
     private static Random random = new Random(System.nanoTime());
@@ -37,11 +37,6 @@ public class Child extends Person implements IDoSomething, IPrintAction {
                 System.out.println(this.name + TypeOfAction.PLAYBAD);
                 return;
         }
-
     }
 
-    @Override
-    public String printAction() {
-        return null;
-    }
 }

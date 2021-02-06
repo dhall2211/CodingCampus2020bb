@@ -1,6 +1,6 @@
 package Marcella.Kindergarden;
 
-public interface IDoSomething {
+public interface ISimulation {
 
     public void doSomething();
 
