@@ -13,17 +13,38 @@ public class Kind extends Person {
 
     @Override
     public void printSimulation(Vector<ISimulation> friends) {
+        boolean isGlücklich;
+        isGlücklich = false;
         ISimulation myFriend = friends.get(random.nextInt(friends.size()));
         if (myFriend instanceof Kind) {
             myFriend.interaction(this);
+            isGlücklich =true;
         }
-//        System.out.println("kind: " + name + " ist glücklich");
-//        System.out.println("kind: " + name + " ist nicht glücklich");
+        if(myFriend instanceof Hund){
+            myFriend.interaction(this);
+        }if
+            (myFriend instanceof Katze){
+            myFriend.interaction(this);
+            isGlücklich =true;
+
+        }
+       //System.out.println("kind: " + name + " ist glücklich");
+      // System.out.println("kind: " + name + " ist nicht glücklich");
+
     }
+
 
     @Override
     public void interaction(ISimulation friend) {
-        System.out.println(name + " begegnet " + friend.getName());
+        if (friend instanceof Kind) {
+            System.out.println(name + " begegnet sein mitschüler " + friend.getName() + " und Spielen glücklich zusammen");
+        }
+        if (friend instanceof Hund) {
+            System.out.println(name + " begegnet das Hund " + friend.getName() + " und ist erschrekt");
+        }
+        if (friend instanceof Katze) {
+            System.out.println(name + " begegnet die Katze " + friend.getName() + " und Es macht ihn Glücklich");
+        }
     }
 
     @Override

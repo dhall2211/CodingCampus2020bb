@@ -1,8 +1,11 @@
 package Ali.ghanmi.com.kinderGarten;
 
+import java.util.Random;
 import java.util.Vector;
 
 public class KinderGäertner extends Person {
+    private Random random = new Random();
+
     public KinderGäertner(String name) {
         super(name);
     }
@@ -14,8 +17,13 @@ public class KinderGäertner extends Person {
 
     @Override
     public void printSimulation(Vector<ISimulation> friends) {
-        System.out.println("kindergärtner: "+ name+" Passt auf dem kind ");
+        ISimulation myFriend = friends.get(random.nextInt(friends.size()));
+        if (myFriend instanceof Kind) {
+            myFriend.interaction(this);
+        }
+
     }
+
 
     @Override
     public void interaction(ISimulation friend) {
@@ -26,4 +34,5 @@ public class KinderGäertner extends Person {
     public String getName() {
         return name;
     }
+
 }

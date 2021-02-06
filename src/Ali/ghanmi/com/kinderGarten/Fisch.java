@@ -9,7 +9,7 @@ public class Fisch extends Tiere{
 
     @Override
     public void printSimulation(Vector<ISimulation> friends) {
-        System.out.println("Fisch: "+name+" Macht nicht");
+      //  System.out.println("Fisch: "+name+" Macht nicht");
     }
 
     @Override
