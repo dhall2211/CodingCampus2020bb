@@ -6,4 +6,5 @@ public abstract class Person implements ISimulation{
     public Person(String name) {
         this.name = name;
     }
+
 }

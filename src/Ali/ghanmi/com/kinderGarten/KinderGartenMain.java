@@ -4,39 +4,27 @@ import java.util.Vector;
 
 public class KinderGartenMain {
     public static void main(String[] args) {
-
-
-
+        Vector<ISimulation> simulation = new Vector<>();
+/*
         Vector<Tiere> tieres = new Vector<>();
+        Vector<Kind> kinds = new Vector<>();
+        Vector<KinderGäertner> kinderGäertners = new Vector<>();
+*/
+        simulation.add(new KinderGäertner("Manuel"));
+        simulation.add(new KinderGäertner("Manuel"));
 
-        Vector<Person> personen = new Vector<>();
-        personen.add(new KinderGäertner("Manuel"));
-        personen.add(new Kind("Alex"));
-
-
-        tieres.add(new Katze("fritz"));
-        tieres.add(new Katze("Franz"));
-        tieres.add(new Hund("Bello"));
-        tieres.add(new Hund("Bellaaaaaaaaaaaa"));
-        tieres.add(new Fisch("Memo"));
-
-        Vector<ISimulation> lebewesens = new Vector<>();
-        lebewesens.add(new KinderGäertner("Manuel"));
-        lebewesens.add(new Kind("Alex"));
+        simulation.add(new Kind("Alex"));
+        simulation.add(new Kind("Alexandra"));
+        simulation.add(new Kind("Felix"));
+        simulation.add(new Kind("Anton"));
 
 
-        lebewesens.add(new Katze("fritz"));
-        lebewesens.add(new Katze("Franz"));
-        lebewesens.add(new Hund("Bello"));
-        lebewesens.add(new Hund("Bellaaaaaaaaaaaa"));
-        lebewesens.add(new Fisch("Memo"));
+        simulation.add(new Katze("Franz"));
+        simulation.add(new Hund("Bello"));
+        simulation.add(new Fisch("Memo"));
 
-
-        for (ISimulation l : lebewesens) {
-            l.printSimulation();
-        }
-     //   for (Person  p: personen) {
-      //      p.printSimulation();
+        for (ISimulation is: simulation) {
+            is.printSimulation(simulation);
         }
     }
-
+}

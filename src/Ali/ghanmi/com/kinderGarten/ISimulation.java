@@ -1,6 +1,12 @@
 package Ali.ghanmi.com.kinderGarten;
 
+import java.util.Vector;
+
 public interface ISimulation {
-    void printSimulation();
+    public void printSimulation(Vector<ISimulation> friends);
+
+    public void interaction(ISimulation friend);
+
+    public String getName();
 
 }
