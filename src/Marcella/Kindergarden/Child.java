@@ -26,15 +26,15 @@ public class Child extends Being {
         switch (randomChoice) {
             case 0:
                 happyIndex++;
-                System.out.println(this.name + TypeOfAction.CONTACT);
+                System.out.println(this.name + TypeOfAction.CONTACT + " (HappyIndex: " + this.happyIndex + ")");
                 return;
             case 1:
                 happyIndex++;
-                System.out.println(this.name + TypeOfAction.PLAYGOOD);
+                System.out.println(this.name + TypeOfAction.PLAYGOOD + " (HappyIndex: " + this.happyIndex + ")");
                 return;
             case 2:
                 happyIndex--;
-                System.out.println(this.name + TypeOfAction.PLAYBAD);
+                System.out.println(this.name + TypeOfAction.PLAYBAD + " (HappyIndex: " + this.happyIndex + ")");
                 return;
         }
     }

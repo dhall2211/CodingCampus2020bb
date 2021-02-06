@@ -1,5 +1,8 @@
 package Marcella.Kindergarden;
 
+import java.util.Comparator;
+import java.util.Vector;
+
 public class Ped extends Being {
 
     public Ped(Kindergarden kindergarden, String name, String type) {
@@ -8,14 +11,10 @@ public class Ped extends Being {
 
     @Override
     public void doSomething() {
-        int unhappiestChildIndex = kindergarden.getChildren().get(0).getHappyIndex();
-        for (int i = 0; i < kindergarden.getChildren().size(); ++i) {
-            if (unhappiestChildIndex > kindergarden.getChildren().get(i).getHappyIndex()) {
-                unhappiestChildIndex = kindergarden.getChildren().get(i).getHappyIndex();
-            }
-        }
+        Vector<Child> children = new Vector<>(kindergarden.getChildren());
+        children.sort(Comparator.comparing(Child::getHappyIndex));
 
-        Child unhappiestChild = kindergarden.getChildren().get(0);
+        Child unhappiestChild = children.get(0);
         System.out.println(this.name + " kümmert sich um " + unhappiestChild.name);
     }
 

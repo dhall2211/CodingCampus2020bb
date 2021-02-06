@@ -32,9 +32,11 @@ public class Kindergarden {
 
     public void generateChildren(int numberOfChildren) {
         for (int i = 0; i < numberOfChildren; i++) {
-            String[] name = {"Peter", "Paul", "Lisa", "Anna", "Victor", "Tatjana", "Zoe"};
-            int[] happyIndex = {1,2,3,4,5,6,7,8,9,10};
-            Child newChild = new Child(this, name[random.nextInt(name.length)], "Kind", happyIndex[random.nextInt(happyIndex.length)]);
+            String[] firstName = {"Peter", "Paul", "Lisa", "Anna", "Victor", "Tatjana", "Zoe"};
+            String[] lastName = {"M", "O", "F", "L", "P", "A", "H", "T", "C", "I", "V"};
+            String name = (firstName[random.nextInt(firstName.length)] + " " + lastName[random.nextInt(lastName.length)]);
+            int[] happyIndex = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+            Child newChild = new Child(this, name, "Kind", happyIndex[random.nextInt(happyIndex.length)]);
             this.children.add(newChild);
         }
     }
@@ -44,14 +46,14 @@ public class Kindergarden {
     }
 
     public void runSimultation() {
+        for (Animal oneAnimal : animals) {
+            oneAnimal.doSomething();
+        }
         for (Child oneChild : children) {
             oneChild.doSomething();
         }
         for (Ped onePed : peds) {
             onePed.doSomething();
-        }
-        for (Animal oneAnimal : animals) {
-            oneAnimal.doSomething();
         }
     }
 
