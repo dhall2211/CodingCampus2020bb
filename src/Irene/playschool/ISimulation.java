@@ -5,5 +5,15 @@ public interface ISimulation {
 
     public void interaction(ISimulation target);
 
+    public void auntieInteraction();
+
+    public String getChildName();
+
     public String getName();
+
+//    public Auntie getName();
+
+    public int getMood();
+
+    public void setMood(int mood);
 }

@@ -1,6 +1,6 @@
 package Marcella.Kindergarden;
 
-public class Ped extends Person implements IDoSomething, IPrintAction {
+public class Ped extends Being {
 
     public Ped(Kindergarden kindergarden, String name, String type) {
         super(kindergarden, name, type);
@@ -19,8 +19,4 @@ public class Ped extends Person implements IDoSomething, IPrintAction {
         System.out.println(this.name + " kümmert sich um " + unhappiestChild.name);
     }
 
-    @Override
-    public String printAction() {
-        return null;
-    }
 }

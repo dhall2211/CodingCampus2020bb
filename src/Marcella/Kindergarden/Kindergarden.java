@@ -22,13 +22,9 @@ public class Kindergarden {
         return children;
     }
 
-    public void addAnimal(Animal animal) {
-        this.animals.add(animal);
-    }
-
     public void generatePeds(int numberOfPeds) {
         for (int i = 0; i < numberOfPeds; i++) {
-            String[] name = {"Hans", "Gerlinde", "Tom", "Victor", "Tatjana"};
+            String[] name = {"Hans", "Gerlinde", "Tom"};
             Ped newPed = new Ped(this, name[random.nextInt(name.length)], "Pädagog*in");
             this.peds.add(newPed);
         }
@@ -41,6 +37,10 @@ public class Kindergarden {
             Child newChild = new Child(this, name[random.nextInt(name.length)], "Kind", happyIndex[random.nextInt(happyIndex.length)]);
             this.children.add(newChild);
         }
+    }
+
+    public void addAnimal(Animal animal) {
+        this.animals.add(animal);
     }
 
     public void runSimultation() {

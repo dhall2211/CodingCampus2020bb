@@ -1,18 +1,21 @@
 package Marcella.Kindergarden;
 
+import java.util.Vector;
+
 public class Main {
 
     public static void main(String[] args) {
 
         Kindergarden kindergarden = new Kindergarden("Kindergarten Feldkirch");
 
-        Animal hund = new Animal(kindergarden, "Wolle", "Hund");
-        Animal katze = new Animal(kindergarden, "Mizi", "Katze");
-        Animal fisch = new Animal(kindergarden, "Fritz", "Fisch");
+        Vector<Animal> animals = new Vector<>();
+        animals.add(new Hund(kindergarden, "Wolle", "Hund", "wuff"));
+        animals.add(new Katze(kindergarden, "Mizi", "Katze", "miau"));
+        animals.add(new Fisch(kindergarden, "Fritz", "Fisch", "blub"));
 
-        kindergarden.addAnimal(hund);
-        kindergarden.addAnimal(katze);
-        kindergarden.addAnimal(fisch);
+            for (Animal newAnimal : animals) {
+                kindergarden.addAnimal(newAnimal);
+            }
 
         kindergarden.generatePeds(3);
         kindergarden.generateChildren(9);
