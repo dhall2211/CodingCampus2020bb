@@ -8,15 +8,22 @@ public class Main {
         Vector<ISimulation> everyThingCanBeSimulated = new Vector<>();
         Random random = new Random();
 
-        everyThingCanBeSimulated.add(new Child("Luca", 5));
+        everyThingCanBeSimulated.add(new Child("Luca", 3));
         everyThingCanBeSimulated.add(new Child("Victor", 3));
+        everyThingCanBeSimulated.add(new Child("Klaus", 3));
+        everyThingCanBeSimulated.add(new Child("Mihael", 3));
+        everyThingCanBeSimulated.add(new Child("Irene", 3));
+        everyThingCanBeSimulated.add(new Child("Marcella", 3));
+        everyThingCanBeSimulated.add(new Child("Sabrina", 3));
 
-        for (int i = 0; i < 100; i++) { // 100 rounds of simulation
+        everyThingCanBeSimulated.add(new Auntie("Gyula"));
+
+        for (int i = 0; i < 10; i++) { // 100 rounds of simulation
             for (ISimulation sim: everyThingCanBeSimulated){
                 ISimulation target = everyThingCanBeSimulated.get(random.nextInt(everyThingCanBeSimulated.size()));
                 sim.interaction(target);
+                sim.auntieInteraction();
             }
-
         }
     }
 }
