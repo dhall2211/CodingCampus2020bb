@@ -1,22 +1,10 @@
 package Ali.ghanmi.com.Museum;
 
-public class Guard {
-    private String firstName;
-    private String lastName;
+public class Guard extends Person {
     private Room room;
 
     public Guard(String firstName, String lastName) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-    }
-
-    public void visitRoom(Room room) {
-        if(this.room != null){
-            this.room.removeGuard(this);
-        }
-        room.addGuard(this);
-        this.room = room;
-        System.out.println("Guard " + firstName + " " + lastName + " moves to room " + room.getId());
+        super(firstName, lastName, PersonType.GUARD);
     }
 
     @Override

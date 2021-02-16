@@ -5,7 +5,7 @@ import Ali.ghanmi.com.Museum.Factories.PersonFactory;
 import java.util.LinkedList;
 import java.util.Random;
 
-public class Museum {
+public class Museum  {
     private String name;
     private LinkedList<Room> rooms;
     private Room startingRoom;
@@ -22,22 +22,21 @@ public class Museum {
         this.closingHours = closingHours;
     }
 
-    private int getTicksUntilCloseDoors(){
+    private int getTicksUntilCloseDoors() {
         return (closingDoorsHours - openingHour) * 4; // one tick every 15min
     }
 
-    public int getTicksUntilClose(){
+    public int getTicksUntilClose() {
         return (closingHours - openingHour) * 4; // one tick every 15min
     }
 
     public void nextSimulationStep(int tick, int maxGuestsPerTick) {
         for (var room : rooms) {
-            room.moveGuards(rooms);
-            room.moveVisitors(rooms);
+            room.movePersons(rooms);
         }
 
         var random = new Random();
-        if(tick <= getTicksUntilCloseDoors()){
+        if (tick <= getTicksUntilCloseDoors()) {
             int guestsCount = random.nextInt(maxGuestsPerTick);
             var newVisitors = PersonFactory.createVisitors(guestsCount);
             for (var visitor : newVisitors) {
@@ -45,10 +44,11 @@ public class Museum {
             }
         }
 
-        if(tick == getTicksUntilClose()-1){
+        if (tick == getTicksUntilClose() - 1) {
             for (var room : rooms) {
-                room.removeAllPersons();
+                room.removeAllPersons(startingRoom);
             }
         }
     }
-}
+
+    }
