@@ -1,4 +1,6 @@
 package Irene.skirental;
 
-public class IProvider {
+public interface IProvider {
+	public boolean isAvailable(Category category);
+	public Reservation request(Category category);
 }
