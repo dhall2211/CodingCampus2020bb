@@ -1,7 +1,5 @@
 package Daniel.Shapes;
 
-import java.util.Locale;
-
 public class Circle extends Shape {
     private final double radius;
 
@@ -17,7 +15,7 @@ public class Circle extends Shape {
 
     @Override
     public String toString() {
-        return getColor().toString().toLowerCase(Locale.ROOT) + " (hex color: " + Color.getHexColor(getColor()) + " )"
+        return getColor().toString().toLowerCase() + " (hex color: " + Color.getHexColor(getColor()) + " )"
                 + " circle with radius " + radius + " and area of " + getArea();
     }
 }
