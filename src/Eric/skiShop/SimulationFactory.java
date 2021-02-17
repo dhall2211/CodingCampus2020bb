@@ -6,9 +6,9 @@ import java.util.Random;
 
 public class SimulationFactory {
 
-    private static String[] firstname = new String[]{"Ali", "Hari", "Bokhee", "Eric", "Jo"};
-    private static String[] lastname = new String[]{"Schmid", "Muller", "Metzger", "Bäcker", "Yan"};
-    private static Random random = new Random(System.currentTimeMillis());
+    private static final String[] firstname = new String[]{"Ali", "Hari", "Bokhee", "Eric", "Jo"};
+    private static final String[] lastname = new String[]{"Schmid", "Muller", "Metzger", "Bäcker", "Yan"};
+    private static final Random random = new Random(System.currentTimeMillis());
 
     public static List<Customer> createCustomers(int max) {
         List<Customer> customers = new ArrayList<>();
