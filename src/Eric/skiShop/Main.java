@@ -5,5 +5,6 @@ public class Main {
 
         Simulation sim = new Simulation();
         sim.run();
+
     }
 }

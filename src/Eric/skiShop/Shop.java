@@ -19,6 +19,13 @@ public class Shop {
         if (instance == null) {
             instance = new Shop();
         }
+        if (instance.salesPersons.size() < 1){
+            try {
+                throw new Exception("Chef has to come himself!");
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
         return instance;
     }
 

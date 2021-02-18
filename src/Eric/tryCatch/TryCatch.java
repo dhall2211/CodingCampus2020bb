@@ -5,9 +5,9 @@ import java.util.Scanner;
 public class TryCatch {
     public static void main(String[] args) throws Exception {
 
-//        var userInput = getUserNumber();
-//        System.out.println(userInput);
-        var userName = getUserFirstName();
+        var userInput = getUserNumber();
+        System.out.println(userInput);
+        var userName = getUserNameAgain();
         System.out.println(userName);
 
     }
@@ -20,7 +20,6 @@ public class TryCatch {
                 Scanner scanner = new Scanner(System.in);
                 System.out.println("Please enter id");
                 userInput = scanner.nextInt();
-
                 return userInput;
             } catch (Exception e) {
                 System.out.println("error ");
@@ -47,9 +46,29 @@ public class TryCatch {
         }
     }
 
-    public static String getUserLastName() throws Exception {
-        String username = getUserFirstName();
-        System.out.println("Hello " + username);
-        return username;
+    public static String getName() {
+        var userInput = "";
+        try {
+            Scanner scanner = new Scanner(System.in);
+            System.out.println("Please enter name");
+            userInput = scanner.next();
+            if (userInput.length() <= 3) {
+                throw new Exception("Error: your name is too short");
+            } else {
+                return userInput;
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return "";
+    }
+
+    public static String getUserNameAgain() {
+        String getNameBefore = "";
+
+        while (getNameBefore.isEmpty()) {
+            getNameBefore = getName();
+        }
+        return getNameBefore;
     }
 }

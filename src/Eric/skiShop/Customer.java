@@ -1,6 +1,7 @@
 package Eric.skiShop;
 
 import java.util.List;
+import java.util.NoSuchElementException;
 import java.util.Random;
 
 public class Customer {
@@ -17,10 +18,13 @@ public class Customer {
     public void rentItem(Category category, List<Item> items) {
         var provider = chooseShop(PROBABILITY);
 
+        if (category == null || items == null) {
+            throw new NoSuchElementException("You are a stupid customer");
+        }
         if (!provider.isAvailable(category, items)) {
             System.err.println("sorry not available: " + category);
         } else {
-           provider.request(this, category, items);
+            provider.request(this, category, items);
         }
     }
 
