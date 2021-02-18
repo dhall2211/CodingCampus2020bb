@@ -28,10 +28,11 @@ public class WebShop implements IProvider {
     }
 
     @Override
-    public Reservation request(Category category, List<Item> items) {
+    public Reservation request(Customer customer, Category category, List<Item> items) {
         for (Item item : items) {
             if (item.getCategory().equals(category) && item.isAvailable()) {
                 item.setAvailable(false);
+                Shop.reservations.add(new Reservation(customer, item ));
                 return null;
             }
         }

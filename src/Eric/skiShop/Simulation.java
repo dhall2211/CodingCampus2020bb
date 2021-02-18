@@ -5,18 +5,21 @@ import java.util.List;
 import java.util.Random;
 
 public class Simulation {
-    private int tick;
+    public static int tick = 7;
     private final Shop shop = Shop.getInstance();
     private final List<Item> items = new ArrayList<>(shop.getItems());
 
     public void run() {
 
-        var customers = SimulationFactory.createCustomers(30);
+        var customers = SimulationFactory.createCustomers(5);
 
-        showAvailabeItems();
-
-        for (Customer customer : customers) {
-            doCustomerRent(customer, items);
+        for (int i = 0; i < 5; i++) {
+            tick++;
+            System.out.println(tick + " o clock:");
+            showAvailabeItems();
+            for (Customer customer : customers) {
+                doCustomerRent(customer, items);
+            }
         }
 
         showAvailabeItems();

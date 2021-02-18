@@ -20,13 +20,13 @@ public class Customer {
         if (!provider.isAvailable(category, items)) {
             System.err.println("sorry not available: " + category);
         } else {
-            provider.request(category, items);
+           provider.request(this, category, items);
         }
     }
 
     public IProvider chooseShop(double probability) {
         Random random = new Random();
-        IProvider provider = null;
+        IProvider provider;
         var shop = Shop.getInstance();
 
         if (random.nextDouble() > probability) {

@@ -1,5 +1,6 @@
 package Eric.skiShop;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Shop {
@@ -9,6 +10,7 @@ public class Shop {
     private final WebShop webShop = WebShop.getInstance();
     private final List<SalesPerson> salesPersons = SimulationFactory.createSalesPerson(1);
     private List<Item> items = SimulationFactory.createItems(10);
+    public static List<Reservation> reservations = new ArrayList<>();
 
     private Shop() {
     }
@@ -39,4 +41,5 @@ public class Shop {
     public void setItems(List<Item> items) {
         this.items = items;
     }
+
 }
