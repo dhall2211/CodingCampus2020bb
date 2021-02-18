@@ -1,6 +1,5 @@
 package Irene.skirental;
 
-import Irene.restaurant.Item;
 
 public class Reservation {
     private Item items[];

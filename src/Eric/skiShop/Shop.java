@@ -1,14 +1,16 @@
 package Eric.skiShop;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Shop {
 
-    private String name = "Skishop";
     private static Shop instance;
-    private List<SalesPerson> salesPersons;
-    private WebShop webShop;
-    private List<Item> items;
+    private final String name = "Skishop";
+    private final WebShop webShop = WebShop.getInstance();
+    private final List<SalesPerson> salesPersons = SimulationFactory.createSalesPerson(1);
+    private List<Item> items = SimulationFactory.createItems(10);
+    public static List<Reservation> reservations = new ArrayList<>();
 
     private Shop() {
     }
@@ -23,4 +25,21 @@ public class Shop {
     public String getName() {
         return name;
     }
+
+    public WebShop getWebShop() {
+        return this.webShop;
+    }
+
+    public SalesPerson getSalesPerson() {
+        return this.salesPersons.get(0);
+    }
+
+    public List<Item> getItems() {
+        return items;
+    }
+
+    public void setItems(List<Item> items) {
+        this.items = items;
+    }
+
 }
