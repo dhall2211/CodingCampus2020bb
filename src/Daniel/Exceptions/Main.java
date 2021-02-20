@@ -1,14 +1,18 @@
 package Daniel.Exceptions;
 
+import Daniel.Logging.LogType;
+import Daniel.Logging.SimpleLogger;
+
 public class Main {
     public static void main(String[] args) {
+        SimpleLogger logger = SimpleLogger.getInstance();
         for (var item : Items.values()) {
             try {
-                System.out.println(item.name() + " kostet " + item.getPrice());
+                logger.log(LogType.INFO, item.name() + " kostet " + item.getPrice());
             } catch (ItemUnknownPriceException e) {
-                System.err.println("Fehler bei Pricing: " + e.getMessage());
+                logger.log(LogType.ERROR, "Fehler bei Pricing: " + e.getMessage());
             } finally {
-                System.out.println("dieser Block wird immer ausgeführt");
+                logger.log(LogType.INFO, "dieser Block wird immer ausgeführt");
             }
         }
     }
