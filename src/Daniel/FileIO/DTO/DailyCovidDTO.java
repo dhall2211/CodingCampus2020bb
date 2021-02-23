@@ -1,4 +1,4 @@
-package Daniel.FileIO;
+package Daniel.FileIO.DTO;
 
 import java.util.Collection;
 import java.util.LinkedList;
