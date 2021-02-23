@@ -1,9 +1,6 @@
 package Daniel.FileIO;
 
-import Daniel.FileIO.DTO.AverageCumulativeDTO;
-import Daniel.FileIO.DTO.DailyCovidDTO;
-import Daniel.FileIO.DTO.MaxCumulativeDTO;
-import Daniel.FileIO.DTO.TopCasesDTO;
+import Daniel.FileIO.DTO.*;
 import Daniel.Logging.LogType;
 import Daniel.Logging.SimpleLogger;
 
@@ -21,10 +18,12 @@ public class Main {
         var topList = aggregator.getTopCases(data);
         var averageCumulative = aggregator.getAverageCumulative(data);
         var maxCumulative = aggregator.getMaxCumulative(data);
+        var topPercentagePopulation = aggregator.getTopPercentagePopulation(data);
 
         CsvUtil.saveCsv(basePath.resolve("covid-toplist.csv"), TopCasesDTO.convert(topList), ";");
         CsvUtil.saveCsv(basePath.resolve("average-cases-per-100k.csv"), AverageCumulativeDTO.convert(averageCumulative), ";");
         CsvUtil.saveCsv(basePath.resolve("max-cumulative-14-days.csv"), MaxCumulativeDTO.convert(maxCumulative), ";");
+        CsvUtil.saveCsv(basePath.resolve("top-percentage-population.csv"), TopPercentagePopulationDTO.convert(topPercentagePopulation), ";");
 
         long finish = System.currentTimeMillis();
         SimpleLogger.getInstance().log(LogType.INFO, "processed " + csv.size() + " lines in " + (finish - start) + "ms");

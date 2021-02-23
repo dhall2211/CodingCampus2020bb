@@ -1,9 +1,8 @@
 package Daniel.FileIO;
 
-import Daniel.FileIO.DTO.AverageCumulativeDTO;
-import Daniel.FileIO.DTO.DailyCovidDTO;
-import Daniel.FileIO.DTO.MaxCumulativeDTO;
-import Daniel.FileIO.DTO.TopCasesDTO;
+import Daniel.FileIO.DTO.*;
+import Daniel.Logging.LogType;
+import Daniel.Logging.SimpleLogger;
 
 import java.util.*;
 
@@ -53,6 +52,25 @@ public class CovidAggregator {
             }
         }
         List<MaxCumulativeDTO> sorted = new LinkedList<>(resultSet.values());
+        Collections.sort(sorted);
+        return sorted;
+    }
+
+    public Collection<TopPercentagePopulationDTO> getTopPercentagePopulation(Collection<DailyCovidDTO> data) {
+        Map<String, TopPercentagePopulationDTO> resultSet = new HashMap<>();
+        for (var item : data) {
+            var aggregationData = resultSet.get(item.getCountry());
+            if (aggregationData == null) {
+                if (item.getPopulation() == null || item.getPopulation() == "") {
+                    SimpleLogger.getInstance().log(LogType.WARNING, item.getCountry() + " has empty population column");
+                    continue;
+                }
+                aggregationData = new TopPercentagePopulationDTO(item.getCountry(), Integer.parseInt(item.getPopulation()));
+                resultSet.put(item.getCountry(), aggregationData);
+            }
+            aggregationData.addCases(Integer.parseInt(item.getCases()));
+        }
+        List<TopPercentagePopulationDTO> sorted = new LinkedList<>(resultSet.values());
         Collections.sort(sorted);
         return sorted;
     }
