@@ -14,9 +14,9 @@ public class Main {
 
         var data = DailyCovidDTO.convert(csv);
         var aggregator = new CovidAggregator();
-        var toplist = aggregator.getTopCases(data);
+        var topList = aggregator.getTopCases(data);
 
-        CsvUtil.saveCsv(basePath.resolve("covid-toplist.csv"), CovidAggregationDTO.convert(toplist), ";");
+        CsvUtil.saveCsv(basePath.resolve("covid-toplist.csv"), CovidAggregationDTO.convert(topList), ";");
 
         long finish = System.currentTimeMillis();
         SimpleLogger.getInstance().log(LogType.INFO, "processed " + csv.size() + " lines in " + (finish - start) + "ms");

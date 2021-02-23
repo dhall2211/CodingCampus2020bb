@@ -3,6 +3,7 @@ package Daniel.FileIO;
 import java.util.Collection;
 import java.util.LinkedList;
 
+// DTO = data transfer object
 public class DailyCovidDTO {
     private final String date;
     private final String day;

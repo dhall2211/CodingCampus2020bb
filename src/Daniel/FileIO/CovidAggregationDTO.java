@@ -3,6 +3,7 @@ package Daniel.FileIO;
 import java.util.Collection;
 import java.util.LinkedList;
 
+// DTO = data transfer object
 public class CovidAggregationDTO {
     private final String country;
     private int cases;

@@ -36,7 +36,7 @@ public class CsvUtil {
         File file = filePath.toFile();
         FileWriter writer = null;
         try {
-            writer = new FileWriter(file, true);
+            writer = new FileWriter(file, false);
             for (String[] line : csv) {
                 writer.write(String.join(separator, line) + "\n");
             }

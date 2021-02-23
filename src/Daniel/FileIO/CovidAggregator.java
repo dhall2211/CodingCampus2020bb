@@ -19,7 +19,6 @@ public class CovidAggregator {
     }
 
     class SortByCasesDesc implements Comparator<CovidAggregationDTO> {
-
         @Override
         public int compare(CovidAggregationDTO o1, CovidAggregationDTO o2) {
             return o2.getCases() - o1.getCases();
