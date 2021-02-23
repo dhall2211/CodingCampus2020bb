@@ -12,6 +12,7 @@ public class SimpleLogger {
     private final File logfile;
 
     private SimpleLogger() {
+        // String logFilePath = getFilePathFromConfig(); -- sollte eigentlich in Konfiguration liegen
         logfile = new File(LOG_FILE_PATH);
         System.out.println("Logfile: " + logfile.getAbsolutePath());
     }
