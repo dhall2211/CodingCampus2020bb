@@ -1,19 +1,19 @@
-package Ali.ghanmi.com.FileIO;
+package Ali.ghanmi.com.FileIO.DTO;
 
 import java.util.Collection;
 import java.util.LinkedList;
 
 // DTO = data transfer object
-public class CovidAggregationDTO {
+public class TopCasesDTO implements Comparable {
     private final String country;
     private int cases;
 
-    public CovidAggregationDTO(String country) {
+    public TopCasesDTO(String country) {
         this.country = country;
         this.cases = 0;
     }
 
-    public static Collection<String[]> convert(Collection<CovidAggregationDTO> data) {
+    public static Collection<String[]> convert(Collection<TopCasesDTO> data) {
         Collection<String[]> result = new LinkedList<>();
         for (var line : data) {
             result.add(new String[]{line.getCountry(), String.valueOf(line.getCases())});
@@ -31,5 +31,10 @@ public class CovidAggregationDTO {
 
     public void addCases(int cases) {
         this.cases += cases;
+    }
+
+    @Override
+    public int compareTo(Object o) {
+        return ((TopCasesDTO) o).getCases() - this.getCases();
     }
 }
