@@ -1,0 +1,1 @@
+Einfaches Textfile einzulesen. Check!
