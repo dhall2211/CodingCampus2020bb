@@ -1,0 +1,14 @@
+; Zeilen, die mit Semicolon beginnen, sind einfache Kommentare, die beim Einlesen ignorieren müssen.
+; Mann kann eine Haufen komische Dinge hier einschreiben
+
+; Der Key ist immer Text (oder alphanumerisches Text)
+key1 = value
+; Value kann auch leer sein
+key2 =                                                
+; Es kann auch Zahl sein
+key3 = 123
+; Es kann Ein/Aus wert in Boolean sein
+key4 = false
+; Es kann auch eine komplexe Sache beschreiben, wie ein weitere Dateiname
+key5 = $(HOME)/config_1.txt
+
