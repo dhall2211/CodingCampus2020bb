@@ -10,7 +10,7 @@ public class DynColumns {
                     "where encompasses.Continent = 'Asia' and Percentage > 50 " +
                     "order by PopDens ASC " +
                     "limit 10;";
-    private static String sqlQuery_2 = "select * from province;";
+    private static String sqlQuery_2 = "select * from province limit 10;";
 
 
 
@@ -28,8 +28,34 @@ public class DynColumns {
 
     public static void printResult(ResultSet rs) throws SQLException {
         ResultSetMetaData md = rs.getMetaData();
+
+        System.out.print("|");
         for (int i = 1; i <= md.getColumnCount(); i++) {
-            System.out.printf("%20s %20s %5d %10s %5d%n", md.getColumnLabel(i), md.getColumnName(i), md.getColumnDisplaySize(i), md.getColumnTypeName(i), md.getColumnType(i));
+            if (md.getColumnType(i) == Types.VARCHAR) {
+                System.out.printf(" %-" + Math.max(md.getColumnDisplaySize(i), md.getColumnName(i).length()) + "s |", md.getColumnName(i));
+            } else {
+                System.out.printf(" %" + Math.max(md.getColumnDisplaySize(i),md.getColumnName(i).length()) +"s |", md.getColumnName(i));
+            }
+        }
+        System.out.println();
+
+        System.out.print("|");
+        for (int i = 1; i <= md.getColumnCount(); i++) {
+            System.out.printf(" %s |", "-".repeat(Math.max(md.getColumnDisplaySize(i), md.getColumnName(i).length())));
+        }
+        System.out.println();
+
+
+        while (rs.next()){
+            System.out.print("|");
+            for (int i = 1; i <= md.getColumnCount(); i++) {
+                if (md.getColumnType(i) == Types.VARCHAR){
+                    System.out.printf(" %-" + Math.max(md.getColumnDisplaySize(i), md.getColumnName(i).length()) + "s |", rs.getString(i));
+                } else {
+                    System.out.printf(" %" + Math.max(md.getColumnDisplaySize(i), md.getColumnName(i).length()) + "s |", rs.getString(i));
+                }
+            }
+            System.out.println();
         }
     }
 }
