@@ -11,16 +11,12 @@ public class NotesMain {private static final String url = "jdbc:mysql://localhos
 
     public static void main(String[] args) {
 
-        newUserFromScanner();
+        getMetaData();
         int userId = selectUser();
         while(notesRunning) {
             printNotes(userId);
             newNoteFromScanner(userId);
         }
-    }
-
-    private static void newUserFromScanner() {
-
     }
 
     /**
@@ -114,4 +110,46 @@ public class NotesMain {private static final String url = "jdbc:mysql://localhos
             }
         }
     }
+
+    private static void getMetaData() {
+        Connection connection = null;
+        try {
+            connection = DriverManager.getConnection(url, user, password);
+            Statement statement = connection.createStatement();
+            ResultSet allFromNotes = statement.executeQuery("SELECT * FROM notes");
+
+            ResultSetMetaData allNotesMD = allFromNotes.getMetaData();
+            int numberOfColumns = allNotesMD.getColumnCount();
+            for (int i = 1; i <= numberOfColumns; i++) {
+                System.out.println(allNotesMD.getColumnName(i));
+            }
+            System.out.printf("%-10s %-50s %-20s %-10s %n",
+                    "notesId",
+                    "text",
+                    "created",
+                    "userId");
+            while (allFromNotes.next()) {
+                int notesId = allFromNotes.getInt("notesId");
+                String text = allFromNotes.getString("text");
+                Date created = allFromNotes.getDate("created");
+                int userId = allFromNotes.getInt("userId");
+                System.out.printf("%-10s %-50s %-20s %-10s %n",
+                        notesId,
+                        text,
+                        created,
+                        userId);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            if (connection != null) {
+                try {
+                    connection.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+    }
+
 }
