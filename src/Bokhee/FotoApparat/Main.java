@@ -7,7 +7,7 @@ public class Main {
         FotoApparat myFotoApparat = new FotoApparat("EOS 6D MarkII", 26, true, 35, "Japan");
         SpeicherKarte mySpeicherKarte = new SpeicherKarte("Sony", 0, 128);
 
-        myFotoApparat.setCurrentSpeicherarte(mySpeicherKarte);
+        myFotoApparat.setCurrentSpeicherKarte(mySpeicherKarte);
 
 
         int iterations = 0;

@@ -18,7 +18,7 @@ public class FotoApparat {
     }
     public void machfoto() {
         if (currentSpeicherkarte.getFreierSpeicherPlatz() < 5) {
-            System.out.println("kein Sprehcerplatz mehr! Geben Sie eine neue Karte"+"\n"+
+            System.out.println("kein Speicherplatz mehr! Geben Sie eine neue Karte"+"\n"+
                     "Freie Platz sind : "+ currentSpeicherkarte.getFreierSpeicherPlatz());
         } else {
             System.out.println("ein Foto ist gemacht worden.");
@@ -35,7 +35,7 @@ public class FotoApparat {
 //    public void machfoto() throws Exception {
 //        if (currentSpeicherkarte.getFreierSpeicherPlatz() < 5) {
 //
-//             throw new Exception ("kein Sprehcerplatz");
+//             throw new Exception ("kein Speicherplatz");
 //        } else {
 //            System.out.println("ein Foto ist gemacht worden.");
 //            currentSpeicherkarte.speichereFoto();
@@ -46,7 +46,8 @@ public class FotoApparat {
         return currentSpeicherkarte;
     }
 
-    public void setCurrentSpeicherarte(SpeicherKarte currentSpeicherkarte) {
+    public void setCurrentSpeicherKarte(SpeicherKarte currentSpeicherkarte) {
+
         this.currentSpeicherkarte = currentSpeicherkarte;
     }
 
@@ -54,37 +55,6 @@ public class FotoApparat {
         currentSpeicherkarte.setBenutzteSpeicherPlatz(currentSpeicherkarte.getBenutzteSpeicherPlatz()-(menge*5));
         System.out.println(menge+" Fotos wurde gelöscht."+"\n"+"Freie Platz sind : "+ currentSpeicherkarte.getFreierSpeicherPlatz());
 
-    }
-    public String getDescription() {
-        return beschreibung;
-    }
-
-    public void setDescription(String description) {
-        this.beschreibung = description;
-    }
-
-    public int getMegaPixel() {
-        return megaPixel;
-    }
-
-    public void setMegaPixel(int megaPixel) {
-        this.megaPixel = megaPixel;
-    }
-
-    public boolean getPictureStabilizer() {
-        return bildStabilizierung;
-    }
-
-    public void setPictureStabilizer(boolean pictureStabilizer) {
-        this.bildStabilizierung = pictureStabilizer;
-    }
-
-    public int getFocalLength() {
-        return brennweite;
-    }
-
-    public void setFocalLength(int focalLength) {
-        this.brennweite = focalLength;
     }
 
     public String getCountry() {

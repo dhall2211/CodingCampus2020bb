@@ -1,0 +1,12 @@
+; Man kann noch einen Schritt weitergehen und Struktur definieren
+; Zum Beispiel: Gruppe A für Input und Gruppe B für Output Konfiguration
+
+[ConfigGruppe_A]
+key1 = value
+key2 = value
+
+[ConfigGruppe_B]
+key1 = value
+key3 = value
+
+
