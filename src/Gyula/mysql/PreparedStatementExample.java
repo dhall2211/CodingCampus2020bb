@@ -6,7 +6,7 @@ import java.util.Scanner;
 public class PreparedStatementExample {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        System.out.println("Geben Sie einen Kontinent ein:");
+        System.out.println("Geben Sie einen     Kontinent ein:");
         String continent = sc.nextLine();
 
         Connection conn = null;
