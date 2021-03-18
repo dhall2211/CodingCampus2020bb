@@ -16,10 +16,6 @@ public class SpeicherKarte {
         return speicherPlatz - benutzteSpeicherPlatz;
     }
 
-    public void setbenutzteSpeicherPlatz(int benutzteSpeicherPlatz) {
-        this.benutzteSpeicherPlatz = benutzteSpeicherPlatz;
-    }
-
     public int getBenutzteSpeicherPlatz() {
         return benutzteSpeicherPlatz;
     }
@@ -30,9 +26,7 @@ public class SpeicherKarte {
 
     public void speichereFoto() {
         this.benutzteSpeicherPlatz += 5;
-
     }
-
 }
 
 
