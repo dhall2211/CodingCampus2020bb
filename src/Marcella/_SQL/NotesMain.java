@@ -3,7 +3,8 @@ package Marcella._SQL;
 import java.sql.*;
 import java.util.Scanner;
 
-public class NotesMain {private static final String url = "jdbc:mysql://localhost:3306/notes";
+public class NotesMain {
+    private static final String url = "jdbc:mysql://localhost:3306/notes";
     private static final String user = "jdbc user";
     private static final String password = "jdbcuserpassword";
 
