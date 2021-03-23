@@ -16,7 +16,7 @@ public class Main {
         //ScannerTest.simulate();
         //BankAutomat.chaschService();
         //GeldAutomat.cash();
-        //GeldautomatDrei.main();
+     //   GeldautomatDrei.main();
         //WichtelÜbung.wichteln();
 
     }
