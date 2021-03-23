@@ -3,8 +3,6 @@ package Ali.ghanmi.com.mysql;
 import java.sql.*;
 
 public class DynColumns {
-
-
     private static String url = "jdbc:mysql://localhost:3306/mondial";
     private static String user = "root";
     private static String pw = "@Aliben@";
@@ -15,8 +13,8 @@ public class DynColumns {
                     "join country on encompasses.Country = Country.code " +
                     "where encompasses.Continent = 'Asia' and Percentage > 50 " +
                     "order by PopDens ASC " +
-                    "limit 5;";
-    private static String sqlQuery_2 = "select * from province limit 5;";
+                    "limit 10;";
+    private static String sqlQuery_2 = "select Country AS ichmoechteeinwirklichlangenameverwenden from province limit 10;";
 
 
 
@@ -38,16 +36,16 @@ public class DynColumns {
         System.out.print("|");
         for (int i = 1; i <= md.getColumnCount(); i++) {
             if (md.getColumnType(i) == Types.VARCHAR) {
-                System.out.printf(" %-" + Math.max(md.getColumnDisplaySize(i), md.getColumnName(i).length()) + "s |", md.getColumnName(i));
+                System.out.printf(" %-" + Math.max(md.getColumnDisplaySize(i), md.getColumnLabel(i).length()) + "s |", md.getColumnLabel(i));
             } else {
-                System.out.printf(" %" + Math.max(md.getColumnDisplaySize(i),md.getColumnName(i).length()) +"s |", md.getColumnName(i));
+                System.out.printf(" %" + Math.max(md.getColumnDisplaySize(i),md.getColumnLabel(i).length()) +"s |", md.getColumnLabel(i));
             }
         }
         System.out.println();
 
         System.out.print("|");
         for (int i = 1; i <= md.getColumnCount(); i++) {
-            System.out.printf(" %s |", ".".repeat(Math.max(md.getColumnDisplaySize(i), md.getColumnName(i).length())));
+            System.out.printf(" %s |", "-".repeat(Math.max(md.getColumnDisplaySize(i), md.getColumnLabel(i).length())));
         }
         System.out.println();
 
@@ -56,13 +54,12 @@ public class DynColumns {
             System.out.print("|");
             for (int i = 1; i <= md.getColumnCount(); i++) {
                 if (md.getColumnType(i) == Types.VARCHAR){
-                    System.out.printf(" %-" + Math.max(md.getColumnDisplaySize(i), md.getColumnName(i).length()) + "s |", rs.getString(i));
+                    System.out.printf(" %-" + Math.max(md.getColumnDisplaySize(i), md.getColumnLabel(i).length()) + "s |", rs.getString(i));
                 } else {
-                    System.out.printf(" %" + Math.max(md.getColumnDisplaySize(i), md.getColumnName(i).length()) + "s |", rs.getString(i));
+                    System.out.printf(" %" + Math.max(md.getColumnDisplaySize(i), md.getColumnLabel(i).length()) + "s |", rs.getString(i));
                 }
             }
             System.out.println();
         }
     }
-
 }

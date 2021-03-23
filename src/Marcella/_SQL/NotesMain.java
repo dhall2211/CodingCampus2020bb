@@ -121,7 +121,13 @@ public class NotesMain {private static final String url = "jdbc:mysql://localhos
             ResultSetMetaData allNotesMD = allFromNotes.getMetaData();
             int numberOfColumns = allNotesMD.getColumnCount();
             for (int i = 1; i <= numberOfColumns; i++) {
-                System.out.println(allNotesMD.getColumnName(i));
+                System.out.printf("%-20s %-20s %-20s %-20s %-20s %n",
+                        allNotesMD.getColumnName(i),
+                        allNotesMD.getColumnDisplaySize(i),
+                        allNotesMD.getColumnTypeName(i),
+                        allNotesMD.getPrecision(i),
+                        allNotesMD.isNullable(i)
+                        );
             }
             System.out.printf("%-10s %-50s %-20s %-10s %n",
                     "notesId",
