@@ -8,8 +8,8 @@ function loadData() {
         "Vorarlbergerisch" : "Habidere"
     }
 
-    var selector = document.getElementById("language");
-    var lang = selector.options[selector.selectedIndex].text;
+    let selector = document.getElementById("language");
+    let lang = selector.options[selector.selectedIndex].text;
 
     fetch('http://localhost:3000/hello')
     .then(response => response.json())

@@ -10,7 +10,7 @@ app.get('/', (req, res) => {
 })
 
 app.get('/hello', (req, res) => {
-    var response = {
+    let response = {
         name : get_random_name()
     }
     res.json(response)
